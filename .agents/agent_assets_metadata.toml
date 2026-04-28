@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "94fZBdybcaoYpTeK3RhXu"
+uri = "file://artifacts/cydigital/public/images/hero.png"
+type = "image"
+title = "Hero abstract digital waves"
+
+[[generated]]
+id = "cyMEdsyqWcqJRciNN1IQ6"
+uri = "file://artifacts/cydigital/public/images/portfolio-1.png"
+type = "image"
+title = "Restaurant website mockup"
+
+[[generated]]
+id = "hMsdzWxwD4Da4ksPxVE7P"
+uri = "file://artifacts/cydigital/public/images/portfolio-2.png"
+type = "image"
+title = "Beauty salon social media"
+
+[[generated]]
+id = "pGL2OApeNx6eB_jrKt0su"
+uri = "file://artifacts/cydigital/public/images/portfolio-3.png"
+type = "image"
+title = "Branding identity mockup"
+
+[[generated]]
+id = "ToGpQWOIxps-F1LrR5-51"
+uri = "file://artifacts/cydigital/public/images/portfolio-4.png"
+type = "image"
+title = "Gym ads mockup"

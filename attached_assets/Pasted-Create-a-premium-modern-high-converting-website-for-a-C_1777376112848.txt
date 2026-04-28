@@ -1,0 +1,217 @@
+Create a premium, modern, high-converting website for a Cyprus-based digital agency called “CYDigital”.
+
+Language: Greek (ALL content must be written in Greek).
+
+Target audience:
+Small and medium-sized businesses in Cyprus (restaurants, cafés, beauty salons, gyms, clinics, real estate agencies, local shops, and service providers).
+
+Main goal:
+Generate leads and convert visitors into clients through a highly professional, trustworthy, and visually premium website.
+
+Brand positioning:
+CYDigital helps businesses in Cyprus build a strong online presence through website creation, social media management, branding, graphic design, Google Business Profile setup, and digital advertising.
+
+Design direction:
+- Premium, modern, clean, elegant
+- Mobile-first (extremely important)
+- High-end agency feel (not template-like)
+- Smooth animations and micro-interactions
+- Strong spacing and visual hierarchy
+
+Color palette:
+- Dark navy (#0B1C2C)
+- White (#FFFFFF)
+- Light grey (#F5F5F5)
+- Gold accents (#C9A24A)
+- Optional soft blue inspired by Cyprus
+
+Typography:
+- Modern sans-serif fonts
+- Large bold headlines
+- Clean readable body text
+- Premium spacing
+- Rounded cards and soft shadows
+
+----------------------------------
+WEBSITE STRUCTURE
+----------------------------------
+
+1. HEADER
+- Logo text: CYDigital
+- Navigation:
+  Αρχική
+  Υπηρεσίες
+  Πακέτα
+  Portfolio
+  Γιατί Εμάς
+  Επικοινωνία
+- CTA button: "Ζητήστε Προσφορά"
+- Sticky header on scroll
+
+----------------------------------
+
+2. HERO SECTION
+Headline:
+"Η online εικόνα της επιχείρησής σας ξεκινά εδώ"
+
+Subheadline:
+"Δημιουργούμε ιστοσελίδες, social media περιεχόμενο, γραφιστικά και digital καμπάνιες για μικρές και μεσαίες επιχειρήσεις στην Κύπρο."
+
+CTA buttons:
+- "Ζητήστε Δωρεάν Προσφορά"
+- "Δείτε Υπηρεσίες"
+
+Visual direction:
+- Abstract digital waves
+- Website mockups
+- Social media visuals
+- Mediterranean / Cyprus-inspired style
+
+----------------------------------
+
+3. TRUST BAR
+- Για επιχειρήσεις στην Κύπρο
+- Γρήγορη εξυπηρέτηση
+- Προσιτές λύσεις
+- Επαγγελματικό αποτέλεσμα
+
+----------------------------------
+
+4. SERVICES SECTION
+Title:
+"Οι Υπηρεσίες μας"
+
+Cards with icons:
+
+- Δημιουργία Ιστοσελίδας
+- Social Media Management
+- Γραφιστικά & Δημιουργικά
+- Logo & Branding
+- Google Business Profile
+- Διαφημίσεις Facebook & Instagram
+
+Each card must include a short benefit-focused description.
+
+----------------------------------
+
+5. HOW IT WORKS
+Title:
+"Πώς λειτουργεί"
+
+Steps:
+01. Μας λέτε τι χρειάζεται η επιχείρησή σας
+02. Ετοιμάζουμε στρατηγική και προσφορά
+03. Δημιουργούμε το υλικό και το πλάνο
+04. Ξεκινάμε την ανάπτυξη της επιχείρησής σας
+
+----------------------------------
+
+6. PACKAGES SECTION
+Title:
+"Πακέτα για κάθε επιχείρηση"
+
+Starter – Από €199/μήνα
+- 8 social media posts
+- Basic design
+- Google Business setup
+- Monthly report
+
+Growth – Από €399/μήνα (highlight as MOST POPULAR)
+- 12–16 posts
+- Reels ideas
+- Landing page
+- Ads management
+- Strategy call
+
+Premium – Από €699/μήνα
+- Full website creation
+- Social media management
+- Graphic design
+- Branding support
+- Ads management
+- Monthly strategy review
+
+Each package must include CTA: "Ενδιαφέρομαι"
+
+----------------------------------
+
+7. PORTFOLIO
+Title:
+"Δείγματα δουλειάς"
+
+Create modern placeholder cards:
+- Website for restaurant
+- Social media for beauty salon
+- Branding project
+- Ads campaign for gym
+
+----------------------------------
+
+8. WHY CHOOSE US
+Title:
+"Γιατί να επιλέξετε την CYDigital"
+
+- Τοπική γνώση της αγοράς Κύπρου
+- Απλή και ξεκάθαρη επικοινωνία
+- Προσιτές λύσεις
+- Επαγγελματικό design
+- Εστίαση σε αποτελέσματα
+- Γρήγορη υποστήριξη
+
+----------------------------------
+
+9. STRONG CTA SECTION
+Headline:
+"Έτοιμοι να αναπτύξετε την επιχείρησή σας;"
+
+Subheadline:
+"Στείλτε μας λίγες πληροφορίες και θα σας προτείνουμε την καλύτερη λύση."
+
+Button:
+"Ζητήστε Δωρεάν Προσφορά"
+
+----------------------------------
+
+10. CONTACT FORM
+Fields:
+- Όνομα
+- Όνομα Επιχείρησης
+- Τηλέφωνο
+- Email
+- Πόλη
+- Υπηρεσία (dropdown)
+- Μήνυμα
+
+Success message:
+"Ευχαριστούμε! Θα επικοινωνήσουμε σύντομα μαζί σας."
+
+----------------------------------
+
+11. FOOTER
+- CYDigital
+- Short description
+- Navigation links
+- Contact placeholders
+- Social icons
+
+----------------------------------
+
+TECHNICAL REQUIREMENTS
+----------------------------------
+
+- Fully responsive (mobile, tablet, desktop)
+- Premium mobile experience (not just resized desktop)
+- Smooth scrolling
+- Scroll animations (fade, slide)
+- Clean component structure
+- SEO-friendly headings
+- Fast loading
+- Proper spacing
+- All CTA buttons scroll to contact form
+- No generic template feel
+
+----------------------------------
+
+IMPORTANT:
+The final result must look like a real premium digital agency website that can immediately be used to sell services to business owners in Cyprus.
+Make it visually impressive and conversion-focused.

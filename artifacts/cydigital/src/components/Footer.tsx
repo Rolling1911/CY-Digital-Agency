@@ -16,12 +16,7 @@ export function Footer() {
             <img
               src="/images/logo.png"
               alt="CYDigital"
-              style={{
-                width: "340px",
-                height: "85px",
-                objectFit: "cover",
-                objectPosition: "center center",
-              }}
+              style={{ height: "130px", width: "auto" }}
               className="mb-4"
             />
             <p className="text-muted-foreground text-lg max-w-md mb-6 leading-relaxed">

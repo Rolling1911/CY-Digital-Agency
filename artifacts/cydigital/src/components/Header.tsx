@@ -43,12 +43,7 @@ export function Header() {
             <img
               src="/images/logo.png"
               alt="CYDigital"
-              style={{
-                width: "280px",
-                height: "70px",
-                objectFit: "cover",
-                objectPosition: "center center",
-              }}
+              style={{ height: "100px", width: "auto" }}
             />
           </div>
 

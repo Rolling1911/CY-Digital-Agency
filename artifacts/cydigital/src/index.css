@@ -535,12 +535,15 @@ img { max-width: 100%; height: auto; }
   }
 
   /* — Packages — */
+  .pkg-grid {
+    grid-template-columns: 1fr !important;
+  }
   .pkg-wrapper {
     transform: none !important;
     opacity: 1 !important;
-    flex: 1 1 100% !important;
     max-width: 480px !important;
     margin: 0 auto;
+    width: 100%;
   }
 
   /* — Footer grid: stack columns — */

@@ -89,15 +89,13 @@ export function Packages() {
         </div>
 
         {/* Cards */}
-        {/* Desktop: flex bottom-aligned. Mobile: stack */}
         <div
-          className="max-w-5xl mx-auto"
+          className="max-w-5xl mx-auto pkg-grid"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-end",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
             gap: "24px",
-            flexWrap: "wrap",
+            alignItems: "end",
           }}
         >
           {packages.map((pkg, index) => {
@@ -123,8 +121,6 @@ export function Packages() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="pkg-wrapper"
               style={{
-                flex: "1 1 260px",
-                maxWidth: "340px",
                 transform: `scale(${scaleMap[index]})`,
                 transformOrigin: "bottom center",
                 opacity: opacityMap[index],

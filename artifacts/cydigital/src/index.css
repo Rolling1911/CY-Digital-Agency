@@ -692,3 +692,13 @@ img { max-width: 100%; height: auto; }
     transition: none !important;
   }
 }
+/* — NEW badge shimmer — */
+@keyframes newBadgeShimmer {
+  0%   { transform: translateX(-150%); }
+  100% { transform: translateX(300%); }
+}
+.new-badge-shimmer {
+  background: linear-gradient(105deg, transparent 30%, rgba(212,175,55,0.45) 50%, transparent 70%);
+  animation: newBadgeShimmer 2.2s ease-in-out infinite;
+  animation-delay: 0.8s;
+}

@@ -85,20 +85,30 @@ export function ContentCreation() {
         <div className="text-center mb-16">
           {/* NEW badge */}
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.7 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
             className="inline-flex items-center gap-2 mb-6"
           >
-            <span
-              className="text-[#D4AF37] font-semibold uppercase tracking-[0.3em] text-[10px] px-4 py-1.5 border border-[#D4AF37]/40"
-              style={{
-                boxShadow: "0 0 12px rgba(212,175,55,0.2), inset 0 0 12px rgba(212,175,55,0.04)",
+            <motion.span
+              animate={{
+                boxShadow: [
+                  "0 0 10px rgba(212,175,55,0.4), 0 0 30px rgba(212,175,55,0.15), inset 0 0 10px rgba(212,175,55,0.08)",
+                  "0 0 20px rgba(212,175,55,0.7), 0 0 50px rgba(212,175,55,0.3), inset 0 0 18px rgba(212,175,55,0.15)",
+                  "0 0 10px rgba(212,175,55,0.4), 0 0 30px rgba(212,175,55,0.15), inset 0 0 10px rgba(212,175,55,0.08)",
+                ],
               }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="relative overflow-hidden text-[#D4AF37] font-bold uppercase tracking-[0.4em] text-[11px] px-5 py-2 border border-[#D4AF37]/60"
+              style={{ background: "rgba(212,175,55,0.08)" }}
             >
-              ✦ NEW
-            </span>
+              {/* Shimmer sweep */}
+              <span
+                className="absolute inset-0 pointer-events-none new-badge-shimmer"
+              />
+              ✦ NEW ✦
+            </motion.span>
           </motion.div>
 
           <motion.h2

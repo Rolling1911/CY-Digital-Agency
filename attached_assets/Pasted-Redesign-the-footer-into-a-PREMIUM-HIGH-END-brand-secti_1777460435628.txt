@@ -1,0 +1,142 @@
+Redesign the footer into a PREMIUM, HIGH-END brand section.
+
+GOAL:
+Make the footer feel like a strong closing brand statement, not just a list of links.
+
+--------------------------------------------------
+💎 LAYOUT (STRUCTURE)
+--------------------------------------------------
+
+Use 3 clean columns:
+
+LEFT:
+- Logo
+- Short premium tagline
+- Social icons (upgraded)
+
+CENTER:
+- Navigation links
+
+RIGHT:
+- Contact info
+
+--------------------------------------------------
+✨ LEFT COLUMN (UPGRADE)
+--------------------------------------------------
+
+Replace text:
+
+"Premium Digital Agency — Κύπρος"
+
+With:
+
+"Premium Digital Agency για επιχειρήσεις που θέλουν να ξεχωρίζουν."
+
+Add spacing and better typography.
+
+--------------------------------------------------
+🎯 SOCIAL ICONS (IMPORTANT)
+--------------------------------------------------
+
+Make icons premium:
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  background: rgba(212,175,55,0.12);
+  box-shadow: 0 0 12px rgba(212,175,55,0.3);
+}
+
+--------------------------------------------------
+📂 MENU LINKS (IMPROVE)
+--------------------------------------------------
+
+- Add hover effect:
+
+.footer-link:hover {
+  color: #D4AF37;
+}
+
+- Add slight spacing between items
+
+--------------------------------------------------
+📞 CONTACT SECTION
+--------------------------------------------------
+
+Make more structured:
+
+Λευκωσία, Κύπρος  
+info@cydigital.agency  
++357 99 123456  
+
+Add small icons if possible.
+
+--------------------------------------------------
+✨ PREMIUM BACKGROUND EFFECT
+--------------------------------------------------
+
+Add subtle gradient:
+
+.footer {
+  background: linear-gradient(
+    to top,
+    rgba(212,175,55,0.05),
+    transparent
+  );
+}
+
+--------------------------------------------------
+📏 SPACING
+--------------------------------------------------
+
+- Increase vertical padding
+- Add more space between columns
+
+--------------------------------------------------
+💎 BOTTOM BAR (UPGRADE)
+--------------------------------------------------
+
+Split into 2:
+
+LEFT:
+© 2026 CYDigital. Με επιφύλαξη παντός δικαιώματος.
+
+RIGHT:
+Όροι Χρήσης | Πολιτική Απορρήτου
+
+Add subtle divider line above.
+
+--------------------------------------------------
+✨ MICRO ANIMATIONS
+--------------------------------------------------
+
+- Fade-in on scroll
+- Hover glow on icons
+- Smooth transitions
+
+--------------------------------------------------
+🚫 IMPORTANT RULES
+--------------------------------------------------
+
+- Do NOT overcrowd
+- Keep minimal and elegant
+- Maintain black + gold consistency
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+Footer should feel:
+- Premium
+- Clean
+- Brand-focused
+- Strong closing impression

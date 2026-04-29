@@ -1,0 +1,116 @@
+Redesign the stats/metrics section into a PREMIUM, COMPACT, HIGH-END layout.
+
+PROBLEM:
+- Too much empty space
+- Stats are too far apart
+- Feels like a basic template
+- No visual impact
+
+GOAL:
+Create a centered, elegant stats section that builds authority and trust.
+
+--------------------------------------------------
+💎 NEW LAYOUT
+--------------------------------------------------
+
+- Center all stats inside a max-width container (900px–1100px)
+- Use a 4-column grid (desktop)
+- Reduce spacing between items
+- Align everything perfectly
+
+.stats-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+--------------------------------------------------
+🎯 STAT STYLE
+--------------------------------------------------
+
+Each stat should feel strong and premium:
+
+NUMBER:
+- Large and bold
+- Gold color (#D4AF37)
+- Slight glow or gradient
+
+.stat-number {
+  font-size: 42px;
+  font-weight: 600;
+  color: #D4AF37;
+}
+
+LABEL:
+- Smaller, clean, spaced
+- Light gray
+
+.stat-label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #BFBFBF;
+  margin-top: 8px;
+}
+
+--------------------------------------------------
+✨ PREMIUM CARD STYLE (IMPORTANT)
+--------------------------------------------------
+
+Wrap each stat in a subtle card:
+
+.stat-item {
+  padding: 20px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+Hover effect:
+- Slight lift
+- Soft gold glow
+
+.stat-item:hover {
+  transform: translateY(-4px);
+  border-color: #D4AF37;
+}
+
+--------------------------------------------------
+📏 SPACING
+--------------------------------------------------
+
+- Section padding:
+  top: 80px
+  bottom: 80px
+
+- Keep it compact, not stretched
+
+--------------------------------------------------
+📱 MOBILE
+--------------------------------------------------
+
+- Switch to 2 columns
+- Keep spacing tight
+
+grid-template-columns: repeat(2, 1fr);
+
+--------------------------------------------------
+🚫 IMPORTANT RULES
+--------------------------------------------------
+
+- Do NOT stretch stats full width
+- Do NOT leave huge gaps
+- Do NOT make it look empty
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+The section should feel:
+- Premium
+- Compact
+- Trustworthy
+- High-end agency level

@@ -1,28 +1,70 @@
-export function TrustBar() {
-  const items = [
-    { number: "100+", text: "Projects Delivered" },
-    { number: "5+", text: "Χρόνια Εμπειρία" },
-    { number: "100%", text: "Αφοσίωση" },
-    { number: "24h", text: "Γρήγορη Επικοινωνία" },
-  ];
+import { motion } from "framer-motion";
 
+const stats = [
+  { number: "100+", label: "Projects Delivered" },
+  { number: "5+",   label: "Χρόνια Εμπειρίας" },
+  { number: "100%", label: "Αφοσίωση στον Πελάτη" },
+  { number: "24h",  label: "Γρήγορη Επικοινωνία" },
+];
+
+export function TrustBar() {
   return (
-    <div className="bg-[#0D0D0D] py-10 md:py-12 border-y border-[#D4AF37]/20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-between items-center gap-8 md:gap-0">
-          {items.map((item, index) => (
-            <div key={index} className="flex items-center w-[40%] md:w-auto justify-center md:justify-start">
-              <div className="flex flex-col items-center text-center">
-                <span className="text-4xl md:text-5xl font-display font-bold text-[#D4AF37] mb-2">{item.number}</span>
-                <span className="text-xs uppercase tracking-widest text-[#BFBFBF] font-medium">{item.text}</span>
+    <section
+      className="bg-[#0D0D0D] border-y border-[#D4AF37]/15"
+      style={{ paddingTop: "80px", paddingBottom: "80px" }}
+    >
+      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 24px" }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-7">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{
+                y: -4,
+                borderColor: "rgba(212,175,55,0.7)",
+                boxShadow: "0 0 24px rgba(212,175,55,0.12)",
+              }}
+              style={{
+                padding: "28px 20px",
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(212,175,55,0.15)",
+                borderRadius: "10px",
+                textAlign: "center",
+                cursor: "default",
+                transition: "all 0.3s ease",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "42px",
+                  fontWeight: 700,
+                  color: "#D4AF37",
+                  lineHeight: 1,
+                  fontFamily: "Cormorant Garamond, serif",
+                  textShadow: "0 0 20px rgba(212,175,55,0.25)",
+                }}
+              >
+                {stat.number}
               </div>
-              {index < items.length - 1 && (
-                <div className="hidden md:block w-px h-16 bg-[#D4AF37]/20 mx-12"></div>
-              )}
-            </div>
+              <div
+                style={{
+                  fontSize: "13px",
+                  letterSpacing: "1px",
+                  color: "#BFBFBF",
+                  marginTop: "10px",
+                  textTransform: "uppercase",
+                  lineHeight: 1.4,
+                }}
+              >
+                {stat.label}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

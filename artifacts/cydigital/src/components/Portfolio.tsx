@@ -4,28 +4,32 @@ const items = [
   {
     image: "/images/portfolio-1.png",
     title: "Ιστοσελίδα Εστιατορίου",
-    category: "Web Design"
+    category: "Web Design",
+    result: "+45% Αύξηση Πωλήσεων"
   },
   {
     image: "/images/portfolio-2.png",
     title: "Social Media Beauty Salon",
-    category: "Social Media"
+    category: "Social Media",
+    result: "+200% Engagement"
   },
   {
     image: "/images/portfolio-3.png",
     title: "Branding Project",
-    category: "Branding"
+    category: "Branding",
+    result: "Brand Identity από Μηδέν"
   },
   {
     image: "/images/portfolio-4.png",
     title: "Καμπάνια Διαφημίσεων Gym",
-    category: "Advertising"
+    category: "Advertising",
+    result: "3x ROAS σε 30 Ημέρες"
   }
 ];
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 bg-card">
+    <section id="portfolio" className="py-24 bg-black">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <motion.h2 
@@ -33,7 +37,7 @@ export function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-bold text-foreground mb-4"
+            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
           >
             Δείγματα δουλειάς
           </motion.h2>
@@ -42,7 +46,7 @@ export function Portfolio() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-24 h-1 bg-primary mx-auto rounded-full" 
+            className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full" 
           />
         </div>
 
@@ -54,7 +58,7 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer"
+              className="group relative overflow-hidden bg-[#0D0D0D] border border-white/5 cursor-pointer"
             >
               <div className="aspect-[4/3] w-full overflow-hidden">
                 <img
@@ -63,9 +67,10 @@ export function Portfolio() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                <span className="text-primary font-medium mb-2 tracking-wider text-sm uppercase">{item.category}</span>
-                <h3 className="text-2xl font-bold text-foreground">{item.title}</h3>
+              <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-8 text-center backdrop-blur-sm">
+                <span className="text-[#D4AF37] font-medium mb-4 tracking-[0.2em] text-xs uppercase">{item.category}</span>
+                <h3 className="text-3xl font-display font-bold text-white mb-4">{item.title}</h3>
+                <span className="text-[#D4AF37] italic font-display text-xl">{item.result}</span>
               </div>
             </motion.div>
           ))}

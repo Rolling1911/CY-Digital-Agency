@@ -83,12 +83,12 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-background p-8 md:p-12 rounded-3xl border border-border shadow-lg"
+            className="bg-[#0D0D0D] p-8 md:p-12 rounded-3xl border border-white/5 shadow-lg"
           >
             {isSubmitted ? (
               <div className="text-center py-16 flex flex-col items-center justify-center">
-                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-6">
-                  <CheckCircle className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 bg-[#D4AF37]/20 rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle className="w-10 h-10 text-[#D4AF37]" />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Ευχαριστούμε!</h3>
                 <p className="text-muted-foreground text-lg max-w-md mx-auto">
@@ -97,7 +97,7 @@ export function Contact() {
                 <Button 
                   onClick={() => setIsSubmitted(false)}
                   variant="outline"
-                  className="mt-8 border-primary text-primary hover:bg-primary/10"
+                  className="mt-8 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
                 >
                   Αποστολή Νέου Μηνύματος
                 </Button>
@@ -113,7 +113,7 @@ export function Contact() {
                         <FormItem>
                           <FormLabel className="text-foreground">Όνομα</FormLabel>
                           <FormControl>
-                            <Input placeholder="π.χ. Γιάννης Παπαδόπουλος" className="bg-card border-border/50 focus-visible:ring-primary h-12" {...field} data-testid="input-name" />
+                            <Input placeholder="π.χ. Γιάννης Παπαδόπουλος" className="bg-[#0D0D0D] border-white/10 focus-visible:ring-[#D4AF37] h-12" {...field} data-testid="input-name" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -126,7 +126,7 @@ export function Contact() {
                         <FormItem>
                           <FormLabel className="text-foreground">Όνομα Επιχείρησης</FormLabel>
                           <FormControl>
-                            <Input placeholder="π.χ. Το Καφέ μου" className="bg-card border-border/50 focus-visible:ring-primary h-12" {...field} data-testid="input-company" />
+                            <Input placeholder="π.χ. Το Καφέ μου" className="bg-[#0D0D0D] border-white/10 focus-visible:ring-[#D4AF37] h-12" {...field} data-testid="input-company" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -142,7 +142,7 @@ export function Contact() {
                         <FormItem>
                           <FormLabel className="text-foreground">Τηλέφωνο</FormLabel>
                           <FormControl>
-                            <Input placeholder="π.χ. 99 123456" className="bg-card border-border/50 focus-visible:ring-primary h-12" {...field} data-testid="input-phone" />
+                            <Input placeholder="π.χ. 99 123456" className="bg-[#0D0D0D] border-white/10 focus-visible:ring-[#D4AF37] h-12" {...field} data-testid="input-phone" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -155,7 +155,7 @@ export function Contact() {
                         <FormItem>
                           <FormLabel className="text-foreground">Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="π.χ. email@example.com" type="email" className="bg-card border-border/50 focus-visible:ring-primary h-12" {...field} data-testid="input-email" />
+                            <Input placeholder="π.χ. email@example.com" type="email" className="bg-[#0D0D0D] border-white/10 focus-visible:ring-[#D4AF37] h-12" {...field} data-testid="input-email" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -171,7 +171,7 @@ export function Contact() {
                         <FormItem>
                           <FormLabel className="text-foreground">Πόλη</FormLabel>
                           <FormControl>
-                            <Input placeholder="π.χ. Λευκωσία" className="bg-card border-border/50 focus-visible:ring-primary h-12" {...field} data-testid="input-city" />
+                            <Input placeholder="π.χ. Λευκωσία" className="bg-[#0D0D0D] border-white/10 focus-visible:ring-[#D4AF37] h-12" {...field} data-testid="input-city" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -185,11 +185,11 @@ export function Contact() {
                           <FormLabel className="text-foreground">Υπηρεσία που σας ενδιαφέρει</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value}>
                             <FormControl>
-                              <SelectTrigger className="bg-card border-border/50 focus-visible:ring-primary h-12 text-left" data-testid="select-service">
+                              <SelectTrigger className="bg-[#0D0D0D] border-white/10 focus-visible:ring-[#D4AF37] h-12 text-left" data-testid="select-service">
                                 <SelectValue placeholder="Επιλέξτε..." />
                               </SelectTrigger>
                             </FormControl>
-                            <SelectContent className="bg-card border-border">
+                            <SelectContent className="bg-[#0D0D0D] border-white/10">
                               <SelectItem value="web">Δημιουργία Ιστοσελίδας</SelectItem>
                               <SelectItem value="social">Social Media Management</SelectItem>
                               <SelectItem value="graphics">Γραφιστικά & Δημιουργικά</SelectItem>
@@ -213,7 +213,7 @@ export function Contact() {
                         <FormControl>
                           <Textarea 
                             placeholder="Πείτε μας λίγα λόγια για τις ανάγκες σας..." 
-                            className="bg-card border-border/50 focus-visible:ring-primary min-h-[120px] resize-y" 
+                            className="bg-[#0D0D0D] border-white/10 focus-visible:ring-[#D4AF37] min-h-[120px] resize-y" 
                             {...field} 
                             data-testid="input-message"
                           />
@@ -225,7 +225,7 @@ export function Contact() {
 
                   <Button 
                     type="submit" 
-                    className="w-full h-14 text-lg font-semibold bg-primary text-primary-foreground hover:bg-primary/90 mt-4 rounded-xl transition-all"
+                    className="w-full h-14 text-lg font-semibold bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 mt-4 rounded-xl transition-all"
                     data-testid="button-submit-contact"
                   >
                     Αποστολή Μηνύματος

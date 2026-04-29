@@ -1,73 +1,82 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { LineChart, LayoutTemplate, Target, TrendingUp, MapPin, Users } from "lucide-react";
 
 const reasons = [
-  "Τοπική γνώση της αγοράς Κύπρου",
-  "Απλή και ξεκάθαρη επικοινωνία",
-  "Προσιτές λύσεις",
-  "Επαγγελματικό design",
-  "Εστίαση σε αποτελέσματα",
-  "Γρήγορη υποστήριξη"
+  {
+    icon: LineChart,
+    title: "Strategy-First Προσέγγιση",
+    subtitle: "Κάθε απόφαση βασίζεται σε δεδομένα"
+  },
+  {
+    icon: LayoutTemplate,
+    title: "Premium Εκτέλεση",
+    subtitle: "Custom λύσεις, όχι templates"
+  },
+  {
+    icon: Target,
+    title: "Results-Driven Νοοτροπία",
+    subtitle: "Μετράμε αποτελέσματα"
+  },
+  {
+    icon: TrendingUp,
+    title: "Κλιμακωτή Ανάπτυξη",
+    subtitle: "Συστήματα που μεγαλώνουν μαζί σας"
+  },
+  {
+    icon: MapPin,
+    title: "Τοπική Γνώση",
+    subtitle: "Κατανοούμε την αγορά της Κύπρου"
+  },
+  {
+    icon: Users,
+    title: "Αποκλειστική Εξυπηρέτηση",
+    subtitle: "Περιορισμένος αριθμός πελατών"
+  }
 ];
 
 export function WhyUs() {
   return (
     <section id="why-us" className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center gap-16">
-          <div className="md:w-1/2">
+        <div className="text-center mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
+          >
+            Γιατί να επιλέξετε την <span className="text-[#D4AF37]">CYDigital</span>
+          </motion.h2>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full mb-8" 
+          />
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Γνωρίζουμε τι χρειάζεται μια επιχείρηση στην Κύπρο για να ξεχωρίσει. Συνδυάζουμε υψηλή αισθητική με πρακτικές λύσεις που φέρνουν πραγματικά αποτελέσματα.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {reasons.map((reason, index) => (
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="bg-[#0A0A0A] border border-white/5 p-8 hover:border-[#D4AF37]/30 transition-colors"
             >
-              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Γιατί να επιλέξετε την <span className="text-primary">CYDigital</span>
-              </h2>
-              <div className="w-24 h-1 bg-primary rounded-full mb-10" />
-              <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                Γνωρίζουμε τι χρειάζεται μια επιχείρηση στην Κύπρο για να ξεχωρίσει. Συνδυάζουμε υψηλή αισθητική με πρακτικές λύσεις που φέρνουν πραγματικά αποτελέσματα, χωρίς περιττή πολυπλοκότητα.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {reasons.map((reason, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-center space-x-3"
-                  >
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-primary" />
-                    </div>
-                    <span className="text-foreground font-medium">{reason}</span>
-                  </motion.div>
-                ))}
+              <div className="w-12 h-12 rounded-none bg-[#D4AF37]/10 flex items-center justify-center mb-6">
+                <reason.icon className="w-6 h-6 text-[#D4AF37]" />
               </div>
+              <h3 className="text-lg font-bold text-foreground mb-2">{reason.title}</h3>
+              <p className="text-sm text-muted-foreground">{reason.subtitle}</p>
             </motion.div>
-          </div>
-          
-          <div className="md:w-1/2 w-full">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden border border-border/50 p-2"
-            >
-               <div className="w-full h-full rounded-2xl overflow-hidden relative">
-                  <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />
-                  <img 
-                    src="/images/hero.png" 
-                    alt="Why choose us" 
-                    className="w-full h-full object-cover grayscale-[20%]"
-                  />
-               </div>
-            </motion.div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

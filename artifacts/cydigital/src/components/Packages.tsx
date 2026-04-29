@@ -61,16 +61,25 @@ export function Packages() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-bold text-foreground mb-4"
+            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
           >
             Πακέτα για κάθε επιχείρηση
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-[#D4AF37] uppercase tracking-widest text-sm font-medium mb-6"
+          >
+            Επιλέξτε το πακέτο που ταιριάζει στους στόχους σας
+          </motion.p>
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-24 h-1 bg-primary mx-auto rounded-full" 
+            className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full" 
           />
         </div>
 
@@ -82,24 +91,24 @@ export function Packages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-card rounded-3xl p-8 border ${
+              className={`relative bg-[#0D0D0D] p-8 ${
                 pkg.popular 
-                  ? "border-primary shadow-[0_0_40px_rgba(201,162,74,0.15)] md:-translate-y-4" 
-                  : "border-border/50"
+                  ? "border border-[#D4AF37]/50 shadow-[0_0_40px_rgba(212,175,55,0.15)] md:-translate-y-4" 
+                  : "border border-white/5"
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold tracking-wider">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#0D0D0D] border border-[#D4AF37] text-[#D4AF37] px-6 py-1 text-xs font-bold tracking-widest uppercase">
                   MOST POPULAR
                 </div>
               )}
               
-              <div className="text-center mb-8 border-b border-border/50 pb-8">
+              <div className="text-center mb-8 border-b border-white/10 pb-8">
                 <h3 className="text-2xl font-bold text-foreground mb-2">{pkg.name}</h3>
                 <p className="text-muted-foreground text-sm mb-6">{pkg.description}</p>
                 <div className="flex items-baseline justify-center">
                   <span className="text-sm font-semibold text-muted-foreground mr-1">Από</span>
-                  <span className="text-4xl font-extrabold text-foreground">{pkg.price}</span>
+                  <span className="text-5xl font-display font-bold text-[#D4AF37]">{pkg.price}</span>
                   <span className="text-muted-foreground ml-1">{pkg.period}</span>
                 </div>
               </div>
@@ -107,7 +116,7 @@ export function Packages() {
               <ul className="space-y-4 mb-8">
                 {pkg.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <Check className="w-5 h-5 text-primary mr-3 shrink-0" />
+                    <Check className="w-5 h-5 text-[#D4AF37] mr-3 shrink-0" />
                     <span className="text-foreground/90">{feature}</span>
                   </li>
                 ))}
@@ -115,10 +124,10 @@ export function Packages() {
 
               <Button
                 onClick={scrollToContact}
-                className={`w-full h-12 text-lg font-semibold rounded-xl transition-all ${
+                className={`w-full h-12 text-sm uppercase tracking-widest font-semibold rounded-none transition-all ${
                   pkg.popular
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                    ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90"
+                    : "bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
                 }`}
                 data-testid={`button-package-${pkg.name.toLowerCase()}`}
               >

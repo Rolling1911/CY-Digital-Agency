@@ -1,0 +1,191 @@
+Upgrade the existing CY Digital website into a HIGH-END LUXURY AGENCY WEBSITE designed to attract €3K–€10K clients.
+
+IMPORTANT:
+Do NOT change the core structure drastically.
+Enhance design, typography, layout precision, and copywriting.
+
+--------------------------------------------------
+🎨 LUXURY COLOR SYSTEM
+--------------------------------------------------
+
+Primary Background:
+- #0B0B0B (deep black)
+- #121212 (secondary dark)
+
+Gold Accents:
+- #D4AF37 (main gold)
+- #C9A646 (soft gold)
+- #F5E6A8 (highlight gold)
+
+Text:
+- #FFFFFF (white)
+- #BFBFBF (soft gray)
+
+RULE:
+Use gold ONLY for highlights, buttons, hover effects, icons.
+
+--------------------------------------------------
+🔤 LUXURY FONT COMBINATION (VERY IMPORTANT)
+--------------------------------------------------
+
+Headlines:
+- "Playfair Display" OR "Cormorant Garamond"
+→ Elegant, luxury, high-end feel
+
+Body Text:
+- "Inter" OR "Poppins"
+→ Clean, modern, highly readable
+
+STYLE:
+- Headlines: uppercase + letter spacing
+- Strong hierarchy (big bold headings)
+- Clean spacing (luxury = breathing space)
+
+--------------------------------------------------
+💎 EXACT UI LAYOUT (HIGH-TICKET CONVERSION STRUCTURE)
+--------------------------------------------------
+
+1. HERO SECTION (FULL SCREEN)
+
+Headline:
+"WE BUILD DIGITAL EXPERIENCES THAT DRIVE REVENUE"
+
+Subtext:
+"Premium websites, branding, and growth systems for businesses that want to scale."
+
+Buttons:
+→ "Book a Call"
+→ "View Our Work"
+
+Add:
+- Dark overlay
+- Subtle gold accent line under headline
+- Smooth fade animation
+
+--------------------------------------------------
+
+2. TRUST / AUTHORITY BAR
+
+- "Trusted by growing brands"
+- Add logos OR placeholders
+- Optional stats:
+   → "100+ Projects Delivered"
+   → "Proven Growth Systems"
+
+--------------------------------------------------
+
+3. SERVICES (HIGH-TICKET POSITIONING)
+
+Cards:
+
+→ Website Development
+→ Branding & Identity
+→ Social Media Growth
+→ Automation Systems
+
+Each card:
+- Dark background
+- Thin gold border
+- Hover glow effect
+
+--------------------------------------------------
+
+4. PORTFOLIO / RESULTS
+
+- Showcase projects visually
+- Add:
+   → Before / After
+   → Results-driven captions
+
+Example:
+"Increased conversions by 45%"
+
+--------------------------------------------------
+
+5. WHY CHOOSE US (POSITIONING)
+
+Replace generic text with:
+
+→ Strategy-first approach
+→ Premium execution
+→ Results-driven mindset
+→ Built for businesses that want to scale
+
+--------------------------------------------------
+
+6. PROCESS (SIMPLIFIED)
+
+Step 1: Strategy  
+Step 2: Design  
+Step 3: Build  
+Step 4: Launch & Scale  
+
+Use clean horizontal layout with icons
+
+--------------------------------------------------
+
+7. TESTIMONIALS
+
+- Clean cards
+- Minimal text
+- Premium spacing
+
+--------------------------------------------------
+
+8. FINAL CTA (VERY IMPORTANT)
+
+Headline:
+"Ready to Elevate Your Brand?"
+
+Subtext:
+"We work with a limited number of clients each month."
+
+Buttons:
+→ "Book a Call"
+→ "Get Started"
+
+Add urgency + exclusivity
+
+--------------------------------------------------
+
+⚡ PREMIUM DESIGN DETAILS
+--------------------------------------------------
+
+- Gold hover effects (subtle glow)
+- Smooth animations (0.3–0.5s)
+- Thin gold dividers
+- Dark cards with depth
+- Blur navbar (glass effect)
+- Floating mobile CTA button
+
+--------------------------------------------------
+
+✍️ HIGH-CONVERTING COPY STYLE
+--------------------------------------------------
+
+Tone:
+- Confident
+- Premium
+- Straight to the point
+
+Avoid:
+- Fluffy words
+- Cheap marketing language
+
+Use:
+- Results
+- Authority
+- Clarity
+
+--------------------------------------------------
+
+🎯 GOAL
+--------------------------------------------------
+
+Make CY Digital look like a HIGH-END AGENCY that:
+- attracts serious clients
+- justifies premium pricing
+- feels exclusive and powerful
+
+This is NOT a basic website.
+This is a DIGITAL AGENCY SALES MACHINE.

@@ -34,12 +34,12 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md py-4" : "bg-transparent py-6"
+        isScrolled ? "bg-black/80 backdrop-blur-xl border-b border-white/5 py-4" : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold tracking-tight text-primary cursor-pointer" onClick={() => handleNavClick("#home")}>
+          <div className="text-2xl font-display tracking-[0.15em] uppercase text-[#D4AF37] cursor-pointer" onClick={() => handleNavClick("#home")}>
             CYDigital
           </div>
 
@@ -48,7 +48,7 @@ export function Header() {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="text-sm tracking-widest uppercase font-medium text-white/70 hover:text-[#D4AF37] transition-colors"
                 data-testid={`link-${link.href.replace('#', '')}`}
               >
                 {link.name}
@@ -59,7 +59,7 @@ export function Header() {
           <div className="hidden md:block">
             <Button
               onClick={() => handleNavClick("#contact")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+              className="bg-[#D4AF37] text-black font-semibold tracking-widest uppercase text-xs px-6 py-2.5 rounded-md hover:bg-[#D4AF37]/90 transition-colors"
               data-testid="button-header-cta"
             >
               Ζητήστε Προσφορά
@@ -84,7 +84,7 @@ export function Header() {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="text-left text-lg font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/10"
+                className="text-left text-lg font-medium text-foreground hover:text-[#D4AF37] transition-colors py-2 border-b border-border/10"
                 data-testid={`link-mobile-${link.href.replace('#', '')}`}
               >
                 {link.name}
@@ -92,7 +92,7 @@ export function Header() {
             ))}
             <Button
               onClick={() => handleNavClick("#contact")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold mt-4 w-full"
+              className="bg-[#D4AF37] text-black font-semibold uppercase tracking-widest text-xs px-6 py-3 mt-4 w-full rounded-md"
               data-testid="button-mobile-header-cta"
             >
               Ζητήστε Προσφορά

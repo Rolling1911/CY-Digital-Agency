@@ -6,8 +6,8 @@ export function Hero() {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToServices = () => {
-    document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToPortfolio = () => {
+    document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -25,14 +25,26 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-30">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-6 flex flex-col items-center"
+          >
+            <span className="text-[#D4AF37] text-xs font-semibold tracking-widest uppercase mb-4">
+              Cyprus Digital Agency
+            </span>
+            <div className="w-16 h-px bg-[#D4AF37]"></div>
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-6"
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-foreground leading-[1.1] mb-6 uppercase"
           >
-            Η online εικόνα της <br className="hidden md:block" /> επιχείρησής σας <span className="text-primary">ξεκινά εδώ</span>
+            ΧΤΙΖΟΥΜΕ ΨΗΦΙΑΚΕΣ ΕΜΠΕΙΡΙΕΣ ΠΟΥ ΦΕΡΝΟΥΝ <span className="text-[#D4AF37]">ΑΠΟΤΕΛΕΣΜΑΤΑ</span>
           </motion.h1>
 
           <motion.p
@@ -41,7 +53,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Δημιουργούμε ιστοσελίδες, social media περιεχόμενο, γραφιστικά και digital καμπάνιες για μικρές και μεσαίες επιχειρήσεις στην Κύπρο.
+            Premium ιστοσελίδες, branding και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν.
           </motion.p>
 
           <motion.div
@@ -53,19 +65,19 @@ export function Hero() {
             <Button
               onClick={scrollToContact}
               size="lg"
-              className="w-full sm:w-auto text-lg h-14 px-8 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold rounded-md transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto text-sm h-14 px-8 bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 font-semibold tracking-widest uppercase rounded-none transition-all hover:scale-105 active:scale-95"
               data-testid="button-hero-primary"
             >
-              Ζητήστε Δωρεάν Προσφορά
+              Κλείστε μια Συνάντηση
             </Button>
             <Button
-              onClick={scrollToServices}
+              onClick={scrollToPortfolio}
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto text-lg h-14 px-8 border-primary text-primary hover:bg-primary/10 font-semibold rounded-md transition-all hover:scale-105 active:scale-95"
+              className="w-full sm:w-auto text-sm h-14 px-8 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 font-semibold tracking-widest uppercase rounded-none transition-all hover:scale-105 active:scale-95"
               data-testid="button-hero-secondary"
             >
-              Δείτε Υπηρεσίες
+              Δείτε τη Δουλειά μας
             </Button>
           </motion.div>
         </div>

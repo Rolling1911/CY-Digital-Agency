@@ -116,7 +116,9 @@ export function Footer() {
 
           {/* CENTER — navigation */}
           <div>
-            <h3
+            <motion.h3
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               style={{
                 fontSize: "11px",
                 letterSpacing: "2px",
@@ -127,7 +129,7 @@ export function Footer() {
               }}
             >
               Μενού
-            </h3>
+            </motion.h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px" }}>
               {navLinks.map(({ label, href }) => (
                 <li key={label}>
@@ -152,7 +154,9 @@ export function Footer() {
 
           {/* RIGHT — contact info */}
           <div>
-            <h3
+            <motion.h3
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
               style={{
                 fontSize: "11px",
                 letterSpacing: "2px",
@@ -163,7 +167,7 @@ export function Footer() {
               }}
             >
               Επικοινωνία
-            </h3>
+            </motion.h3>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
               {contactItems.map(({ icon: Icon, text, href }) => (
                 <li key={text} style={{ display: "flex", alignItems: "center", gap: "10px" }}>

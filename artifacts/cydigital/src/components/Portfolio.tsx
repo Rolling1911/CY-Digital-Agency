@@ -24,6 +24,7 @@ const items: { title: string; category: string; result: string; bg: string; labe
     result: "Brand Identity από Μηδέν",
     bg: "from-[#1a1a1a] to-[#1a0a2a]",
     label: "BR",
+    image: "/images/portfolio-branding.png",
   },
   {
     title: "Καμπάνια Διαφημίσεων Gym",

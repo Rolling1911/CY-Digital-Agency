@@ -1,0 +1,147 @@
+Redesign the "Η Διαδικασία μας" section to match the PREMIUM style of the services cards.
+
+PROBLEM:
+- Current design is a basic timeline
+- Feels outdated and disconnected from the services section
+- Too much empty space
+- Not visually premium
+
+GOAL:
+Create a modern, boxed, premium process section with the same visual language as the services cards.
+
+--------------------------------------------------
+💎 NEW LAYOUT
+--------------------------------------------------
+
+- Replace horizontal timeline with a GRID layout
+- Use 4 cards (like services)
+- Center everything
+
+.process-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+--------------------------------------------------
+📦 PROCESS CARD STYLE (MATCH SERVICES)
+--------------------------------------------------
+
+.process-card {
+  position: relative;
+  padding: 30px 20px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(212,175,55,0.15);
+  transition: 0.35s;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  border-color: #D4AF37;
+}
+
+--------------------------------------------------
+🔢 STEP NUMBER DESIGN
+--------------------------------------------------
+
+Replace circles with a premium badge:
+
+.process-step {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #D4AF37;
+}
+
+--------------------------------------------------
+🧠 TEXT HIERARCHY
+--------------------------------------------------
+
+.process-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.process-desc {
+  font-size: 14px;
+  color: #BFBFBF;
+  line-height: 1.5;
+}
+
+--------------------------------------------------
+✨ GOLD ANIMATION (MATCH SERVICES)
+--------------------------------------------------
+
+Add SAME animation logic:
+- Only ONE card active at a time
+- Rotating gold light border
+
+.process-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(212,175,55,0.9) 40deg,
+    transparent 80deg
+  );
+  opacity: 0;
+  animation: rotateGlow 2s linear infinite;
+}
+
+@keyframes rotateGlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+--------------------------------------------------
+⏱️ STAGGERED ANIMATION (IMPORTANT)
+--------------------------------------------------
+
+Only ONE card active at a time:
+
+.process-card:nth-child(1) { animation-delay: 0s; }
+.process-card:nth-child(2) { animation-delay: 2s; }
+.process-card:nth-child(3) { animation-delay: 4s; }
+.process-card:nth-child(4) { animation-delay: 6s; }
+
+--------------------------------------------------
+📱 MOBILE
+--------------------------------------------------
+
+- Switch to 2 columns
+- Keep spacing tight
+
+grid-template-columns: repeat(2, 1fr);
+
+--------------------------------------------------
+🚫 REMOVE
+--------------------------------------------------
+
+- Remove horizontal line
+- Remove dotted connector
+- Remove old circle timeline
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+The section should feel:
+- Consistent with services
+- Premium and modern
+- Clean and structured
+- Slightly animated (not distracting)

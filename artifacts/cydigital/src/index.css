@@ -639,6 +639,10 @@ img { max-width: 100%; height: auto; }
     margin-left: auto !important;
     margin-right: auto !important;
   }
+  .footer-col:first-child img {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 /* — WhyUs & Contact left-column centre on mobile — */

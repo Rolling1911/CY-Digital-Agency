@@ -8,7 +8,7 @@ const items = [
     result: "+45% Αύξηση Πωλήσεων"
   },
   {
-    image: "/images/portfolio-2.png",
+    image: "/images/portfolio-socialmedia.png",
     title: "Social Media Beauty Salon",
     category: "Social Media",
     result: "+200% Engagement"

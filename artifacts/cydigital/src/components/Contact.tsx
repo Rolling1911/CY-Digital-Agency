@@ -48,6 +48,8 @@ const inputClass = `
 
 export function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,9 +59,22 @@ export function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    setIsSubmitted(true);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!res.ok) throw new Error("Server error");
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError("Κάτι πήγε στραβά. Δοκιμάστε ξανά ή επικοινωνήστε μαζί μας απευθείας.");
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -308,6 +323,7 @@ export function Contact() {
                   {/* Submit */}
                   <button
                     type="submit"
+                    disabled={isLoading}
                     data-testid="button-submit-contact"
                     style={{
                       width: "100%",
@@ -316,26 +332,38 @@ export function Contact() {
                       fontWeight: 700,
                       letterSpacing: "2px",
                       textTransform: "uppercase",
-                      background: "#D4AF37",
+                      background: isLoading ? "#a88a2a" : "#D4AF37",
                       color: "#0B0B0B",
                       border: "none",
                       borderRadius: "8px",
-                      cursor: "pointer",
+                      cursor: isLoading ? "not-allowed" : "pointer",
                       boxShadow: "0 0 24px rgba(212,175,55,0.2)",
                       transition: "all 0.25s ease",
                       marginTop: "4px",
+                      opacity: isLoading ? 0.75 : 1,
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.background = "#c9a830";
-                      e.currentTarget.style.boxShadow = "0 0 36px rgba(212,175,55,0.32)";
+                      if (!isLoading) {
+                        e.currentTarget.style.background = "#c9a830";
+                        e.currentTarget.style.boxShadow = "0 0 36px rgba(212,175,55,0.32)";
+                      }
                     }}
                     onMouseLeave={e => {
-                      e.currentTarget.style.background = "#D4AF37";
-                      e.currentTarget.style.boxShadow = "0 0 24px rgba(212,175,55,0.2)";
+                      if (!isLoading) {
+                        e.currentTarget.style.background = "#D4AF37";
+                        e.currentTarget.style.boxShadow = "0 0 24px rgba(212,175,55,0.2)";
+                      }
                     }}
                   >
-                    Ζητήστε Προσφορά
+                    {isLoading ? "Αποστολή..." : "Ζητήστε Προσφορά"}
                   </button>
+
+                  {/* Error message */}
+                  {submitError && (
+                    <p style={{ textAlign: "center", fontSize: "12px", color: "#e57373", letterSpacing: "0.3px" }}>
+                      {submitError}
+                    </p>
+                  )}
 
                   {/* Trust note */}
                   <p style={{ textAlign: "center", fontSize: "11.5px", color: "#666", letterSpacing: "0.3px" }}>

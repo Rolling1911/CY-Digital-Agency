@@ -60,7 +60,7 @@ export function Footer() {
             <img
               src="/images/logo2.png"
               alt="CYDigital"
-              style={{ height: "52px", width: "auto", maxWidth: "200px", objectFit: "contain", marginBottom: "20px" }}
+              style={{ height: "auto", width: "200px", objectFit: "contain", marginBottom: "20px" }}
             />
             <p
               style={{

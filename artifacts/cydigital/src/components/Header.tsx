@@ -48,9 +48,8 @@ export function Header() {
             src="/images/logo2.png"
             alt="CYDigital"
             style={{
-              height: "56px",
-              width: "auto",
-              maxWidth: "220px",
+              height: "auto",
+              width: "220px",
               objectFit: "contain",
               display: "block",
               transition: "transform 0.3s ease, filter 0.3s ease",

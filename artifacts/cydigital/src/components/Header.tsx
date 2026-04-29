@@ -28,13 +28,13 @@ export function Header() {
 
   return (
     <header
-      style={{ height: "120px" }}
+      style={{ height: "145px" }}
       className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
         isScrolled ? "bg-black/85 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
       }`}
     >
       <div
-        style={{ maxWidth: "1200px", margin: "0 auto", width: "100%", padding: "0 32px" }}
+        style={{ maxWidth: "1440px", margin: "0 auto", width: "100%", padding: "0 40px" }}
         className="flex items-center justify-between"
       >
         {/* LEFT — Logo */}
@@ -48,9 +48,9 @@ export function Header() {
             src="/images/logo.png"
             alt="CYDigital"
             style={{
-              height: "110px",
+              height: "130px",
               width: "auto",
-              maxWidth: "440px",
+              maxWidth: "520px",
               objectFit: "contain",
               display: "block",
               transition: "transform 0.3s ease, filter 0.3s ease",

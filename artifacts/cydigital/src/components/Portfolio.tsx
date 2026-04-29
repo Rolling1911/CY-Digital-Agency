@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const items = [
   {
-    image: "/images/portfolio-1.png",
+    image: "/images/portfolio-webdesign.png",
     title: "Ιστοσελίδα Εστιατορίου",
     category: "Web Design",
     result: "+45% Αύξηση Πωλήσεων"

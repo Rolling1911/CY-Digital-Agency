@@ -104,7 +104,7 @@ export function Footer() {
             <div style={{ display: "flex", gap: "10px" }}>
               {socials.map(({ icon: Icon, href, label }) => (
                 <a key={label} href={href} aria-label={label} className="footer-social-icon">
-                  <Icon size={18} />
+                  <Icon size={22} />
                 </a>
               ))}
             </div>

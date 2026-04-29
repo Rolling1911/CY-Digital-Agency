@@ -67,7 +67,8 @@ export function Header() {
             <button
               key={link.name}
               onClick={() => handleNavClick(link.href)}
-              className="text-xs tracking-[0.14em] uppercase font-medium text-white/65 hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap"
+              className="uppercase text-white/70 hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap"
+            style={{ fontFamily: "'Cinzel', 'Cormorant Garamond', Georgia, serif", fontSize: "11px", letterSpacing: "3px", fontWeight: 400 }}
               data-testid={`link-${link.href.replace("#", "")}`}
             >
               {link.name}
@@ -105,7 +106,8 @@ export function Header() {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="text-left text-sm font-medium text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 tracking-widest uppercase"
+                className="text-left text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 uppercase"
+                style={{ fontFamily: "'Cinzel', 'Cormorant Garamond', Georgia, serif", fontSize: "12px", letterSpacing: "3px", fontWeight: 400 }}
                 data-testid={`link-mobile-${link.href.replace("#", "")}`}
               >
                 {link.name}

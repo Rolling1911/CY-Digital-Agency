@@ -1,0 +1,115 @@
+Refine the HERO section to look premium, clean, and high-converting.
+
+PROBLEM:
+- Headline is too large and crowded
+- Text hierarchy is weak
+- Not enough spacing (feels heavy)
+- Subtitle is too small and hard to read
+
+GOAL:
+Create a balanced, luxury hero section with strong hierarchy and perfect readability.
+
+--------------------------------------------------
+🧠 HEADLINE FIX
+--------------------------------------------------
+
+- Reduce headline size by 10–15%
+- Increase line-height for better spacing
+- Add slight letter-spacing
+
+.hero-title {
+  font-size: 64px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+--------------------------------------------------
+💎 HIGHLIGHT WORD (ΑΠΟΤΕΛΕΣΜΑΤΑ)
+--------------------------------------------------
+
+- Keep gold color
+- Reduce size slightly (5–10%)
+- Add spacing above it
+
+.hero-highlight {
+  font-size: 60px;
+  margin-top: 12px;
+}
+
+--------------------------------------------------
+✍️ SUBTITLE FIX
+--------------------------------------------------
+
+- Increase size for readability
+- Add more spacing
+- Limit width
+
+.hero-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #BFBFBF;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+--------------------------------------------------
+📐 SPACING (VERY IMPORTANT)
+--------------------------------------------------
+
+- Add breathing space:
+  Headline → Subtitle: +20px
+  Subtitle → Buttons: +25px
+
+.hero-content {
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+--------------------------------------------------
+🎯 BUTTON IMPROVEMENT
+--------------------------------------------------
+
+- Increase size slightly
+- Make primary button more dominant
+
+.btn-primary {
+  padding: 14px 28px;
+  font-size: 15px;
+}
+
+.btn-secondary {
+  border: 1px solid #D4AF37;
+}
+
+--------------------------------------------------
+🏷️ TOP LABEL (CYPRUS DIGITAL AGENCY)
+--------------------------------------------------
+
+- Make it subtle and premium
+
+.hero-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+--------------------------------------------------
+💎 FINAL TOUCHES
+--------------------------------------------------
+
+- Ensure text is perfectly centered
+- Keep clean margins on both sides
+- Do NOT overcrowd the section
+- Maintain luxury spacing
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+The hero section should feel:
+- Clean
+- Premium
+- Easy to read
+- High-end agency level (not aggressive, but confident)

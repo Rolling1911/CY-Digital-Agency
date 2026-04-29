@@ -53,6 +53,7 @@ export function Header() {
               objectFit: "contain",
               display: "block",
               transition: "transform 0.3s ease, filter 0.3s ease",
+              mixBlendMode: "screen",
             }}
             className="header-logo group-hover:scale-[1.03] group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]"
           />

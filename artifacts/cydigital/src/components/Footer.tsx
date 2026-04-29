@@ -81,7 +81,7 @@ export function Footer() {
                 filter: "blur(22px)", pointerEvents: "none",
               }} />
               <img
-                src="/images/logo-new.png"
+                src="/images/logo-agency.png"
                 alt="CYDigital"
                 style={{ position: "relative", height: "auto", width: "340px", objectFit: "contain", display: "block", marginLeft: "-56px" }}
               />

@@ -45,7 +45,7 @@ export function Header() {
           style={{ flex: "0 0 auto" }}
         >
           <img
-            src="/images/logo-new.png"
+            src="/images/logo-agency.png"
             alt="CYDigital"
             style={{
               height: "auto",

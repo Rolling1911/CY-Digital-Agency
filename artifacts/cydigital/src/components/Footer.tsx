@@ -41,6 +41,19 @@ export function Footer() {
   return (
     <footer className="footer-premium" style={{ padding: "80px 40px 36px" }}>
 
+      {/* Gold wave background image */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <img
+          src="/images/hero-bg.png"
+          alt=""
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.45 }}
+        />
+        <div style={{
+          position: "absolute", inset: 0,
+          background: "linear-gradient(to bottom, rgba(5,5,5,0.82) 0%, rgba(5,5,5,0.78) 60%, rgba(5,5,5,0.88) 100%)",
+        }} />
+      </div>
+
       {/* Top gold hairline */}
       <div style={{
         position: "absolute", top: 0, left: 0, right: 0, height: "1px",

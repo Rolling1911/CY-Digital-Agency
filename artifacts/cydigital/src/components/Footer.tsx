@@ -195,7 +195,7 @@ export function Footer() {
                 <p style={{ fontSize: "11px", fontWeight: 700, color: "#D4AF37", letterSpacing: "1px", textTransform: "uppercase", margin: 0 }}>
                   Απαντάμε Συνήθως
                 </p>
-                <p style={{ fontSize: "12px", color: "#888", margin: "3px 0 0" }}>Μέσα σε 2–4 ώρες</p>
+                <p style={{ fontSize: "12px", color: "#888", margin: "3px 0 0" }}>Μέσα σε 24 ώρες</p>
               </div>
             </div>
           </div>

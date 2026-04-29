@@ -146,3 +146,91 @@
   .gold-glow-hover:hover { box-shadow: 0 0 30px rgba(212, 175, 55, 0.35); }
   .text-gold { color: #D4AF37; }
 }
+
+/* ── Service card staggered gold spotlight ─────────────────────────── */
+@keyframes rotateGoldSpot {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes showGoldSpot {
+  0%, 16%   { opacity: 0.85; }
+  17%, 100% { opacity: 0;    }
+}
+
+@keyframes activeCardCycle {
+  0%, 16%   { border-color: rgba(212,175,55,0.75); box-shadow: 0 0 26px rgba(212,175,55,0.16); }
+  17%, 100% { border-color: rgba(212,175,55,0.18); box-shadow: none; }
+}
+
+@keyframes iconGlowCycle {
+  0%, 16%   { transform: scale(1.06); background: rgba(212,175,55,0.14); box-shadow: 0 0 22px rgba(212,175,55,0.28); }
+  17%, 100% { transform: scale(1);    background: rgba(212,175,55,0.06); box-shadow: none; }
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212,175,55,0.18);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.025);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  animation: activeCardCycle 12s infinite;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212,175,55,0.7) !important;
+  box-shadow: 0 0 26px rgba(212,175,55,0.18) !important;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 300deg,
+    rgba(212,175,55,0.95) 330deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  filter: blur(2px);
+  pointer-events: none;
+  animation: rotateGoldSpot 2s linear infinite, showGoldSpot 12s linear infinite;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 13px;
+  background: #0B0B0B;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-card > * { position: relative; z-index: 2; }
+
+.service-card::before {
+  animation-delay: 0s, var(--card-delay, 0s);
+}
+
+.icon-box {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  animation: iconGlowCycle 12s infinite;
+  animation-delay: var(--card-delay, 0s);
+}
+
+.service-card:hover .icon-box {
+  transform: scale(1.08) !important;
+  background: rgba(212,175,55,0.14) !important;
+  box-shadow: 0 0 22px rgba(212,175,55,0.3) !important;
+}
+
+.service-card:hover .icon-box svg,
+.service-card:hover .icon-box .lucide {
+  filter: drop-shadow(0 0 8px rgba(212,175,55,0.85));
+}

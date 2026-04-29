@@ -1,0 +1,208 @@
+Upgrade the services section with premium staggered gold animation and dynamic icon glow.
+
+GOAL:
+Only ONE service card should animate at a time, then the glow moves to the next card, in a smooth loop.
+
+IMPORTANT:
+- Do not animate all cards together.
+- Keep the effect luxury, subtle, slow, and elegant.
+- No neon, no gaming style, no aggressive flashing.
+
+--------------------------------------------------
+1. SERVICE CARD BORDER ANIMATION
+--------------------------------------------------
+
+Each service card should have:
+- Thin subtle gold border by default
+- A moving gold light spot around the border
+- Only one card active at a time
+- The active card changes every 2 seconds
+
+Use CSS classes or nth-child animation delays.
+
+Example logic:
+Card 1 active → Card 2 active → Card 3 active → Card 4 active → Card 5 active → Card 6 active → repeat
+
+Animation timing:
+- Total loop: 12s
+- Each card active: 2s
+
+--------------------------------------------------
+2. CSS IMPLEMENTATION
+--------------------------------------------------
+
+Use something like this:
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 300deg,
+    rgba(212, 175, 55, 0.95) 330deg,
+    transparent 360deg
+  );
+  opacity: 0;
+  filter: blur(2px);
+  animation: rotateGoldSpot 2s linear infinite;
+  pointer-events: none;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 13px;
+  background: #0B0B0B;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes rotateGoldSpot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.service-card {
+  animation: activeCardCycle 12s infinite;
+}
+
+.service-card:nth-child(1) { animation-delay: 0s; }
+.service-card:nth-child(2) { animation-delay: 2s; }
+.service-card:nth-child(3) { animation-delay: 4s; }
+.service-card:nth-child(4) { animation-delay: 6s; }
+.service-card:nth-child(5) { animation-delay: 8s; }
+.service-card:nth-child(6) { animation-delay: 10s; }
+
+.service-card:nth-child(1)::before { animation-delay: 0s; }
+.service-card:nth-child(2)::before { animation-delay: 2s; }
+.service-card:nth-child(3)::before { animation-delay: 4s; }
+.service-card:nth-child(4)::before { animation-delay: 6s; }
+.service-card:nth-child(5)::before { animation-delay: 8s; }
+.service-card:nth-child(6)::before { animation-delay: 10s; }
+
+@keyframes activeCardCycle {
+  0%, 16% {
+    border-color: rgba(212, 175, 55, 0.75);
+    box-shadow: 0 0 26px rgba(212, 175, 55, 0.16);
+  }
+  17%, 100% {
+    border-color: rgba(212, 175, 55, 0.18);
+    box-shadow: none;
+  }
+}
+
+.service-card:nth-child(1)::before,
+.service-card:nth-child(2)::before,
+.service-card:nth-child(3)::before,
+.service-card:nth-child(4)::before,
+.service-card:nth-child(5)::before,
+.service-card:nth-child(6)::before {
+  animation-name: rotateGoldSpot, showGoldSpot;
+  animation-duration: 2s, 12s;
+  animation-timing-function: linear, linear;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes showGoldSpot {
+  0%, 16% {
+    opacity: 0.85;
+  }
+  17%, 100% {
+    opacity: 0;
+  }
+}
+
+--------------------------------------------------
+3. ICON DYNAMIC GLOW
+--------------------------------------------------
+
+When a card is active OR hovered:
+- Icon should glow softly gold
+- Icon box should get a warm gold background glow
+- Icon should scale slightly
+
+.icon-box {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.service-card:hover .icon-box {
+  transform: scale(1.08);
+  background: rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 22px rgba(212, 175, 55, 0.28);
+}
+
+.service-card:hover svg {
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.85));
+}
+
+--------------------------------------------------
+4. ACTIVE ICON GLOW
+--------------------------------------------------
+
+Also make the icon glow when its card is the active animated card.
+
+Use the same staggered timing:
+Card 1 icon glows first, then card 2, then card 3, etc.
+
+If needed, add a class like:
+.active-glow
+
+Or use nth-child animation delays on the icon-box.
+
+.icon-box {
+  animation: iconGlowCycle 12s infinite;
+}
+
+.service-card:nth-child(1) .icon-box { animation-delay: 0s; }
+.service-card:nth-child(2) .icon-box { animation-delay: 2s; }
+.service-card:nth-child(3) .icon-box { animation-delay: 4s; }
+.service-card:nth-child(4) .icon-box { animation-delay: 6s; }
+.service-card:nth-child(5) .icon-box { animation-delay: 8s; }
+.service-card:nth-child(6) .icon-box { animation-delay: 10s; }
+
+@keyframes iconGlowCycle {
+  0%, 16% {
+    transform: scale(1.06);
+    background: rgba(212, 175, 55, 0.12);
+    box-shadow: 0 0 22px rgba(212, 175, 55, 0.25);
+  }
+  17%, 100% {
+    transform: scale(1);
+    background: rgba(212, 175, 55, 0.06);
+    box-shadow: none;
+  }
+}
+
+--------------------------------------------------
+5. FINAL RESULT
+--------------------------------------------------
+
+The services section should feel:
+- Premium
+- Alive
+- Elegant
+- Not busy
+- One card gets attention at a time
+- Icons react with luxury gold glow

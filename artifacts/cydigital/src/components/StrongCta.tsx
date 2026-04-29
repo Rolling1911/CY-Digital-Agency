@@ -152,6 +152,7 @@ export function StrongCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, delay: 0.22 }}
+          className="strong-cta-buttons"
           style={{
             display: "flex",
             justifyContent: "center",

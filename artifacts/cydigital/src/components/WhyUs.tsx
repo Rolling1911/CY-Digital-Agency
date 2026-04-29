@@ -150,6 +150,7 @@ export function WhyUs() {
 
           {/* RIGHT — 2×3 compact reason cards */}
           <div
+            className="why-us-reasons-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",

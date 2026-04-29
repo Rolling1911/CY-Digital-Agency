@@ -52,7 +52,7 @@ export function HowItWorks() {
         {/* Cards grid */}
         <div
           style={{ maxWidth: "1000px", margin: "0 auto" }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6"
+          className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 process-grid-mobile"
         >
           {steps.map((step, index) => (
             <motion.div

@@ -101,7 +101,7 @@ export function Footer() {
               Ακολουθήστε Μας
             </motion.p>
 
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div className="footer-social-icon-row" style={{ display: "flex", gap: "10px", justifyContent: "flex-start" }}>
               {socials.map(({ icon: Icon, href, label }) => (
                 <a key={label} href={href} aria-label={label} className="footer-social-icon">
                   <Icon size={22} />
@@ -154,7 +154,7 @@ export function Footer() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "24px" }}>
               {contactItems.map(({ icon: Icon, text, href }) => (
-                <div key={text} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div key={text} className="footer-contact-item" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <div style={{
                     width: "38px", height: "38px", borderRadius: "50%", flexShrink: 0,
                     border: "1px solid rgba(212,175,55,0.2)",
@@ -206,7 +206,7 @@ export function Footer() {
         <div className="footer-bottom-divider"><span /></div>
 
         {/* Bottom bar */}
-        <div style={{
+        <div className="footer-bottom-bar" style={{
           maxWidth: "1300px", margin: "0 auto",
           display: "flex", justifyContent: "space-between", alignItems: "center",
           flexWrap: "wrap", gap: "12px", paddingBottom: "8px",

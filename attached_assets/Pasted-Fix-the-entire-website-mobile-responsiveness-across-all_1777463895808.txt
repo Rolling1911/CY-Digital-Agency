@@ -1,0 +1,103 @@
+Fix the entire website mobile responsiveness across all devices.
+
+GOAL:
+Make the website look premium, clean, and fully workable on:
+- iPhone
+- Android
+- tablets
+- small laptops
+- desktop
+
+IMPORTANT:
+Do not change the brand design.
+Keep the black/gold luxury style.
+Only fix responsiveness, spacing, sizing, navigation, and usability.
+
+1. GLOBAL RESPONSIVE RULES
+- Add proper breakpoints:
+  mobile: max-width 480px
+  tablet: max-width 768px
+  laptop: max-width 1024px
+- Remove horizontal scrolling everywhere.
+- Ensure all sections have proper padding on mobile.
+- Use max-width containers.
+- Make images scale with width: 100%; height: auto.
+- Set box-sizing: border-box globally.
+
+2. NAVBAR MOBILE FIX
+- Logo must be visible and not tiny.
+- Add hamburger menu on mobile.
+- Menu should open cleanly full-screen or slide-down.
+- CTA button should not break the layout.
+- Navbar should stay sticky and smooth.
+- No overlapping text.
+
+3. HERO SECTION MOBILE FIX
+- Reduce headline size properly.
+- Keep text centered and readable.
+- Hero background must fit nicely.
+- Buttons should stack vertically.
+- Add enough spacing above and below.
+
+Mobile hero example:
+headline font-size: 34px–42px;
+line-height: 1.15;
+subtitle font-size: 16px;
+buttons width: 100%;
+max-width: 320px;
+
+4. SERVICE CARDS
+- On desktop keep 3 columns.
+- Tablet: 2 columns.
+- Mobile: 1 column.
+- Cards must not be too wide or squeezed.
+- Keep gold animation working but lighter on mobile.
+
+5. STATS / PROCESS / WHY US
+- Convert all grids to 1 column on mobile.
+- Keep spacing consistent.
+- Reduce font sizes.
+- Remove any elements that overlap.
+
+6. PACKAGES SECTION
+- Stack packages vertically on mobile.
+- Disable scale transforms on mobile.
+- Cards should be same width and centered.
+- Buttons full width.
+- No card should overflow screen.
+
+7. TESTIMONIALS
+- Stack cards vertically.
+- Reduce padding.
+- Keep text readable.
+
+8. CONTACT FORM
+- Convert 2-column form to 1 column on mobile.
+- Inputs must be full width.
+- Buttons full width.
+- Input height comfortable for touch.
+- No fields should overflow.
+
+9. FOOTER
+- Stack footer columns vertically on mobile.
+- Center logo and text.
+- Center social icons.
+- Contact info must be readable.
+- Bottom legal links should stack or center.
+
+10. PERFORMANCE
+- Compress large background images if possible.
+- Use responsive image sizes.
+- Avoid heavy animations on mobile.
+- Respect prefers-reduced-motion.
+
+11. TESTING
+Check and fix layout at:
+- 390px width
+- 430px width
+- 768px width
+- 1024px width
+- 1440px width
+
+FINAL RESULT:
+The website must look premium and professional on every screen size, with no broken layout, no tiny text, no horizontal scroll, no overlapping elements, and smooth mobile navigation.

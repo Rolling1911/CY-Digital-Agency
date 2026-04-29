@@ -35,7 +35,7 @@ export function Header() {
     >
       <div
         style={{ maxWidth: "1440px", margin: "0 auto", width: "100%", padding: "0 40px" }}
-        className="flex items-center justify-between"
+        className="flex items-center justify-between header-inner"
       >
         {/* LEFT — Logo */}
         <div
@@ -52,10 +52,9 @@ export function Header() {
               width: "280px",
               objectFit: "contain",
               display: "block",
-
               transition: "transform 0.3s ease, filter 0.3s ease",
             }}
-            className="group-hover:scale-[1.03] group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]"
+            className="header-logo group-hover:scale-[1.03] group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]"
           />
         </div>
 

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiInstagram, FiFacebook, FiLinkedin } from "react-icons/fi";
+import { FiInstagram, FiFacebook } from "react-icons/fi";
 import { MapPin, Mail, Phone } from "lucide-react";
 
 const navLinks = [
@@ -14,13 +14,12 @@ const navLinks = [
 const socials = [
   { icon: FiInstagram, href: "#", label: "Instagram" },
   { icon: FiFacebook,  href: "#", label: "Facebook" },
-  { icon: FiLinkedin,  href: "#", label: "LinkedIn" },
 ];
 
 const contactItems = [
-  { icon: MapPin, text: "Λευκωσία, Κύπρος",      href: undefined },
+  { icon: MapPin, text: "Λάρνακα, Κύπρος",        href: undefined },
   { icon: Mail,   text: "info@cydigital.agency",  href: "mailto:info@cydigital.agency" },
-  { icon: Phone,  text: "+357 99 123456",          href: "tel:+35799123456" },
+  { icon: Phone,  text: "+357 94 344355",          href: "tel:+35794344355" },
 ];
 
 export function Footer() {

@@ -359,8 +359,10 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.1fr 1fr 1.1fr;
+  gap: 70px;
+  max-width: 1300px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
 }
@@ -419,7 +421,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 56px 0 24px;
+  margin: 48px auto 24px;
+  max-width: 1300px;
   position: relative;
   z-index: 2;
 }

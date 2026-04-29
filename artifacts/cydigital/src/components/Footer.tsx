@@ -30,7 +30,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="footer-premium" style={{ padding: "100px 40px 40px" }}>
+    <footer className="footer-premium" style={{ padding: "80px 40px 36px" }}>
 
       {/* Top hairline divider */}
       <div style={{
@@ -52,11 +52,21 @@ export function Footer() {
 
           {/* ── LEFT: Brand ── */}
           <div>
-            <img
-              src="/images/logo-new.png"
-              alt="CYDigital"
-              style={{ height: "auto", width: "210px", objectFit: "contain", marginBottom: "20px" }}
-            />
+            {/* Gold glow behind logo */}
+            <div style={{
+              position: "relative", display: "inline-block", marginBottom: "4px",
+            }}>
+              <div style={{
+                position: "absolute", inset: "-20px", borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(212,175,55,0.18), transparent 70%)",
+                filter: "blur(20px)", pointerEvents: "none",
+              }} />
+              <img
+                src="/images/logo-new.png"
+                alt="CYDigital"
+                style={{ position: "relative", height: "auto", width: "260px", objectFit: "contain", display: "block" }}
+              />
+            </div>
 
             <p className="footer-description" style={{ color: "#BFBFBF", margin: "16px 0 20px", lineHeight: 1.7, fontSize: "14px", maxWidth: "280px" }}>
               Premium Digital Agency για επιχειρήσεις που θέλουν να ξεχωρίζουν.
@@ -84,7 +94,7 @@ export function Footer() {
           </div>
 
           {/* ── CENTER: Menu ── */}
-          <div>
+          <div style={{ maxWidth: "360px" }}>
             <motion.h3
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -109,7 +119,7 @@ export function Footer() {
           </div>
 
           {/* ── RIGHT: Contact ── */}
-          <div>
+          <div style={{ maxWidth: "420px" }}>
             <motion.h3
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
@@ -176,6 +186,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div style={{
           position: "relative", zIndex: 2,
+          maxWidth: "1300px", margin: "0 auto",
           display: "flex", justifyContent: "space-between", alignItems: "center",
           flexWrap: "wrap", gap: "12px",
           paddingBottom: "8px",

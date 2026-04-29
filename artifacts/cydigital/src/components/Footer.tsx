@@ -58,7 +58,7 @@ export function Footer() {
           {/* LEFT — logo + tagline + socials */}
           <div>
             <img
-              src="/images/logo2.png"
+              src="/images/logo-new.png"
               alt="CYDigital"
               style={{ height: "auto", width: "200px", objectFit: "contain", marginBottom: "20px" }}
             />

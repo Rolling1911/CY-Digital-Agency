@@ -28,63 +28,66 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-black/85 backdrop-blur-xl border-b border-white/5"
-          : "bg-transparent"
+      style={{ height: "82px" }}
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
+        isScrolled ? "bg-black/85 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 md:px-10">
+      <div
+        style={{ maxWidth: "1200px", margin: "0 auto", width: "100%", padding: "0 32px" }}
+        className="flex items-center justify-between"
+      >
+        {/* LEFT — Logo */}
         <div
-          className="flex items-center justify-between"
-          style={{ height: "80px" }}
+          className="flex items-center cursor-pointer group"
+          onClick={() => handleNavClick("#home")}
+          data-testid="link-logo"
+          style={{ flex: "0 0 auto" }}
         >
-          {/* Logo */}
-          <div
-            className="cursor-pointer flex-shrink-0 group"
-            onClick={() => handleNavClick("#home")}
-            data-testid="link-logo"
-            style={{ lineHeight: 0 }}
-          >
-            <img
-              src="/images/logo.png"
-              alt="CYDigital"
-              style={{
-                height: "48px",
-                width: "auto",
-                display: "block",
-                transition: "transform 0.3s ease, filter 0.3s ease",
-              }}
-              className="group-hover:scale-[1.03] group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.6))]"
-            />
-          </div>
+          <img
+            src="/images/logo.png"
+            alt="CYDigital"
+            style={{
+              height: "58px",
+              width: "auto",
+              maxWidth: "220px",
+              objectFit: "contain",
+              display: "block",
+              transition: "transform 0.3s ease, filter 0.3s ease",
+            }}
+            className="group-hover:scale-[1.03] group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]"
+          />
+        </div>
 
-          {/* Desktop Nav — centered */}
-          <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="text-xs tracking-[0.15em] uppercase font-medium text-white/65 hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap"
-                data-testid={`link-${link.href.replace("#", "")}`}
-              >
-                {link.name}
-              </button>
-            ))}
-          </nav>
+        {/* CENTER — Nav menu (desktop) */}
+        <nav
+          className="hidden md:flex items-center"
+          style={{ gap: "34px" }}
+        >
+          {navLinks.map((link) => (
+            <button
+              key={link.name}
+              onClick={() => handleNavClick(link.href)}
+              className="text-xs tracking-[0.14em] uppercase font-medium text-white/65 hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap"
+              data-testid={`link-${link.href.replace("#", "")}`}
+            >
+              {link.name}
+            </button>
+          ))}
+        </nav>
 
-          {/* CTA — right */}
-          <div className="hidden md:block flex-shrink-0">
+        {/* RIGHT — CTA + mobile hamburger */}
+        <div className="flex items-center" style={{ gap: "20px" }}>
+          <div className="hidden md:block">
             <Button
               onClick={() => handleNavClick("#contact")}
-              className="bg-[#D4AF37] text-black font-semibold tracking-[0.12em] uppercase text-xs px-6 py-2.5 rounded-sm hover:bg-[#D4AF37]/90 transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.35)]"
+              className="bg-[#D4AF37] text-black font-semibold tracking-[0.1em] uppercase text-xs px-6 py-2.5 rounded-sm hover:bg-[#D4AF37]/90 transition-all duration-300 hover:shadow-[0_0_18px_rgba(212,175,55,0.3)]"
               data-testid="button-header-cta"
             >
               Ζητήστε Προσφορά
             </Button>
           </div>
 
-          {/* Mobile hamburger */}
           <button
             className="md:hidden text-white/80 hover:text-[#D4AF37] transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -103,7 +106,7 @@ export function Header() {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="text-left text-base font-medium text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 tracking-wide"
+                className="text-left text-sm font-medium text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 tracking-widest uppercase"
                 data-testid={`link-mobile-${link.href.replace("#", "")}`}
               >
                 {link.name}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const items = [
+const items: { image: string; title: string; category: string; result: string; aspect: string; objectPosition?: string }[] = [
   {
     image: "/images/portfolio-webdesign.png",
     title: "Ιστοσελίδα Εστιατορίου",
@@ -28,6 +28,7 @@ const items = [
     category: "Advertising",
     result: "3x ROAS σε 30 Ημέρες",
     aspect: "aspect-[4/3]",
+    objectPosition: "top",
   }
 ];
 
@@ -69,6 +70,7 @@ export function Portfolio() {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ objectPosition: item.objectPosition ?? "center" }}
                 />
               </div>
               <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-8 text-center backdrop-blur-sm">

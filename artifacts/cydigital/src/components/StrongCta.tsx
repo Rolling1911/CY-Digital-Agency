@@ -70,16 +70,22 @@ export function StrongCta() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          style={{
-            fontSize: "11px",
-            letterSpacing: "3px",
-            textTransform: "uppercase",
-            color: "#D4AF37",
-            fontWeight: 600,
-            marginBottom: "28px",
-          }}
+          style={{ marginBottom: "28px" }}
         >
-          Ξεκινήστε Σήμερα
+          <motion.span
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            style={{
+              display: "inline-block",
+              fontSize: "11px",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              color: "#D4AF37",
+              fontWeight: 600,
+            }}
+          >
+            Ξεκινήστε Σήμερα
+          </motion.span>
         </motion.p>
 
         {/* Headline */}

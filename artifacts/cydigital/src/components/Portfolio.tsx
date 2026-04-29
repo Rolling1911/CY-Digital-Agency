@@ -65,7 +65,7 @@ export function Portfolio() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative overflow-hidden cursor-pointer"
-              style={{ aspectRatio: item.ratio ?? "4/3" }}
+              style={{ aspectRatio: item.ratio ?? "1/1" }}
             >
               {item.image ? (
                 <img

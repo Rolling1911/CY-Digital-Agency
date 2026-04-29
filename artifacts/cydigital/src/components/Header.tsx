@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoPath from "@assets/ChatGPT_Image_Apr_29,_2026,_10_29_19_AM_1777448255272.png";
 
 const navLinks = [
   { name: "Αρχική", href: "#home" },
@@ -39,8 +40,8 @@ export function Header() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-display tracking-[0.15em] uppercase text-[#D4AF37] cursor-pointer" onClick={() => handleNavClick("#home")}>
-            CYDigital
+          <div className="cursor-pointer" onClick={() => handleNavClick("#home")} data-testid="link-logo">
+            <img src={logoPath} alt="CYDigital" className="h-12 w-auto" />
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">

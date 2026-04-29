@@ -1,0 +1,137 @@
+Redesign the pricing section into a PREMIUM “Packages / Solutions” section WITHOUT showing prices.
+
+PROBLEM:
+- Prices make the brand look cheap
+- Section feels like a SaaS template
+- Not aligned with high-end agency positioning
+
+GOAL:
+Create a luxury packages section that sells VALUE, not price.
+
+--------------------------------------------------
+❌ REMOVE
+--------------------------------------------------
+
+- Remove ALL prices (€199, €399, €699)
+- Remove "/month"
+- Remove pricing language
+
+--------------------------------------------------
+💎 RENAME SECTION
+--------------------------------------------------
+
+Change title from:
+"Πακέτα"
+
+To something premium like:
+"Οι Λύσεις μας"
+or
+"Πώς μπορούμε να σας βοηθήσουμε"
+
+--------------------------------------------------
+📦 NEW PACKAGE STRUCTURE
+--------------------------------------------------
+
+Keep 3 boxes but rename:
+
+1. Starter → "Launch"
+2. Growth → "Growth"
+3. Premium → "Scale"
+
+--------------------------------------------------
+🎯 POSITIONING TEXT
+--------------------------------------------------
+
+Each card should feel like a solution:
+
+Example:
+
+Launch:
+"Ideal for businesses starting their digital presence"
+
+Growth:
+"For businesses ready to grow and generate leads"
+
+Scale:
+"For brands that want full digital domination"
+
+--------------------------------------------------
+✨ REMOVE PRICE → ADD CTA
+--------------------------------------------------
+
+Replace price area with:
+
+→ "Κατόπιν επικοινωνίας"
+OR
+→ "Προσαρμοσμένο στις ανάγκες σας"
+
+--------------------------------------------------
+🔥 CTA BUTTONS (IMPORTANT)
+--------------------------------------------------
+
+Replace "ΕΝΔΙΑΦΕΡΟΜΑΙ" with:
+
+→ "Ζητήστε Προσφορά"
+→ "Μιλήστε Μαζί Μας"
+→ "Κλείστε Συνάντηση"
+
+--------------------------------------------------
+💎 DESIGN UPGRADE
+--------------------------------------------------
+
+Make cards more premium:
+
+.package-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 14px;
+  padding: 30px;
+  transition: 0.35s;
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+  border-color: #D4AF37;
+}
+
+--------------------------------------------------
+🌟 FEATURED CARD (MIDDLE ONE)
+--------------------------------------------------
+
+Keep "MOST POPULAR" but upgrade:
+
+- Add subtle gold glow
+- Slight scale (1.05)
+- Stronger border
+
+.featured {
+  border: 1px solid #D4AF37;
+  box-shadow: 0 0 30px rgba(212,175,55,0.15);
+  transform: scale(1.05);
+}
+
+--------------------------------------------------
+✨ OPTIONAL (VERY STRONG)
+--------------------------------------------------
+
+Add:
+
+"Τα πακέτα προσαρμόζονται ανάλογα με τις ανάγκες της επιχείρησής σας."
+
+--------------------------------------------------
+📱 MOBILE
+--------------------------------------------------
+
+- Stack vertically
+- Keep featured card slightly larger
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+Section should feel:
+- Premium
+- Custom
+- High-value
+- Not price-focused
+- Designed to start conversations, not compare prices

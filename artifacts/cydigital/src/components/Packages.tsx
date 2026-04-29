@@ -1,50 +1,46 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const packages = [
   {
-    name: "Starter",
-    price: "€199",
-    period: "/μήνα",
-    description: "Ιδανικό για νέες επιχειρήσεις",
+    name: "Launch",
+    tagline: "Ιδανικό για επιχειρήσεις που ξεκινούν την ψηφιακή τους παρουσία.",
     features: [
-      "8 social media posts",
-      "Basic design",
+      "8 social media posts/μήνα",
+      "Basic graphic design",
       "Google Business setup",
-      "Monthly report"
+      "Monthly performance report",
     ],
-    popular: false
+    cta: "Ζητήστε Προσφορά",
+    popular: false,
   },
   {
     name: "Growth",
-    price: "€399",
-    period: "/μήνα",
-    description: "Για επιχειρήσεις που θέλουν ανάπτυξη",
+    tagline: "Για επιχειρήσεις που είναι έτοιμες να αναπτυχθούν και να αποκτήσουν leads.",
     features: [
-      "12–16 social media posts",
-      "Reels ideas",
-      "Landing page",
+      "12–16 social media posts/μήνα",
+      "Reels & video ideas",
+      "Landing page δημιουργία",
       "Ads management",
-      "Strategy call"
+      "Monthly strategy call",
     ],
-    popular: true
+    cta: "Μιλήστε Μαζί Μας",
+    popular: true,
   },
   {
-    name: "Premium",
-    price: "€699",
-    period: "/μήνα",
-    description: "Ολοκληρωμένη digital παρουσία",
+    name: "Scale",
+    tagline: "Για brands που θέλουν πλήρη ψηφιακή κυριαρχία στην αγορά τους.",
     features: [
       "Full website creation",
       "Social media management",
-      "Graphic design",
-      "Branding support",
-      "Ads management",
-      "Monthly strategy review"
+      "Graphic design & branding",
+      "Ads management (Meta + Google)",
+      "Monthly strategy review",
+      "Priority support",
     ],
-    popular: false
-  }
+    cta: "Κλείστε Συνάντηση",
+    popular: false,
+  },
 ];
 
 export function Packages() {
@@ -55,35 +51,38 @@ export function Packages() {
   return (
     <section id="packages" className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
+
+        {/* Heading */}
         <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
-          >
-            Πακέτα για κάθε επιχείρηση
-          </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[#D4AF37] uppercase tracking-widest text-sm font-medium mb-6"
+            transition={{ duration: 0.5 }}
+            style={{ color: "#D4AF37", fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "14px" }}
           >
-            Επιλέξτε το πακέτο που ταιριάζει στους στόχους σας
+            Οι Λύσεις μας
           </motion.p>
-          <motion.div 
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
+          >
+            Πώς μπορούμε να σας βοηθήσουμε
+          </motion.h2>
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full" 
+            className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-center">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
@@ -91,51 +90,170 @@ export function Packages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-[#0D0D0D] p-8 ${
-                pkg.popular 
-                  ? "border border-[#D4AF37]/50 shadow-[0_0_40px_rgba(212,175,55,0.15)] md:-translate-y-4" 
-                  : "border border-white/5"
-              }`}
+              style={pkg.popular ? { transform: "scale(1.04)" } : {}}
             >
-              {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#0D0D0D] border border-[#D4AF37] text-[#D4AF37] px-6 py-1 text-xs font-bold tracking-widest uppercase">
-                  MOST POPULAR
-                </div>
-              )}
-              
-              <div className="text-center mb-8 border-b border-white/10 pb-8">
-                <h3 className="text-2xl font-bold text-foreground mb-2">{pkg.name}</h3>
-                <p className="text-muted-foreground text-sm mb-6">{pkg.description}</p>
-                <div className="flex items-baseline justify-center">
-                  <span className="text-sm font-semibold text-muted-foreground mr-1">Από</span>
-                  <span className="text-5xl font-display font-bold text-[#D4AF37]">{pkg.price}</span>
-                  <span className="text-muted-foreground ml-1">{pkg.period}</span>
-                </div>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                {pkg.features.map((feature, i) => (
-                  <li key={i} className="flex items-start">
-                    <Check className="w-5 h-5 text-[#D4AF37] mr-3 shrink-0" />
-                    <span className="text-foreground/90">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button
-                onClick={scrollToContact}
-                className={`w-full h-12 text-sm uppercase tracking-widest font-semibold rounded-none transition-all ${
-                  pkg.popular
-                    ? "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90"
-                    : "bg-transparent border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
-                }`}
-                data-testid={`button-package-${pkg.name.toLowerCase()}`}
+              <div
+                style={{
+                  position: "relative",
+                  padding: "32px 28px",
+                  borderRadius: "14px",
+                  background: "rgba(255,255,255,0.025)",
+                  border: pkg.popular
+                    ? "1px solid rgba(212,175,55,0.65)"
+                    : "1px solid rgba(212,175,55,0.15)",
+                  boxShadow: pkg.popular
+                    ? "0 0 32px rgba(212,175,55,0.14)"
+                    : "none",
+                  transition: "transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease",
+                }}
+                className="package-card-inner"
+                data-testid={`package-card-${pkg.name.toLowerCase()}`}
               >
-                Ενδιαφέρομαι
-              </Button>
+                {/* Most popular badge */}
+                {pkg.popular && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "-14px",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "#D4AF37",
+                      color: "#0B0B0B",
+                      fontSize: "10px",
+                      fontWeight: 700,
+                      letterSpacing: "2px",
+                      textTransform: "uppercase",
+                      padding: "4px 16px",
+                      borderRadius: "20px",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    MOST POPULAR
+                  </div>
+                )}
+
+                {/* Package name */}
+                <h3
+                  style={{
+                    fontSize: "24px",
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    fontFamily: "Cormorant Garamond, serif",
+                    marginBottom: "8px",
+                  }}
+                >
+                  {pkg.name}
+                </h3>
+
+                {/* Tagline */}
+                <p
+                  style={{
+                    fontSize: "13.5px",
+                    color: "#BFBFBF",
+                    lineHeight: 1.6,
+                    marginBottom: "20px",
+                    minHeight: "44px",
+                  }}
+                >
+                  {pkg.tagline}
+                </p>
+
+                {/* Custom pricing message */}
+                <div
+                  style={{
+                    borderTop: "1px solid rgba(212,175,55,0.12)",
+                    borderBottom: "1px solid rgba(212,175,55,0.12)",
+                    padding: "14px 0",
+                    marginBottom: "24px",
+                    textAlign: "center",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      color: "#D4AF37",
+                      letterSpacing: "1px",
+                      textTransform: "uppercase",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Προσαρμοσμένο στις ανάγκες σας
+                  </span>
+                </div>
+
+                {/* Features */}
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 28px", display: "flex", flexDirection: "column", gap: "12px" }}>
+                  {pkg.features.map((feature, i) => (
+                    <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                      <Check style={{ width: "16px", height: "16px", color: "#D4AF37", flexShrink: 0, marginTop: "2px" }} />
+                      <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", lineHeight: 1.5 }}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA button */}
+                <button
+                  onClick={scrollToContact}
+                  data-testid={`button-package-${pkg.name.toLowerCase()}`}
+                  style={{
+                    width: "100%",
+                    padding: "13px 0",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                    borderRadius: "6px",
+                    cursor: "pointer",
+                    transition: "all 0.25s ease",
+                    background: pkg.popular ? "#D4AF37" : "transparent",
+                    color: pkg.popular ? "#0B0B0B" : "#D4AF37",
+                    border: pkg.popular ? "none" : "1px solid rgba(212,175,55,0.5)",
+                  }}
+                  onMouseEnter={e => {
+                    const el = e.currentTarget;
+                    if (pkg.popular) {
+                      el.style.background = "#c9a830";
+                    } else {
+                      el.style.background = "rgba(212,175,55,0.08)";
+                      el.style.borderColor = "#D4AF37";
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    const el = e.currentTarget;
+                    if (pkg.popular) {
+                      el.style.background = "#D4AF37";
+                    } else {
+                      el.style.background = "transparent";
+                      el.style.borderColor = "rgba(212,175,55,0.5)";
+                    }
+                  }}
+                >
+                  {pkg.cta}
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Footer note */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{
+            textAlign: "center",
+            marginTop: "40px",
+            fontSize: "13px",
+            color: "rgba(191,191,191,0.7)",
+            letterSpacing: "0.3px",
+          }}
+        >
+          Τα πακέτα προσαρμόζονται ανάλογα με τις ανάγκες της επιχείρησής σας.
+        </motion.p>
+
       </div>
     </section>
   );

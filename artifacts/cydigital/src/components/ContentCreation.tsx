@@ -11,7 +11,7 @@ const features = [
   {
     icon: Video,
     title: "Βίντεο για social media & διαφημίσεις",
-    desc: "Cinematic βίντεο σχεδιασμένα να τραβούν την προσοχή και να μετατρέπουν.",
+    desc: "Βίντεο για social media & διαφημίσεις",
   },
   {
     icon: Clapperboard,

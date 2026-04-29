@@ -7,7 +7,6 @@ const items: { image: string; title: string; category: string; result: string; a
     category: "Web Design",
     result: "+45% Αύξηση Πωλήσεων",
     aspect: "aspect-[4/3]",
-    objectPosition: "top",
   },
   {
     image: "/images/portfolio-socialmedia.png",

@@ -1,5 +1,4 @@
 import { FiInstagram, FiFacebook, FiLinkedin } from "react-icons/fi";
-import logoPath from "@assets/ChatGPT_Image_Apr_29,_2026,_10_29_19_AM_1777448255272.png";
 
 export function Footer() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -14,7 +13,7 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <img src={logoPath} alt="CYDigital" className="h-20 w-auto mb-4" />
+            <img src="/images/logo.png" alt="CYDigital" className="h-20 w-auto object-contain mb-4" />
             <p className="text-muted-foreground text-lg max-w-md mb-6 leading-relaxed">
               Premium Digital Agency — Κύπρος
             </p>

@@ -83,7 +83,7 @@ export function Footer() {
               <img
                 src="/images/logo-new.png"
                 alt="CYDigital"
-                style={{ position: "relative", height: "auto", width: "278px", objectFit: "contain", display: "block", marginLeft: "-18px" }}
+                style={{ position: "relative", height: "auto", width: "340px", objectFit: "contain", display: "block", marginLeft: "-56px" }}
               />
             </div>
 

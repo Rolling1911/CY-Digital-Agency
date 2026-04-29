@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const items: { image: string; title: string; category: string; result: string; aspect: string; objectPosition?: string }[] = [
   {
-    image: "/images/portfolio-webdesign.png",
+    image: "/images/portfolio-web-v2.png",
     title: "Ιστοσελίδα Εστιατορίου",
     category: "Web Design",
     result: "+45% Αύξηση Πωλήσεων",
@@ -64,11 +64,11 @@ export function Portfolio() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative overflow-hidden bg-[#0D0D0D] border border-white/5 cursor-pointer"
             >
-              <div className={`${item.aspect} w-full overflow-hidden`}>
+              <div className={`${item.aspect} w-full relative overflow-hidden`}>
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   style={{ objectPosition: item.objectPosition ?? "center" }}
                 />
               </div>

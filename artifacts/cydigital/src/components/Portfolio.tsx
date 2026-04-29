@@ -5,25 +5,29 @@ const items = [
     image: "/images/portfolio-webdesign.png",
     title: "Ιστοσελίδα Εστιατορίου",
     category: "Web Design",
-    result: "+45% Αύξηση Πωλήσεων"
+    result: "+45% Αύξηση Πωλήσεων",
+    aspect: "aspect-[4/3]",
   },
   {
     image: "/images/portfolio-socialmedia.png",
     title: "Social Media Beauty Salon",
     category: "Social Media",
-    result: "+200% Engagement"
+    result: "+200% Engagement",
+    aspect: "aspect-square",
   },
   {
     image: "/images/portfolio-branding.png",
     title: "Branding Project",
     category: "Branding",
-    result: "Brand Identity από Μηδέν"
+    result: "Brand Identity από Μηδέν",
+    aspect: "aspect-[4/3]",
   },
   {
     image: "/images/portfolio-4.png",
     title: "Καμπάνια Διαφημίσεων Gym",
     category: "Advertising",
-    result: "3x ROAS σε 30 Ημέρες"
+    result: "3x ROAS σε 30 Ημέρες",
+    aspect: "aspect-[4/3]",
   }
 ];
 
@@ -60,7 +64,7 @@ export function Portfolio() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative overflow-hidden bg-[#0D0D0D] border border-white/5 cursor-pointer"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden">
+              <div className={`${item.aspect} w-full overflow-hidden`}>
                 <img
                   src={item.image}
                   alt={item.title}

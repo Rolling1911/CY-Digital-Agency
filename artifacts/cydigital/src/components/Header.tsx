@@ -49,7 +49,7 @@ export function Header() {
             alt="CYDigital"
             style={{
               height: "auto",
-              width: "220px",
+              width: "280px",
               objectFit: "contain",
               display: "block",
 

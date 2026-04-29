@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const items: { title: string; category: string; result: string; bg: string; label: string; image?: string }[] = [
+const items: { title: string; category: string; result: string; bg: string; label: string; image?: string; ratio?: string }[] = [
   {
     title: "Ιστοσελίδα Εστιατορίου",
     category: "Web Design",
@@ -15,6 +15,7 @@ const items: { title: string; category: string; result: string; bg: string; labe
     bg: "from-[#1a1a1a] to-[#0a1a2a]",
     label: "SM",
     image: "/images/portfolio-frosos.png",
+    ratio: "1/1",
   },
   {
     title: "Branding Project",
@@ -64,7 +65,7 @@ export function Portfolio() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative overflow-hidden cursor-pointer"
-              style={{ aspectRatio: "4/3" }}
+              style={{ aspectRatio: item.ratio ?? "4/3" }}
             >
               {item.image ? (
                 <img

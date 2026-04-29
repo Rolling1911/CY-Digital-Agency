@@ -51,15 +51,15 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-bold uppercase text-foreground text-center"
+            className="font-display font-bold text-foreground text-center"
             style={{
-              fontSize: "clamp(36px, 5vw, 64px)",
-              lineHeight: 1.2,
-              letterSpacing: "1px",
-              maxWidth: "900px",
+              fontSize: "clamp(26px, 4.2vw, 58px)",
+              lineHeight: 1.35,
+              letterSpacing: "0.5px",
+              maxWidth: "860px",
             }}
           >
-            ΧΤΙΖΟΥΜΕ ΨΗΦΙΑΚΕΣ ΕΜΠΕΙΡΙΕΣ ΠΟΥ ΦΕΡΝΟΥΝ
+            Χτίζουμε ψηφιακές εμπειρίες που φέρνουν
           </motion.h1>
 
           {/* Highlighted word */}
@@ -67,12 +67,12 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-bold uppercase text-[#D4AF37] text-center"
+            className="font-display font-bold text-[#D4AF37] text-center"
             style={{
-              fontSize: "clamp(34px, 4.8vw, 60px)",
+              fontSize: "clamp(28px, 4.8vw, 66px)",
               lineHeight: 1.2,
-              letterSpacing: "1px",
-              marginTop: "12px",
+              letterSpacing: "4px",
+              marginTop: "8px",
             }}
           >
             ΑΠΟΤΕΛΕΣΜΑΤΑ

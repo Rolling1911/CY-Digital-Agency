@@ -23,11 +23,11 @@ const items: { image: string; title: string; category: string; result: string; a
     aspect: "aspect-[4/3]",
   },
   {
-    image: "/images/portfolio-advertising.png",
+    image: "/images/portfolio-4.png",
     title: "Καμπάνια Διαφημίσεων Gym",
     category: "Advertising",
     result: "3x ROAS σε 30 Ημέρες",
-    aspect: "aspect-square",
+    aspect: "aspect-[4/3]",
   }
 ];
 

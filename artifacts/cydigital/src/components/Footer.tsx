@@ -23,6 +23,16 @@ const contactItems = [
   { icon: Phone,  text: "+357 94 344355",          href: "tel:+35794344355" },
 ];
 
+/** Luxury vertical gold divider with diamond ornaments top & bottom */
+function VDivider() {
+  return (
+    <div className="footer-vdivider">
+      <div className="footer-vdivider-dot" />
+      <div className="footer-vdivider-dot" style={{ marginTop: "auto" }} />
+    </div>
+  );
+}
+
 export function Footer() {
   const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -32,16 +42,16 @@ export function Footer() {
   return (
     <footer className="footer-premium" style={{ padding: "80px 40px 36px" }}>
 
-      {/* Top hairline divider */}
+      {/* Top gold hairline */}
       <div style={{
         position: "absolute", top: 0, left: 0, right: 0, height: "1px",
-        background: "linear-gradient(to right, transparent, rgba(212,175,55,0.45), transparent)",
+        background: "linear-gradient(to right, transparent, rgba(212,175,55,0.5), transparent)",
         zIndex: 2,
       }} />
 
       <div className="container mx-auto" style={{ position: "relative", zIndex: 2 }}>
 
-        {/* 3-column grid */}
+        {/* 5-column grid: col | divider | col | divider | col */}
         <motion.div
           className="footer-grid"
           initial={{ opacity: 0, y: 24 }}
@@ -50,16 +60,13 @@ export function Footer() {
           transition={{ duration: 0.65 }}
         >
 
-          {/* ── LEFT: Brand ── */}
-          <div>
-            {/* Gold glow behind logo */}
-            <div style={{
-              position: "relative", display: "inline-block", marginBottom: "4px",
-            }}>
+          {/* ── COL 1: Brand ── */}
+          <div className="footer-col">
+            <div style={{ position: "relative", display: "inline-block", marginBottom: "8px" }}>
               <div style={{
-                position: "absolute", inset: "-20px", borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(212,175,55,0.18), transparent 70%)",
-                filter: "blur(20px)", pointerEvents: "none",
+                position: "absolute", inset: "-24px", borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(212,175,55,0.16), transparent 70%)",
+                filter: "blur(22px)", pointerEvents: "none",
               }} />
               <img
                 src="/images/logo-new.png"
@@ -68,18 +75,16 @@ export function Footer() {
               />
             </div>
 
-            <p className="footer-description" style={{ color: "#BFBFBF", margin: "16px 0 20px", lineHeight: 1.7, fontSize: "14px", maxWidth: "280px" }}>
+            <p style={{ color: "#BFBFBF", margin: "14px 0 18px", lineHeight: 1.7, fontSize: "13.5px", maxWidth: "260px" }}>
               Premium Digital Agency για επιχειρήσεις που θέλουν να ξεχωρίζουν.
             </p>
 
-            {/* Gold divider */}
-            <div style={{ width: "60px", height: "2px", background: "#D4AF37", margin: "20px 0" }} />
+            <div style={{ width: "50px", height: "2px", background: "#D4AF37", marginBottom: "18px" }} />
 
-            {/* Social label */}
             <motion.p
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              style={{ fontSize: "10px", letterSpacing: "2.5px", textTransform: "uppercase", color: "#D4AF37", fontWeight: 700, marginBottom: "14px" }}
+              style={{ fontSize: "10px", letterSpacing: "2.5px", textTransform: "uppercase", color: "#D4AF37", fontWeight: 700, marginBottom: "12px" }}
             >
               Ακολουθήστε Μας
             </motion.p>
@@ -93,8 +98,11 @@ export function Footer() {
             </div>
           </div>
 
-          {/* ── CENTER: Menu ── */}
-          <div style={{ maxWidth: "360px" }}>
+          {/* ── DIVIDER 1 ── */}
+          <VDivider />
+
+          {/* ── COL 2: Menu ── */}
+          <div className="footer-col">
             <motion.h3
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
@@ -102,7 +110,7 @@ export function Footer() {
             >
               Μενού
             </motion.h3>
-            <div style={{ width: "32px", height: "2px", background: "#D4AF37", marginBottom: "20px" }} />
+            <div style={{ width: "32px", height: "2px", background: "#D4AF37", marginBottom: "18px" }} />
 
             <nav style={{ display: "flex", flexDirection: "column" }}>
               {navLinks.map(({ label, href }) => (
@@ -118,8 +126,11 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* ── RIGHT: Contact ── */}
-          <div style={{ maxWidth: "420px" }}>
+          {/* ── DIVIDER 2 ── */}
+          <VDivider />
+
+          {/* ── COL 3: Contact ── */}
+          <div className="footer-col">
             <motion.h3
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
@@ -127,21 +138,22 @@ export function Footer() {
             >
               Επικοινωνία
             </motion.h3>
-            <div style={{ width: "32px", height: "2px", background: "#D4AF37", marginBottom: "24px" }} />
+            <div style={{ width: "32px", height: "2px", background: "#D4AF37", marginBottom: "22px" }} />
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "18px", marginBottom: "28px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "24px" }}>
               {contactItems.map(({ icon: Icon, text, href }) => (
-                <div key={text} className="contact-item" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div key={text} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <div style={{
-                    width: "38px", height: "38px", borderRadius: "50%",
+                    width: "38px", height: "38px", borderRadius: "50%", flexShrink: 0,
                     border: "1px solid rgba(212,175,55,0.2)",
                     background: "rgba(212,175,55,0.06)",
-                    display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                    display: "flex", alignItems: "center", justifyContent: "center",
                   }}>
                     <Icon style={{ width: "15px", height: "15px", color: "#D4AF37" }} />
                   </div>
                   {href ? (
-                    <a href={href} style={{ fontSize: "14px", color: "#BFBFBF", textDecoration: "none", transition: "color 0.2s ease" }}
+                    <a href={href}
+                      style={{ fontSize: "14px", color: "#BFBFBF", textDecoration: "none", transition: "color 0.2s ease" }}
                       onMouseEnter={e => (e.currentTarget.style.color = "#D4AF37")}
                       onMouseLeave={e => (e.currentTarget.style.color = "#BFBFBF")}
                     >{text}</a>
@@ -154,16 +166,16 @@ export function Footer() {
 
             {/* Response time box */}
             <div style={{
-              marginTop: "8px", padding: "15px 16px", borderRadius: "12px",
+              padding: "14px 16px", borderRadius: "10px",
               border: "1px solid rgba(212,175,55,0.22)",
               background: "rgba(255,255,255,0.02)",
               display: "flex", alignItems: "center", gap: "12px",
             }}>
               <div style={{
-                width: "38px", height: "38px", borderRadius: "50%",
+                width: "38px", height: "38px", borderRadius: "50%", flexShrink: 0,
                 border: "1px solid rgba(212,175,55,0.25)",
                 background: "rgba(212,175,55,0.08)",
-                display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
+                display: "flex", alignItems: "center", justifyContent: "center",
               }}>
                 <Clock style={{ width: "15px", height: "15px", color: "#D4AF37" }} />
               </div>
@@ -178,32 +190,30 @@ export function Footer() {
 
         </motion.div>
 
-        {/* Diamond divider */}
-        <div className="footer-bottom-divider">
-          <span />
-        </div>
+        {/* Diamond bottom divider */}
+        <div className="footer-bottom-divider"><span /></div>
 
         {/* Bottom bar */}
         <div style={{
-          position: "relative", zIndex: 2,
           maxWidth: "1300px", margin: "0 auto",
           display: "flex", justifyContent: "space-between", alignItems: "center",
-          flexWrap: "wrap", gap: "12px",
-          paddingBottom: "8px",
+          flexWrap: "wrap", gap: "12px", paddingBottom: "8px",
+          position: "relative", zIndex: 2,
         }}>
           <p style={{ fontSize: "14px", color: "#888", margin: 0 }}>
             © {new Date().getFullYear()}{" "}
             <span style={{ color: "#D4AF37" }}>CYDigital</span>
             . Με επιφύλαξη παντός δικαιώματος.
           </p>
-          <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             {["Όροι Χρήσης", "Πολιτική Απορρήτου"].map((item, i) => (
-              <span key={item} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                <a href="#" style={{ fontSize: "14px", color: "#888", textDecoration: "none", marginLeft: i > 0 ? "0" : "0", transition: "color 0.2s ease" }}
+              <span key={item} style={{ display: "flex", alignItems: "center" }}>
+                <a href="#"
+                  style={{ fontSize: "14px", color: "#888", textDecoration: "none", transition: "color 0.2s ease" }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#D4AF37")}
                   onMouseLeave={e => (e.currentTarget.style.color = "#888")}
                 >{item}</a>
-                {i === 0 && <span style={{ color: "rgba(212,175,55,0.3)", margin: "0 8px" }}>|</span>}
+                {i === 0 && <span style={{ color: "rgba(212,175,55,0.3)", margin: "0 12px" }}>|</span>}
               </span>
             ))}
           </div>

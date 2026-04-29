@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiInstagram, FiFacebook, FiLinkedin } from "react-icons/fi";
+import { FiInstagram, FiFacebook } from "react-icons/fi";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 
 const navLinks = [
@@ -14,7 +14,6 @@ const navLinks = [
 const socials = [
   { icon: FiInstagram, href: "#", label: "Instagram" },
   { icon: FiFacebook,  href: "#", label: "Facebook" },
-  { icon: FiLinkedin,  href: "#", label: "LinkedIn" },
 ];
 
 const contactItems = [

@@ -1,0 +1,122 @@
+Add a new premium section to the website called:
+
+“Δημιουργία Περιεχομένου”
+
+SECTION POSITION:
+Place it AFTER the Packages section and BEFORE the Testimonials or Contact section.
+
+GOAL:
+Showcase that CY Digital offers professional photo & video production as a high-value add-on.
+
+--------------------------------------------------
+💎 SECTION STRUCTURE
+--------------------------------------------------
+
+1. Title:
+“Δημιουργία Περιεχομένου”
+
+2. Subtitle:
+“Επαγγελματικές φωτογραφίες & βίντεο που αναδεικνύουν το brand σας”
+
+3. Description:
+“Σε συνεργασία με επαγγελματία φωτογράφο και videographer, δημιουργούμε premium οπτικό περιεχόμενο που αυξάνει την απόδοση των social media και των διαφημίσεων σας.”
+
+--------------------------------------------------
+🎯 FEATURES (4 CARDS)
+--------------------------------------------------
+
+- Φωτογράφιση χώρου & προϊόντων
+- Βίντεο για social media & διαφημίσεις
+- Reels & short-form περιεχόμενο
+- Brand storytelling videos
+
+STYLE:
+- Same service card style
+- Gold icon
+- Subtle glow on hover
+
+--------------------------------------------------
+🎬 PORTFOLIO SHOWCASE (VERY IMPORTANT)
+--------------------------------------------------
+
+Title:
+“Δείγματα Δουλειάς”
+
+Create a premium grid:
+
+Desktop: 3 columns  
+Tablet: 2 columns  
+Mobile: 1 column  
+
+Each item must support:
+- Image or video thumbnail
+- Title
+- Small description
+
+Add placeholders:
+- Φωτογράφιση Επιχείρησης
+- Social Media Video
+- Προϊόντα & Branding
+- Reels Campaign
+- Εταιρικό Βίντεο
+- Lifestyle Content
+
+--------------------------------------------------
+✨ HOVER EFFECTS
+--------------------------------------------------
+
+- Slight zoom on hover
+- Dark overlay
+- Gold glow border
+- If video → show play icon
+
+--------------------------------------------------
+🔥 PREMIUM TOUCH
+--------------------------------------------------
+
+Add small badge on top of section:
+“NEW”
+
+Style:
+- Gold label
+- Subtle glow
+
+--------------------------------------------------
+📢 CTA (VERY IMPORTANT)
+--------------------------------------------------
+
+Add at bottom:
+
+Text:
+“Θέλετε περιεχόμενο που ξεχωρίζει;”
+
+Button:
+“Ζητήστε Προσφορά”
+
+--------------------------------------------------
+🎨 DESIGN RULES
+--------------------------------------------------
+
+- Black background
+- Gold accents (#D4AF37)
+- Clean spacing
+- Cinematic feel
+- Not too crowded
+
+--------------------------------------------------
+📱 MOBILE
+--------------------------------------------------
+
+- Stack everything vertically
+- Keep images large and clean
+- Ensure videos are clickable
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+The section must feel:
+- Premium
+- Visual
+- High-value
+- Like a professional production studio

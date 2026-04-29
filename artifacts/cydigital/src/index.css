@@ -624,6 +624,30 @@ img { max-width: 100%; height: auto; }
   }
 }
 
+/* — WhyUs & Contact left-column centre on mobile — */
+@media (max-width: 768px) {
+  .why-us-left-col {
+    text-align: center;
+  }
+  .why-us-left-col > div,
+  .why-us-left-col p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .why-us-left-col button {
+    display: block;
+    margin: 0 auto;
+  }
+  .contact-left-col {
+    text-align: center;
+  }
+  .contact-left-col > div,
+  .contact-left-col p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* — Header mobile fixes — */
 @media (max-width: 768px) {
   .header-inner {

@@ -56,6 +56,7 @@ export function WhyUs() {
 
           {/* LEFT — Heading, paragraph, CTA */}
           <motion.div
+            className="why-us-left-col"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

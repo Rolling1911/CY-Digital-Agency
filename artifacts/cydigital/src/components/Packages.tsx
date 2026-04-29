@@ -97,7 +97,7 @@ export function Packages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              style={{ height: "100%" }}
+              style={{ height: "100%", transform: index === 0 ? "scale(0.92)" : index === 1 ? "scale(1.0)" : "scale(1.07)", transformOrigin: "center" }}
             >
               <div
                 style={{

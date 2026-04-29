@@ -7,6 +7,7 @@ const items: { title: string; category: string; result: string; bg: string; labe
     result: "+45% Αύξηση Πωλήσεων",
     bg: "from-[#1a1a1a] to-[#2a1f0a]",
     label: "WEB",
+    image: "/images/portfolio-thalassaki.png",
   },
   {
     title: "Social Media Beauty Salon",

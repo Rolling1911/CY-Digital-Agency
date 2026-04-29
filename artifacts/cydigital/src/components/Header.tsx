@@ -28,7 +28,7 @@ export function Header() {
 
   return (
     <header
-      style={{ height: "80px" }}
+      style={{ height: "88px" }}
       className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
         isScrolled ? "bg-black/85 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
       }`}
@@ -48,9 +48,9 @@ export function Header() {
             src="/images/logo.png"
             alt="CYDigital"
             style={{
-              height: "48px",
+              height: "56px",
               width: "auto",
-              maxWidth: "200px",
+              maxWidth: "220px",
               objectFit: "contain",
               display: "block",
               transition: "transform 0.3s ease, filter 0.3s ease",

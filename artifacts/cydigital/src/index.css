@@ -147,6 +147,14 @@
   .text-gold { color: #D4AF37; }
 }
 
+/* ── Why Us 2-col → 1-col on mobile ───────────────────────────────── */
+@media (max-width: 768px) {
+  .why-us-grid {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+}
+
 /* ── Package card hierarchy — disable scale on mobile ─────────────── */
 @media (max-width: 768px) {
   .pkg-wrapper {

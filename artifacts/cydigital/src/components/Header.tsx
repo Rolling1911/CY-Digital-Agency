@@ -40,7 +40,7 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div className="cursor-pointer" onClick={() => handleNavClick("#home")} data-testid="link-logo">
-            <img src="/images/logo.png" alt="CYDigital" className="h-14 w-auto object-contain" />
+            <img src="/images/logo.png" alt="CYDigital" className="h-24 w-auto max-w-[320px] object-contain" />
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -76,7 +76,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border/50 shadow-lg">
           <div className="flex flex-col px-4 py-6 space-y-4">

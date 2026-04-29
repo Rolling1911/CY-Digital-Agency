@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const items = [
+const items: { title: string; category: string; result: string; bg: string; label: string; image?: string }[] = [
   {
     title: "Ιστοσελίδα Εστιατορίου",
     category: "Web Design",
@@ -14,6 +14,7 @@ const items = [
     result: "+200% Engagement",
     bg: "from-[#1a1a1a] to-[#0a1a2a]",
     label: "SM",
+    image: "/images/portfolio-frosos.png",
   },
   {
     title: "Branding Project",
@@ -65,21 +66,31 @@ export function Portfolio() {
               className="group relative overflow-hidden cursor-pointer"
               style={{ aspectRatio: "4/3" }}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.bg}`} />
-              <div className="absolute inset-0 border border-[#D4AF37]/20" />
-              <div className="absolute top-0 left-0 w-12 h-12">
-                <div className="absolute top-0 left-0 w-full h-px bg-[#D4AF37]" />
-                <div className="absolute top-0 left-0 h-full w-px bg-[#D4AF37]" />
-              </div>
-              <div className="absolute bottom-0 right-0 w-12 h-12">
-                <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4AF37]" />
-                <div className="absolute bottom-0 right-0 h-full w-px bg-[#D4AF37]" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
-                <span className="text-[#D4AF37]/30 font-display font-bold text-7xl tracking-widest select-none">
-                  {item.label}
-                </span>
-              </div>
+              {item.image ? (
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.bg}`} />
+                  <div className="absolute inset-0 border border-[#D4AF37]/20" />
+                  <div className="absolute top-0 left-0 w-12 h-12">
+                    <div className="absolute top-0 left-0 w-full h-px bg-[#D4AF37]" />
+                    <div className="absolute top-0 left-0 h-full w-px bg-[#D4AF37]" />
+                  </div>
+                  <div className="absolute bottom-0 right-0 w-12 h-12">
+                    <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4AF37]" />
+                    <div className="absolute bottom-0 right-0 h-full w-px bg-[#D4AF37]" />
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
+                    <span className="text-[#D4AF37]/30 font-display font-bold text-7xl tracking-widest select-none">
+                      {item.label}
+                    </span>
+                  </div>
+                </>
+              )}
               <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-8 text-center">
                 <span className="text-[#D4AF37] font-medium mb-4 tracking-[0.2em] text-xs uppercase">
                   {item.category}

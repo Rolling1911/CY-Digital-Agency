@@ -29,7 +29,6 @@ const formSchema = z.object({
   email: z.string().email({ message: "Μη έγκυρο email" }),
   city: z.string().min(2, { message: "Η περιοχή είναι υποχρεωτική" }),
   service: z.string().min(1, { message: "Επιλέξτε υπηρεσία" }),
-  budget: z.string().min(1, { message: "Επιλέξτε προϋπολογισμό" }),
   message: z.string().optional(),
 });
 
@@ -54,7 +53,7 @@ export function Contact() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "", company: "", phone: "", email: "",
-      city: "", service: "", budget: "", message: "",
+      city: "", service: "", message: "",
     },
   });
 
@@ -289,26 +288,6 @@ export function Contact() {
                       </FormItem>
                     )} />
                   </div>
-
-                  {/* Budget dropdown */}
-                  <FormField control={form.control} name="budget" render={({ field }) => (
-                    <FormItem>
-                      <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Προϋπολογισμός</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-transparent border-white/10 focus:ring-[#D4AF37] h-[50px] text-sm rounded-[10px]" data-testid="select-budget">
-                            <SelectValue placeholder="Επιλέξτε εύρος..." />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent className="bg-[#111] border-white/10">
-                          <SelectItem value="500-1000">€500 – €1.000</SelectItem>
-                          <SelectItem value="1000-3000">€1.000 – €3.000</SelectItem>
-                          <SelectItem value="3000+">€3.000+</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )} />
 
                   {/* Message */}
                   <FormField control={form.control} name="message" render={({ field }) => (

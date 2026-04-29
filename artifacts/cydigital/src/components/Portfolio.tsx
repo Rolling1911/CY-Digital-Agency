@@ -14,7 +14,7 @@ const items = [
     result: "+200% Engagement"
   },
   {
-    image: "/images/portfolio-3.png",
+    image: "/images/portfolio-branding.png",
     title: "Branding Project",
     category: "Branding",
     result: "Brand Identity από Μηδέν"

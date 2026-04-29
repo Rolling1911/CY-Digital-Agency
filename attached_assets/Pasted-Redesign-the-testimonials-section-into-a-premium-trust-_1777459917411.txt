@@ -1,0 +1,85 @@
+Redesign the testimonials section into a premium trust-building section.
+
+PROBLEM:
+- Current testimonial cards look too basic and empty.
+- Too much unused space inside the boxes.
+- Testimonials feel generic.
+- Section does not feel as premium as the rest of the website.
+
+GOAL:
+Make this section feel high-end, credible, modern, and conversion-focused.
+
+NEW DESIGN:
+Create a premium testimonial section with:
+- 3 testimonial cards
+- Client avatar circle or initials badge
+- Star rating
+- Short result tag
+- Cleaner quote layout
+- Premium card hover glow
+
+CARD STRUCTURE:
+Each card should include:
+
+1. Top row:
+- Client initials inside a gold circle
+- Client name
+- Business type
+- 5 small gold stars
+
+2. Middle:
+- Quote text
+
+3. Bottom:
+- Result badge, example:
+  “+60% κρατήσεις”
+  “Brand identity upgrade”
+  “2x ROAS”
+
+DESIGN STYLE:
+- Dark card background: #111111
+- Thin gold border: rgba(212,175,55,0.15)
+- Border radius: 14px
+- Padding: 32px
+- Gold accents only for stars, initials, and result badge
+- Remove oversized quote icons or make them subtle in the background
+
+ANIMATION:
+- On hover:
+  - card lifts slightly
+  - border becomes gold
+  - soft gold glow appears
+  - stars glow subtly
+
+COPY IMPROVEMENT:
+Use stronger, more realistic testimonials:
+
+1.
+Name: Αντώνης Σταύρου
+Role: Ιδιοκτήτης Εστιατορίου
+Quote:
+“Η CYDigital αναβάθμισε πλήρως την online παρουσία μας. Το website είναι γρήγορο, premium και μας φέρνει περισσότερες κρατήσεις.”
+Result badge:
+“+60% κρατήσεις”
+
+2.
+Name: Μαρία Χριστοδούλου
+Role: Beauty Salon Owner
+Quote:
+“Το branding και το περιεχόμενο μας πλέον δείχνουν επαγγελματικά. Οι πελάτες καταλαβαίνουν αμέσως την αξία μας.”
+Result badge:
+“Premium brand image”
+
+3.
+Name: Κώστας Νεοφύτου
+Role: Γυμναστήριο FitLife
+Quote:
+“Οι καμπάνιες μας έγιναν πιο στοχευμένες και αποδοτικές. Είδαμε καλύτερα leads και χαμηλότερο κόστος διαφήμισης.”
+Result badge:
+“2x καλύτερα leads”
+
+IMPORTANT:
+- Make the cards more compact and premium.
+- Do not make them look like plain boxes.
+- Match the black and gold luxury style of the website.
+- Keep it clean, credible, and elegant.

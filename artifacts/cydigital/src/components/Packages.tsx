@@ -212,6 +212,7 @@ export function Packages() {
                       letterSpacing: "1px",
                       textTransform: "uppercase",
                       fontWeight: 500,
+                      whiteSpace: "nowrap",
                     }}
                   >
                     Προσαρμοσμένο στις ανάγκες σας

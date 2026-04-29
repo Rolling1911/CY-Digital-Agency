@@ -40,7 +40,16 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <div className="cursor-pointer" onClick={() => handleNavClick("#home")} data-testid="link-logo">
-            <img src="/images/logo.png" alt="CYDigital" className="h-24 w-auto max-w-[320px] object-contain" />
+            <img
+              src="/images/logo.png"
+              alt="CYDigital"
+              style={{
+                width: "280px",
+                height: "70px",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            />
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">

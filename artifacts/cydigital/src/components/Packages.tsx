@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
+
 const packages = [
   {
     name: "Launch",
@@ -61,7 +62,13 @@ export function Packages() {
             transition={{ duration: 0.5 }}
             style={{ color: "#D4AF37", fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "14px" }}
           >
-            Οι Λύσεις μας
+            <motion.span
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              style={{ display: "inline-block" }}
+            >
+              Οι Λύσεις μας
+            </motion.span>
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

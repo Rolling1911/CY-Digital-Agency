@@ -87,7 +87,7 @@ export function Footer() {
               />
             </div>
 
-            <p style={{ color: "#BFBFBF", margin: "14px 0 18px", lineHeight: 1.7, fontSize: "13.5px", maxWidth: "260px" }}>
+            <p className="footer-brand-desc" style={{ color: "#BFBFBF", margin: "14px 0 18px", lineHeight: 1.7, fontSize: "13.5px", maxWidth: "260px" }}>
               Premium Digital Agency για επιχειρήσεις που θέλουν να ξεχωρίζουν.
             </p>
 

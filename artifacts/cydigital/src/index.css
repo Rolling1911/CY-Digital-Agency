@@ -624,6 +624,19 @@ img { max-width: 100%; height: auto; }
   }
 }
 
+/* — Footer mobile tweaks — */
+@media (max-width: 768px) {
+  .footer-social-icon {
+    width: 46px !important;
+    height: 46px !important;
+  }
+  .footer-brand-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* — WhyUs & Contact left-column centre on mobile — */
 @media (max-width: 768px) {
   .why-us-left-col {

@@ -52,7 +52,7 @@ export function Header() {
               width: "220px",
               objectFit: "contain",
               display: "block",
-              mixBlendMode: "screen",
+
               transition: "transform 0.3s ease, filter 0.3s ease",
             }}
             className="group-hover:scale-[1.03] group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]"

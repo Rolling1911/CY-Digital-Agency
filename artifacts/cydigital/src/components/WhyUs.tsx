@@ -63,17 +63,20 @@ export function WhyUs() {
           >
             {/* Label */}
             <div style={{ marginBottom: "16px" }}>
-              <span
+              <motion.span
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 style={{
                   fontSize: "11px",
                   letterSpacing: "2.5px",
                   textTransform: "uppercase",
                   color: "#D4AF37",
                   fontWeight: 600,
+                  display: "inline-block",
                 }}
               >
                 Γιατί CYDigital
-              </span>
+              </motion.span>
             </div>
 
             {/* Heading */}

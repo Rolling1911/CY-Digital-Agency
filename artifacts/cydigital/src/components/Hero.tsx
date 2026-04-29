@@ -26,7 +26,7 @@ export function Hero() {
       <div className="container mx-auto px-6 md:px-8 relative z-30">
         <div
           className="max-w-[900px] mx-auto text-center flex flex-col items-center hero-padding"
-          style={{ paddingTop: "120px", paddingBottom: "100px" }}
+          style={{ paddingTop: "clamp(32px, 8vw, 120px)", paddingBottom: "clamp(60px, 8vw, 100px)" }}
         >
           {/* Top label */}
           <motion.div

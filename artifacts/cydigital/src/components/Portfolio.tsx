@@ -32,6 +32,7 @@ const items: { title: string; category: string; result: string; bg: string; labe
     result: "3x ROAS σε 30 Ημέρες",
     bg: "from-[#1a1a1a] to-[#0a2a1a]",
     label: "AD",
+    image: "/images/portfolio-gym.jpg",
   },
 ];
 

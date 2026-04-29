@@ -89,7 +89,7 @@ export function Packages() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
@@ -97,13 +97,16 @@ export function Packages() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              style={pkg.popular ? { transform: "scale(1.04)" } : {}}
+              style={{ height: "100%" }}
             >
               <div
                 style={{
                   position: "relative",
                   padding: "32px 28px",
                   borderRadius: "14px",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
                   background: "rgba(255,255,255,0.025)",
                   border: pkg.popular
                     ? "1px solid rgba(212,175,55,0.65)"
@@ -205,6 +208,7 @@ export function Packages() {
                   onClick={scrollToContact}
                   data-testid={`button-package-${pkg.name.toLowerCase()}`}
                   style={{
+                    marginTop: "auto",
                     width: "100%",
                     padding: "13px 0",
                     fontSize: "12px",

@@ -74,7 +74,7 @@ export function Footer() {
 
           {/* ── COL 1: Brand ── */}
           <div className="footer-col">
-            <div style={{ position: "relative", display: "inline-block", marginBottom: "8px" }}>
+            <div style={{ position: "relative", display: "block", marginBottom: "8px" }}>
               <div style={{
                 position: "absolute", inset: "-24px", borderRadius: "50%",
                 background: "radial-gradient(circle, rgba(212,175,55,0.16), transparent 70%)",

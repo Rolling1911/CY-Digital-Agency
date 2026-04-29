@@ -11,7 +11,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative overflow-hidden flex items-start md:items-center justify-center md:min-h-[100dvh]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-background/60 md:bg-background/50 z-10" />
@@ -24,10 +24,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 md:px-8 relative z-30">
-        <div
-          className="max-w-[900px] mx-auto text-center flex flex-col items-center hero-padding"
-          style={{ paddingTop: "clamp(32px, 8vw, 120px)", paddingBottom: "clamp(60px, 8vw, 100px)" }}
-        >
+        <div className="max-w-[900px] mx-auto text-center flex flex-col items-center pt-24 pb-14 md:pt-[120px] md:pb-[100px]">
           {/* Top label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -524,12 +524,6 @@ img { max-width: 100%; height: auto; }
 /* ── Tablet (≤768px) ── */
 @media (max-width: 768px) {
 
-  /* — Hero — */
-  .hero-padding {
-    padding-top: 40px !important;
-    padding-bottom: 70px !important;
-  }
-
   /* — WhyUs layout — */
   .why-us-grid {
     grid-template-columns: 1fr !important;
@@ -600,12 +594,6 @@ img { max-width: 100%; height: auto; }
 
 /* ── Mobile (≤480px) ── */
 @media (max-width: 480px) {
-
-  /* — Hero — */
-  .hero-padding {
-    padding-top: 24px !important;
-    padding-bottom: 60px !important;
-  }
 
   /* — Why Us reasons: 1 col on tiny screens — */
   .why-us-reasons-grid {

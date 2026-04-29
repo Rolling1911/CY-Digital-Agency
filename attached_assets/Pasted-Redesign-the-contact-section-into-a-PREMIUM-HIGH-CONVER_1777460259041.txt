@@ -1,0 +1,136 @@
+Redesign the contact section into a PREMIUM, HIGH-CONVERSION lead capture experience.
+
+PROBLEM:
+- Looks like a basic form
+- No guidance for the user
+- Feels generic and not premium
+- Missing trust and clarity
+
+GOAL:
+Make the contact section feel like a guided, high-end onboarding step.
+
+--------------------------------------------------
+💎 NEW LAYOUT (2-COLUMN)
+--------------------------------------------------
+
+Split into 2 columns:
+
+LEFT SIDE:
+- Headline:
+  "Ας μιλήσουμε για την επιχείρησή σας"
+- Short text:
+  "Συμπληρώστε τη φόρμα και θα επικοινωνήσουμε μαζί σας εντός 24 ωρών."
+- Add trust points:
+   ✓ Δωρεάν αρχική αξιολόγηση  
+   ✓ Προτάσεις προσαρμοσμένες στις ανάγκες σας  
+   ✓ Καμία δέσμευση  
+
+RIGHT SIDE:
+- Keep the form (styled better)
+
+--------------------------------------------------
+📦 FORM CARD DESIGN
+--------------------------------------------------
+
+.form-container {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(212,175,55,0.15);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+--------------------------------------------------
+✍️ INPUT STYLE (VERY IMPORTANT)
+--------------------------------------------------
+
+- Increase input height
+- Add more padding
+- Add focus glow
+
+input, textarea, select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: white;
+}
+
+input:focus, textarea:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 10px rgba(212,175,55,0.2);
+}
+
+--------------------------------------------------
+🎯 FIELD IMPROVEMENT (IMPORTANT)
+--------------------------------------------------
+
+Change labels to feel more premium:
+
+Όνομα → "Το όνομά σας"  
+Όνομα Επιχείρησης → "Επιχείρηση"  
+Τηλέφωνο → "Τηλέφωνο επικοινωνίας"  
+Πόλη → "Περιοχή"  
+
+--------------------------------------------------
+🧠 SMART FIELD ADDITION (HIGH-CONVERTING)
+--------------------------------------------------
+
+Add dropdown:
+
+"Προϋπολογισμός"
+
+Options:
+- €500 – €1.000
+- €1.000 – €3.000
+- €3.000+
+
+This qualifies leads.
+
+--------------------------------------------------
+🔥 CTA BUTTON (UPGRADE)
+--------------------------------------------------
+
+Replace:
+"Αποστολή Μηνύματος"
+
+With:
+"Ζητήστε Προσφορά"
+
+Style:
+- Bigger padding
+- Gold background
+- Subtle glow
+
+--------------------------------------------------
+✨ MICRO INTERACTIONS
+--------------------------------------------------
+
+- Add smooth focus transitions
+- Add hover effect on button
+- Add slight lift on form card
+
+--------------------------------------------------
+🔒 TRUST ELEMENT (VERY IMPORTANT)
+--------------------------------------------------
+
+Add below button:
+
+"Τα στοιχεία σας παραμένουν απολύτως εμπιστευτικά."
+
+--------------------------------------------------
+📱 MOBILE
+--------------------------------------------------
+
+- Stack columns
+- Keep inputs large and easy to tap
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+The section should feel:
+- Premium
+- Easy
+- Guided
+- High-converting
+- Like a consultation, not a form

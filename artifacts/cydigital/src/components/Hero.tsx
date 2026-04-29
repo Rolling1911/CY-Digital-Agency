@@ -35,12 +35,14 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8 flex flex-col items-center"
           >
-            <span
+            <motion.span
               className="text-[#D4AF37] font-semibold uppercase"
-              style={{ fontSize: "12px", letterSpacing: "2px", opacity: 0.7 }}
+              style={{ fontSize: "12px", letterSpacing: "2px" }}
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
               Cyprus Digital Agency
-            </span>
+            </motion.span>
             <div className="w-12 h-px bg-[#D4AF37] mt-3" style={{ opacity: 0.6 }} />
           </motion.div>
 

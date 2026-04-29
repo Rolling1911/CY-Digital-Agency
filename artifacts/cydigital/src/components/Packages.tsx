@@ -89,31 +89,58 @@ export function Packages() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
-          {packages.map((pkg, index) => (
+        {/* Desktop: flex bottom-aligned. Mobile: stack */}
+        <div
+          className="max-w-5xl mx-auto"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "flex-end",
+            gap: "24px",
+            flexWrap: "wrap",
+          }}
+        >
+          {packages.map((pkg, index) => {
+            const scaleMap   = [0.92, 1.0, 1.08];
+            const opacityMap = [0.88, 1.0, 1.0];
+            const borderMap  = [
+              "1px solid rgba(212,175,55,0.15)",
+              "1px solid #D4AF37",
+              "1px solid rgba(212,175,55,0.6)",
+            ];
+            const shadowMap  = [
+              "none",
+              "0 0 30px rgba(212,175,55,0.15)",
+              "0 0 40px rgba(212,175,55,0.22)",
+            ];
+
+            return (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              style={{ height: "100%", transform: index === 0 ? "scale(0.92)" : index === 1 ? "scale(1.0)" : "scale(1.07)", transformOrigin: "center" }}
+              className="pkg-wrapper"
+              style={{
+                flex: "1 1 260px",
+                maxWidth: "340px",
+                transform: `scale(${scaleMap[index]})`,
+                transformOrigin: "bottom center",
+                opacity: opacityMap[index],
+                zIndex: index + 1,
+              }}
             >
               <div
                 style={{
                   position: "relative",
                   padding: "32px 28px",
                   borderRadius: "14px",
-                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   background: "rgba(255,255,255,0.025)",
-                  border: pkg.popular
-                    ? "1px solid rgba(212,175,55,0.65)"
-                    : "1px solid rgba(212,175,55,0.15)",
-                  boxShadow: pkg.popular
-                    ? "0 0 32px rgba(212,175,55,0.14)"
-                    : "none",
+                  border: borderMap[index],
+                  boxShadow: shadowMap[index],
                   transition: "transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease",
                 }}
                 className="package-card-inner"
@@ -245,7 +272,8 @@ export function Packages() {
                 </button>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Footer note */}

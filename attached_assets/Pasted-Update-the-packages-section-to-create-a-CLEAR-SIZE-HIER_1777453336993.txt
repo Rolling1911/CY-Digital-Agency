@@ -1,0 +1,110 @@
+Update the packages section to create a CLEAR SIZE HIERARCHY between the 3 cards.
+
+GOAL:
+- Launch = smallest (entry level)
+- Growth = medium (main focus)
+- Scale = largest (premium / dominant)
+- Keep everything aligned and premium (no messy layout)
+
+--------------------------------------------------
+📐 LAYOUT STRUCTURE
+--------------------------------------------------
+
+Use flexbox:
+
+.packages-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+--------------------------------------------------
+📦 CARD SIZES
+--------------------------------------------------
+
+1. LAUNCH (SMALLEST)
+
+.package-launch {
+  transform: scale(0.92);
+  opacity: 0.85;
+}
+
+--------------------------------------------------
+
+2. GROWTH (MAIN CARD)
+
+.package-growth {
+  transform: scale(1);
+  z-index: 2;
+  border: 1px solid #D4AF37;
+  box-shadow: 0 0 30px rgba(212,175,55,0.15);
+}
+
+--------------------------------------------------
+
+3. SCALE (BIGGEST)
+
+.package-scale {
+  transform: scale(1.08);
+  z-index: 3;
+  border: 1px solid rgba(212,175,55,0.6);
+  box-shadow: 0 0 40px rgba(212,175,55,0.2);
+}
+
+--------------------------------------------------
+✨ HOVER INTERACTION (IMPORTANT)
+--------------------------------------------------
+
+.package-card:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+--------------------------------------------------
+📏 HEIGHT BALANCE
+--------------------------------------------------
+
+Ensure all cards align at the bottom:
+
+.packages-container {
+  align-items: flex-end;
+}
+
+--------------------------------------------------
+📱 MOBILE
+--------------------------------------------------
+
+- Disable scaling on mobile (important)
+- Stack vertically
+
+@media (max-width: 768px) {
+  .package-launch,
+  .package-growth,
+  .package-scale {
+    transform: scale(1);
+  }
+
+  .packages-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+--------------------------------------------------
+🚫 IMPORTANT RULES
+--------------------------------------------------
+
+- Do NOT over-scale (avoid cartoon look)
+- Keep spacing consistent
+- Keep alignment clean
+- Maintain luxury feel (subtle differences)
+
+--------------------------------------------------
+🎯 RESULT
+--------------------------------------------------
+
+Section should feel:
+- Premium
+- Structured
+- Clear progression (small → medium → big)
+- Like a real high-end agency offer

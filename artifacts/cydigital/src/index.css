@@ -147,6 +147,16 @@
   .text-gold { color: #D4AF37; }
 }
 
+/* ── Package card hierarchy — disable scale on mobile ─────────────── */
+@media (max-width: 768px) {
+  .pkg-wrapper {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 /* ── Process card staggered gold spotlight (4 cards, 8s loop) ─────── */
 @keyframes activeProcessCycle {
   0%, 24%    { border-color: rgba(212,175,55,0.75); box-shadow: 0 0 26px rgba(212,175,55,0.16); }

@@ -129,17 +129,6 @@ export function ContentCreation() {
             Επαγγελματικές φωτογραφίες & βίντεο που αναδεικνύουν το brand σας
           </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.32 }}
-            className="text-white/50 max-w-2xl mx-auto leading-relaxed"
-            style={{ fontSize: "15px" }}
-          >
-            Σε συνεργασία με επαγγελματία φωτογράφο και videographer, δημιουργούμε premium οπτικό
-            περιεχόμενο που αυξάνει την απόδοση των social media και των διαφημίσεων σας.
-          </motion.p>
         </div>
 
         {/* Feature cards */}

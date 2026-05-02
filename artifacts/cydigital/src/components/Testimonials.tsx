@@ -48,7 +48,7 @@ function Stars() {
 
 export function Testimonials() {
   return (
-    <section className="py-14 md:py-16 bg-black">
+    <section className="py-9 md:py-16 bg-black">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Heading */}

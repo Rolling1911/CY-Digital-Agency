@@ -24,7 +24,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 md:px-8 relative z-30">
-        <div className="max-w-[900px] mx-auto text-center flex flex-col items-center pt-16 pb-10 md:pt-[100px] md:pb-[80px]">
+        <div className="max-w-[900px] mx-auto text-center flex flex-col items-center pt-10 pb-8 md:pt-[100px] md:pb-[80px]">
           {/* Top label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -79,7 +79,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-14 md:py-16 bg-[#0B0B0B] relative">
+    <section id="contact" className="py-9 md:py-16 bg-[#0B0B0B] relative">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Section title */}

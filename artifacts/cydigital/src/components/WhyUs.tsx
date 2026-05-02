@@ -40,7 +40,7 @@ export function WhyUs() {
   };
 
   return (
-    <section id="why-us" className="py-14 md:py-16 bg-[#080808]">
+    <section id="why-us" className="py-9 md:py-16 bg-[#080808]">
       <div className="container mx-auto px-4 md:px-6">
         <div
           style={{

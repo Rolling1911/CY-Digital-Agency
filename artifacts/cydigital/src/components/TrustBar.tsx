@@ -25,7 +25,7 @@ const stats = [
 
 export function TrustBar() {
   return (
-    <section className="relative bg-[#080808] py-10 md:py-14 overflow-hidden">
+    <section className="relative bg-[#080808] py-7 md:py-14 overflow-hidden">
       {/* Ambient gold glow behind cards */}
       <div
         className="absolute inset-0 pointer-events-none"

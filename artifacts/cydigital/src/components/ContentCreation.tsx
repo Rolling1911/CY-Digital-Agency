@@ -52,7 +52,7 @@ export function ContentCreation() {
   };
 
   return (
-    <section id="content-creation" className="py-14 md:py-16 bg-[#050505] relative overflow-hidden">
+    <section id="content-creation" className="py-9 md:py-16 bg-[#050505] relative overflow-hidden">
       {/* Subtle background glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"

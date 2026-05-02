@@ -584,6 +584,13 @@ img { max-width: 100%; height: auto; }
     padding-left: 0;
   }
 
+  /* — Footer response time box — */
+  .footer-response-box {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
   /* — Footer bottom bar — */
   .footer-bottom-bar {
     flex-direction: column !important;

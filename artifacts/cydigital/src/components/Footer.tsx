@@ -177,25 +177,25 @@ export function Footer() {
             </div>
 
             {/* Response time box */}
-            <div style={{
-              padding: "14px 16px", borderRadius: "10px",
+            <div className="footer-response-box" style={{
+              padding: "10px 14px", borderRadius: "10px",
               border: "1px solid rgba(212,175,55,0.22)",
               background: "rgba(255,255,255,0.02)",
-              display: "flex", alignItems: "center", gap: "12px",
+              display: "inline-flex", alignItems: "center", gap: "10px",
             }}>
               <div style={{
-                width: "38px", height: "38px", borderRadius: "50%", flexShrink: 0,
+                width: "32px", height: "32px", borderRadius: "50%", flexShrink: 0,
                 border: "1px solid rgba(212,175,55,0.25)",
                 background: "rgba(212,175,55,0.08)",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <Clock style={{ width: "15px", height: "15px", color: "#D4AF37" }} />
+                <Clock style={{ width: "13px", height: "13px", color: "#D4AF37" }} />
               </div>
               <div>
-                <p style={{ fontSize: "11px", fontWeight: 700, color: "#D4AF37", letterSpacing: "1px", textTransform: "uppercase", margin: 0 }}>
+                <p style={{ fontSize: "10px", fontWeight: 700, color: "#D4AF37", letterSpacing: "1px", textTransform: "uppercase", margin: 0 }}>
                   Απαντάμε Συνήθως
                 </p>
-                <p style={{ fontSize: "12px", color: "#888", margin: "3px 0 0" }}>Μέσα σε 24 ώρες</p>
+                <p style={{ fontSize: "11px", color: "#888", margin: "2px 0 0" }}>Μέσα σε 24 ώρες</p>
               </div>
             </div>
           </div>

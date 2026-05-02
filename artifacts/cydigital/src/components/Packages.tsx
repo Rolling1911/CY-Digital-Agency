@@ -62,7 +62,7 @@ export function Packages() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
           >
-            Πώς μπορούμε να σας βοηθήσουμε
+            Στρατηγικές λύσεις για την ανάπτυξή σας
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}

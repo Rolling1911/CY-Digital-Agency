@@ -91,7 +91,7 @@ export function Footer() {
               Premium Digital Agency για επιχειρήσεις που θέλουν να ξεχωρίζουν.
             </p>
 
-            <div style={{ width: "70px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "18px", marginLeft: "auto", marginRight: "auto" }} className="footer-col-divider" />
+            <div style={{ width: "70px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "18px" }} className="footer-col-divider" />
 
             <motion.p
               animate={{ opacity: [0.5, 1, 0.5] }}
@@ -122,7 +122,7 @@ export function Footer() {
             >
               Μενού
             </motion.h3>
-            <div style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "18px", marginLeft: "auto", marginRight: "auto" }} className="footer-col-divider" />
+            <div style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "18px" }} className="footer-col-divider" />
 
             <nav style={{ display: "flex", flexDirection: "column" }}>
               {navLinks.map(({ label, href }) => (
@@ -150,7 +150,7 @@ export function Footer() {
             >
               Επικοινωνία
             </motion.h3>
-            <div style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "22px", marginLeft: "auto", marginRight: "auto" }} className="footer-col-divider" />
+            <div style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "22px" }} className="footer-col-divider" />
 
             <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginBottom: "24px" }}>
               {contactItems.map(({ icon: Icon, text, href }) => (

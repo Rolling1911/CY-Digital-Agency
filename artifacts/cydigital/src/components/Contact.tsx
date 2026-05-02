@@ -130,7 +130,7 @@ export function Contact() {
               <span style={{ color: "#D4AF37" }}>την επιχείρησή σας</span>
             </h3>
 
-            <div style={{ width: "40px", height: "3px", background: "#D4AF37", borderRadius: "2px", marginBottom: "24px" }} />
+            <div style={{ width: "70px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "24px" }} />
 
             <p
               style={{

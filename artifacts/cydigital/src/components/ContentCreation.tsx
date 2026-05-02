@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Camera, Video, Clapperboard, Film, Play } from "lucide-react";
+import { Camera, Video, Clapperboard, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const features = [
@@ -27,21 +27,21 @@ const features = [
 
 const portfolioItems = [
   {
-    title: "Φωτογράφιση Επιχείρησης",
-    desc: "Commercial photography",
-    bg: "from-[#1a1200] via-[#2a1f00] to-[#1a1200]",
+    title: "Φωτογράφιση Προϊόντων",
+    desc: "Product photography",
+    image: "/images/content-rose.jpeg",
     isVideo: false,
   },
   {
-    title: "Social Media Video",
-    desc: "Engagement-first content",
-    bg: "from-[#0a0a1a] via-[#12122a] to-[#0a0a1a]",
-    isVideo: true,
+    title: "Lifestyle Content",
+    desc: "Authentic brand moments",
+    image: "/images/content-drink.jpeg",
+    isVideo: false,
   },
   {
     title: "Προϊόντα & Branding",
     desc: "Product photography",
-    bg: "from-[#0a1a0a] via-[#0d200d] to-[#0a1a0a]",
+    image: "/images/content-grapefruit.jpeg",
     isVideo: false,
   },
 ];
@@ -190,52 +190,25 @@ export function ContentCreation() {
                   (e.currentTarget as HTMLElement).style.boxShadow = "none";
                 }}
               >
-                {/* Placeholder background */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.bg}`}
-                  style={{ transition: "transform 0.5s ease" }}
+                {/* Real image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
 
-                {/* Subtle grid texture */}
-                <div
-                  className="absolute inset-0 opacity-[0.03]"
-                  style={{
-                    backgroundImage: `repeating-linear-gradient(0deg, #D4AF37 0px, #D4AF37 1px, transparent 1px, transparent 40px),
-                                      repeating-linear-gradient(90deg, #D4AF37 0px, #D4AF37 1px, transparent 1px, transparent 40px)`,
-                  }}
-                />
+                {/* Dark base overlay */}
+                <div className="absolute inset-0 bg-black/20" />
 
                 {/* Corner accents */}
-                <div className="absolute top-0 left-0 w-8 h-8">
-                  <div className="absolute top-0 left-0 w-full h-px bg-[#D4AF37]/50" />
-                  <div className="absolute top-0 left-0 h-full w-px bg-[#D4AF37]/50" />
+                <div className="absolute top-0 left-0 w-8 h-8 z-10">
+                  <div className="absolute top-0 left-0 w-full h-px bg-[#D4AF37]/60" />
+                  <div className="absolute top-0 left-0 h-full w-px bg-[#D4AF37]/60" />
                 </div>
-                <div className="absolute bottom-0 right-0 w-8 h-8">
-                  <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4AF37]/50" />
-                  <div className="absolute bottom-0 right-0 h-full w-px bg-[#D4AF37]/50" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 z-10">
+                  <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4AF37]/60" />
+                  <div className="absolute bottom-0 right-0 h-full w-px bg-[#D4AF37]/60" />
                 </div>
-
-                {/* Play icon for video items */}
-                {item.isVideo && (
-                  <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
-                    <div
-                      className="w-12 h-12 rounded-full flex items-center justify-center"
-                      style={{
-                        background: "rgba(212,175,55,0.15)",
-                        border: "1px solid rgba(212,175,55,0.4)",
-                      }}
-                    >
-                      <Play size={16} className="text-[#D4AF37] ml-0.5" fill="currentColor" />
-                    </div>
-                  </div>
-                )}
-
-                {/* Label when not hovered */}
-                {!item.isVideo && (
-                  <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
-                    <Camera size={28} className="text-[#D4AF37]/20" strokeWidth={1} />
-                  </div>
-                )}
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">

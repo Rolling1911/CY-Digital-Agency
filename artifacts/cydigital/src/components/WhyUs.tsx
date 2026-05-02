@@ -163,66 +163,51 @@ export function WhyUs() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                whileHover={{ y: -4 }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -6 }}
+                className="group relative cursor-default"
                 style={{
-                  padding: "20px",
-                  borderRadius: "10px",
-                  background: "rgba(255,255,255,0.025)",
-                  border: "1px solid rgba(212,175,55,0.12)",
-                  transition: "border-color 0.3s ease, box-shadow 0.3s ease",
-                  cursor: "default",
+                  padding: "22px 20px 20px",
+                  background: "linear-gradient(145deg, rgba(255,255,255,0.042) 0%, rgba(255,255,255,0.016) 100%)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
+                  border: "1px solid rgba(212,175,55,0.14)",
+                  borderRadius: "18px",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)",
+                  transition: "box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease",
                 }}
-                onHoverStart={e => {
-                  (e.target as HTMLElement).style.borderColor = "rgba(212,175,55,0.4)";
-                  (e.target as HTMLElement).style.boxShadow = "0 0 18px rgba(212,175,55,0.1)";
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = "rgba(212,175,55,0.48)";
+                  el.style.boxShadow = "0 0 0 1px rgba(212,175,55,0.15), 0 14px 40px rgba(212,175,55,0.1), inset 0 1px 0 rgba(255,255,255,0.07)";
                 }}
-                onHoverEnd={e => {
-                  (e.target as HTMLElement).style.borderColor = "rgba(212,175,55,0.12)";
-                  (e.target as HTMLElement).style.boxShadow = "none";
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = "rgba(212,175,55,0.14)";
+                  el.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.05)";
                 }}
               >
-                {/* Icon */}
-                <div
-                  style={{
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "8px",
-                    background: "rgba(212,175,55,0.08)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: "12px",
-                    transition: "background 0.3s ease, box-shadow 0.3s ease",
-                  }}
-                  className="why-icon"
-                >
-                  <reason.icon
-                    style={{ width: "17px", height: "17px", color: "#D4AF37" }}
-                  />
+                {/* Top shimmer */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ width: "50%", background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
+
+                {/* Icon box */}
+                <div className="mb-4 relative" style={{ width: "fit-content" }}>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)", filter: "blur(8px)", transform: "scale(1.5)" }} />
+                  <div style={{ width: "42px", height: "42px", borderRadius: "11px", background: "rgba(212,175,55,0.07)", border: "1px solid rgba(212,175,55,0.2)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
+                    <reason.icon style={{ width: "18px", height: "18px", color: "#D4AF37" }} strokeWidth={1.5} />
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3
-                  style={{
-                    fontSize: "13px",
-                    fontWeight: 700,
-                    color: "#ffffff",
-                    marginBottom: "6px",
-                    lineHeight: 1.3,
-                  }}
-                >
+                <h3 style={{ fontSize: "13px", fontWeight: 700, color: "rgba(255,255,255,0.92)", marginBottom: "7px", lineHeight: 1.3 }}>
                   {reason.title}
                 </h3>
 
+                {/* Accent line */}
+                <div style={{ width: "18px", height: "1px", background: "rgba(212,175,55,0.4)", marginBottom: "8px" }} />
+
                 {/* Description */}
-                <p
-                  style={{
-                    fontSize: "12px",
-                    color: "#999",
-                    lineHeight: 1.6,
-                  }}
-                >
+                <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.42)", lineHeight: 1.7 }}>
                   {reason.desc}
                 </p>
               </motion.div>

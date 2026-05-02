@@ -40,17 +40,6 @@ export function HowItWorks() {
 
         {/* Heading */}
         <div className="text-center mb-14 md:mb-16">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-[#D4AF37] uppercase tracking-[0.3em] text-[11px] mb-4"
-            style={{ fontFamily: "Inter, sans-serif" }}
-          >
-            Η Διαδικασία μας
-          </motion.p>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

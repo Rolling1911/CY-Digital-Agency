@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage, Language, languageNames } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export function Header() {
   const { t, lang, setLang } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
@@ -75,8 +77,22 @@ export function Header() {
           ))}
         </nav>
 
-        {/* RIGHT — Language switcher + CTA + hamburger */}
-        <div className="flex items-center" style={{ gap: "16px" }}>
+        {/* RIGHT — Theme toggle + Language switcher + CTA + hamburger */}
+        <div className="flex items-center" style={{ gap: "12px" }}>
+
+          {/* Theme toggle — desktop + mobile */}
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle-btn"
+            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            data-testid="button-theme-toggle"
+            title={theme === "dark" ? "Light mode" : "Dark mode"}
+          >
+            {theme === "dark"
+              ? <Sun size={16} strokeWidth={1.6} />
+              : <Moon size={16} strokeWidth={1.6} />
+            }
+          </button>
 
           {/* Language switcher */}
           <div className="relative">
@@ -149,25 +165,43 @@ export function Header() {
                 {link.name}
               </button>
             ))}
-            {/* Mobile language row */}
-            <div className="flex gap-3 pt-4 pb-1">
-              {langs.map((l) => (
-                <button
-                  key={l}
-                  onClick={() => { setLang(l); setMobileMenuOpen(false); }}
-                  style={{
-                    fontSize: "11px", letterSpacing: "2px", fontWeight: 700,
-                    fontFamily: "'Cinzel', serif",
-                    color: l === lang ? "#D4AF37" : "rgba(255,255,255,0.45)",
-                    padding: "4px 0",
-                    borderBottom: l === lang ? "1px solid #D4AF37" : "1px solid transparent",
-                    transition: "color 0.2s ease",
-                  }}
-                >
-                  {languageNames[l]}
-                </button>
-              ))}
+
+            {/* Mobile: Language + Theme row */}
+            <div className="flex items-center justify-between pt-4 pb-1">
+              <div className="flex gap-3">
+                {langs.map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => { setLang(l); setMobileMenuOpen(false); }}
+                    style={{
+                      fontSize: "11px", letterSpacing: "2px", fontWeight: 700,
+                      fontFamily: "'Cinzel', serif",
+                      color: l === lang ? "#D4AF37" : "rgba(255,255,255,0.45)",
+                      padding: "4px 0",
+                      borderBottom: l === lang ? "1px solid #D4AF37" : "1px solid transparent",
+                      transition: "color 0.2s ease",
+                    }}
+                  >
+                    {languageNames[l]}
+                  </button>
+                ))}
+              </div>
+
+              {/* Mobile theme toggle */}
+              <button
+                onClick={toggleTheme}
+                className="theme-toggle-btn"
+                aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                data-testid="button-theme-toggle-mobile"
+                style={{ marginLeft: "auto" }}
+              >
+                {theme === "dark"
+                  ? <Sun size={15} strokeWidth={1.6} />
+                  : <Moon size={15} strokeWidth={1.6} />
+                }
+              </button>
             </div>
+
             <Button
               onClick={() => handleNavClick("#contact")}
               className="bg-[#D4AF37] text-black font-semibold uppercase tracking-widest text-xs px-6 py-3 mt-4 w-full rounded-sm"

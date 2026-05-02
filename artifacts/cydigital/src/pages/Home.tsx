@@ -21,9 +21,9 @@ export default function Home() {
         <TrustBar />
         <Services />
         <HowItWorks />
+        <Portfolio />
         <Packages />
         <ContentCreation />
-        <Portfolio />
         <WhyUs />
         <Testimonials />
         <StrongCta />

@@ -38,9 +38,9 @@ const items: { title: string; category: string; result: string; bg: string; labe
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 bg-black">
+    <section id="portfolio" className="py-14 md:py-16 bg-black">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

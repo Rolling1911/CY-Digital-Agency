@@ -52,7 +52,7 @@ export function ContentCreation() {
   };
 
   return (
-    <section id="content-creation" className="py-24 bg-[#050505] relative overflow-hidden">
+    <section id="content-creation" className="py-14 md:py-16 bg-[#050505] relative overflow-hidden">
       {/* Subtle background glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
@@ -64,7 +64,7 @@ export function ContentCreation() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
 
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           {/* NEW badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.7 }}
@@ -124,7 +124,7 @@ export function ContentCreation() {
         </div>
 
         {/* Feature cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {features.map((f, i) => (
             <motion.div
               key={i}

@@ -50,11 +50,11 @@ export function Packages() {
   };
 
   return (
-    <section id="packages" className="py-24 bg-background">
+    <section id="packages" className="py-14 md:py-16 bg-background">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

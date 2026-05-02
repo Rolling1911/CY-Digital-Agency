@@ -36,7 +36,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="relative py-20 md:py-24 bg-[#080808] overflow-hidden">
+    <section id="services" className="relative py-14 md:py-16 bg-[#080808] overflow-hidden">
 
       {/* Ambient glow */}
       <div
@@ -49,7 +49,7 @@ export function Services() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
 
         {/* Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

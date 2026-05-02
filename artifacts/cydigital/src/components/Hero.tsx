@@ -24,13 +24,13 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 md:px-8 relative z-30">
-        <div className="max-w-[900px] mx-auto text-center flex flex-col items-center pt-24 pb-14 md:pt-[120px] md:pb-[100px]">
+        <div className="max-w-[900px] mx-auto text-center flex flex-col items-center pt-16 pb-10 md:pt-[100px] md:pb-[80px]">
           {/* Top label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-8 flex flex-col items-center"
+            className="mb-5 flex flex-col items-center"
           >
             <motion.span
               className="text-[#D4AF37] font-semibold uppercase"
@@ -86,7 +86,7 @@ export function Hero() {
               lineHeight: 1.7,
               color: "#BFBFBF",
               maxWidth: "600px",
-              margin: "28px auto 0",
+              margin: "18px auto 0",
             }}
           >
             Premium ιστοσελίδες, branding και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν.
@@ -98,7 +98,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            style={{ marginTop: "40px" }}
+            style={{ marginTop: "28px" }}
           >
             <Button
               onClick={scrollToContact}

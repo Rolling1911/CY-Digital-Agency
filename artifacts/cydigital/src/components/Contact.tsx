@@ -79,11 +79,11 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-[#0B0B0B] relative">
+    <section id="contact" className="py-14 md:py-16 bg-[#0B0B0B] relative">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Section title */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

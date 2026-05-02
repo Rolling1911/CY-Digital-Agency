@@ -25,7 +25,7 @@ const stats = [
 
 export function TrustBar() {
   return (
-    <section className="relative bg-[#080808] py-16 md:py-20 overflow-hidden">
+    <section className="relative bg-[#080808] py-10 md:py-14 overflow-hidden">
       {/* Ambient gold glow behind cards */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -55,7 +55,7 @@ export function TrustBar() {
               }}
               className="relative group cursor-default text-center"
               style={{
-                padding: "32px 20px 28px",
+                padding: "22px 16px 18px",
                 background:
                   "linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%)",
                 backdropFilter: "blur(12px)",

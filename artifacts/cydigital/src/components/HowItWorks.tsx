@@ -25,7 +25,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-20 md:py-24 bg-[#060606] overflow-hidden">
+    <section id="how-it-works" className="relative py-14 md:py-16 bg-[#060606] overflow-hidden">
 
       {/* Ambient background glow */}
       <div
@@ -39,7 +39,7 @@ export function HowItWorks() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
 
         {/* Heading */}
-        <div className="text-center mb-14 md:mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export function HowItWorks() {
                 whileHover={{ y: -6 }}
                 className="group relative cursor-default"
                 style={{
-                  padding: "36px 24px 32px",
+                  padding: "28px 20px 24px",
                   background:
                     "linear-gradient(145deg, rgba(255,255,255,0.042) 0%, rgba(255,255,255,0.016) 100%)",
                   backdropFilter: "blur(10px)",

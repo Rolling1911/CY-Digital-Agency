@@ -12,7 +12,7 @@ export function StrongCta() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ paddingTop: "80px", paddingBottom: "80px", background: "#080808" }}
+      style={{ paddingTop: "60px", paddingBottom: "60px", background: "#080808" }}
     >
       {/* Deep ambient glow */}
       <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,55,0.055) 0%, transparent 70%)" }} />

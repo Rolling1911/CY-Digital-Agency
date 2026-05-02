@@ -182,7 +182,7 @@ export function ContentCreation() {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.55, delay: i * 0.07 }}
                 className="group relative overflow-hidden cursor-pointer"
-                style={{ aspectRatio: "16/10" }}
+                style={{ aspectRatio: "4/5" }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 1px rgba(212,175,55,0.5), 0 0 30px rgba(212,175,55,0.12)";
                 }}

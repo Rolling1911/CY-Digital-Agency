@@ -125,38 +125,24 @@ export function HowItWorks() {
                   }}
                 />
 
-                {/* Large faded step number (background) */}
-                <div
-                  className="absolute top-3 left-0 right-0 text-center pointer-events-none select-none"
-                  style={{
-                    fontSize: "90px",
-                    fontWeight: 800,
-                    fontFamily: "Cormorant Garamond, serif",
-                    color: "rgba(212,175,55,0.055)",
-                    lineHeight: 1,
-                    letterSpacing: "-4px",
-                    userSelect: "none",
-                  }}
-                >
-                  {step.num}
-                </div>
-
-                {/* Step indicator dot with number */}
-                <div className="relative z-10 mb-5">
+                {/* Step circle */}
+                <div className="relative z-10 mb-5 flex justify-center">
                   <div
-                    className="inline-flex items-center justify-center mx-auto"
+                    className="group-hover:shadow-[0_0_18px_rgba(212,175,55,0.35)] group-hover:border-[rgba(212,175,55,0.6)] transition-all duration-350"
                     style={{
-                      width: "44px",
-                      height: "44px",
+                      width: "52px",
+                      height: "52px",
                       borderRadius: "50%",
                       border: "1px solid rgba(212,175,55,0.35)",
                       background: "rgba(212,175,55,0.07)",
-                      transition: "box-shadow 0.35s ease, border-color 0.35s ease",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
                     <span
                       style={{
-                        fontSize: "14px",
+                        fontSize: "15px",
                         fontWeight: 700,
                         color: "#D4AF37",
                         fontFamily: "Cormorant Garamond, serif",

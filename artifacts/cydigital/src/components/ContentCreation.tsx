@@ -44,24 +44,6 @@ const portfolioItems = [
     bg: "from-[#0a1a0a] via-[#0d200d] to-[#0a1a0a]",
     isVideo: false,
   },
-  {
-    title: "Reels Campaign",
-    desc: "Short-form content",
-    bg: "from-[#1a000a] via-[#250010] to-[#1a000a]",
-    isVideo: true,
-  },
-  {
-    title: "Εταιρικό Βίντεο",
-    desc: "Corporate production",
-    bg: "from-[#0a1220] via-[#0d1828] to-[#0a1220]",
-    isVideo: true,
-  },
-  {
-    title: "Lifestyle Content",
-    desc: "Authentic brand moments",
-    bg: "from-[#1a1400] via-[#221a00] to-[#1a1400]",
-    isVideo: false,
-  },
 ];
 
 export function ContentCreation() {

@@ -131,32 +131,44 @@ export function ContentCreation() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.55, delay: i * 0.08 }}
-              className="group relative border border-white/6 bg-[#0D0D0D] p-6 cursor-default transition-all duration-400"
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{ y: -6 }}
+              className="group relative cursor-default"
               style={{
-                transition: "box-shadow 0.4s ease, border-color 0.4s ease",
+                padding: "28px 24px 26px",
+                background: "linear-gradient(145deg, rgba(255,255,255,0.042) 0%, rgba(255,255,255,0.016) 100%)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                border: "1px solid rgba(212,175,55,0.14)",
+                borderRadius: "18px",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)",
+                transition: "box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 28px rgba(212,175,55,0.14)";
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,55,0.35)";
+                const el = e.currentTarget as HTMLElement;
+                el.style.borderColor = "rgba(212,175,55,0.48)";
+                el.style.boxShadow = "0 0 0 1px rgba(212,175,55,0.15), 0 14px 40px rgba(212,175,55,0.1), inset 0 1px 0 rgba(255,255,255,0.07)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.06)";
+                const el = e.currentTarget as HTMLElement;
+                el.style.borderColor = "rgba(212,175,55,0.14)";
+                el.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.05)";
               }}
             >
-              {/* Top gold line */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+              {/* Top shimmer */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ width: "50%", background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
 
-              <div
-                className="w-11 h-11 mb-5 flex items-center justify-center border border-[#D4AF37]/25"
-                style={{ background: "rgba(212,175,55,0.07)" }}
-              >
-                <f.icon size={20} className="text-[#D4AF37]" strokeWidth={1.5} />
+              {/* Icon box */}
+              <div className="mb-5 relative" style={{ width: "fit-content" }}>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)", filter: "blur(8px)", transform: "scale(1.5)" }} />
+                <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(212,175,55,0.07)", border: "1px solid rgba(212,175,55,0.2)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
+                  <f.icon size={22} className="text-[#D4AF37]" strokeWidth={1.5} />
+                </div>
               </div>
 
-              <h3 className="text-white font-semibold text-sm mb-2 leading-snug">{f.title}</h3>
-              <p className="text-white/45 text-xs leading-relaxed">{f.desc}</p>
+              <h3 style={{ fontSize: "15px", fontWeight: 700, color: "rgba(255,255,255,0.92)", marginBottom: "8px", lineHeight: 1.3 }}>{f.title}</h3>
+              <div style={{ width: "22px", height: "1px", background: "rgba(212,175,55,0.4)", marginBottom: "10px" }} />
+              <p style={{ color: "rgba(255,255,255,0.42)", lineHeight: 1.75, fontSize: "13px" }}>{f.desc}</p>
             </motion.div>
           ))}
         </div>

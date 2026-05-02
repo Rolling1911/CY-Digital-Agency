@@ -11,8 +11,11 @@ import { Testimonials } from "@/components/Testimonials";
 import { StrongCta } from "@/components/StrongCta";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Header />
@@ -30,14 +33,14 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      
+
       {/* Floating Mobile CTA */}
       <button
         className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:hidden bg-[#D4AF37] text-black font-semibold uppercase tracking-widest text-xs px-8 py-3 shadow-[0_0_20px_rgba(212,175,55,0.4)] whitespace-nowrap"
         data-testid="button-floating-cta"
         onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
       >
-        Ζητήστε Προσφορά
+        {t.floating_cta}
       </button>
     </div>
   );

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Hero() {
+  const { t } = useLanguage();
+
   const scrollToContact = () => {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -12,7 +15,6 @@ export function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden flex items-start md:items-center justify-center md:min-h-[100dvh]">
-      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-background/60 md:bg-background/50 z-10" />
         <img
@@ -25,7 +27,6 @@ export function Hero() {
 
       <div className="container mx-auto px-6 md:px-8 relative z-30">
         <div className="max-w-[900px] mx-auto text-center flex flex-col items-center pt-[100px] pb-8 md:pt-[100px] md:pb-[80px]">
-          {/* Top label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,61 +39,41 @@ export function Hero() {
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              Cyprus Digital Agency
+              {t.hero_label}
             </motion.span>
             <div className="w-20 h-px mt-3 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="font-display font-bold text-foreground text-center"
-            style={{
-              fontSize: "clamp(26px, 4.2vw, 58px)",
-              lineHeight: 1.35,
-              letterSpacing: "0.5px",
-              maxWidth: "860px",
-            }}
+            style={{ fontSize: "clamp(26px, 4.2vw, 58px)", lineHeight: 1.35, letterSpacing: "0.5px", maxWidth: "860px" }}
           >
-            Χτίζουμε ψηφιακές εμπειρίες που φέρνουν
+            {t.hero_headline}
           </motion.h1>
 
-          {/* Highlighted word */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
             className="font-display font-bold text-[#D4AF37] text-center"
-            style={{
-              fontSize: "clamp(28px, 4.8vw, 66px)",
-              lineHeight: 1.2,
-              letterSpacing: "4px",
-              marginTop: "8px",
-            }}
+            style={{ fontSize: "clamp(28px, 4.8vw, 66px)", lineHeight: 1.2, letterSpacing: "4px", marginTop: "8px" }}
           >
-            ΑΠΟΤΕΛΕΣΜΑΤΑ
+            {t.hero_accent}
           </motion.div>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
-            style={{
-              fontSize: "18px",
-              lineHeight: 1.7,
-              color: "#BFBFBF",
-              maxWidth: "600px",
-              margin: "18px auto 0",
-            }}
+            style={{ fontSize: "18px", lineHeight: 1.7, color: "#BFBFBF", maxWidth: "600px", margin: "18px auto 0" }}
           >
-            Premium ιστοσελίδες, branding και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν.
+            {t.hero_subtitle}
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -106,7 +87,7 @@ export function Hero() {
               style={{ padding: "14px 28px", fontSize: "13px", height: "auto" }}
               data-testid="button-hero-primary"
             >
-              Κλείστε μια Συνάντηση
+              {t.hero_btn_primary}
             </Button>
             <Button
               onClick={scrollToPortfolio}
@@ -115,7 +96,7 @@ export function Hero() {
               style={{ padding: "14px 28px", fontSize: "13px", height: "auto" }}
               data-testid="button-hero-secondary"
             >
-              Δείτε τη Δουλειά μας
+              {t.hero_btn_secondary}
             </Button>
           </motion.div>
         </div>

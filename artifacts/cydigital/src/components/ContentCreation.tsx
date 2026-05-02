@@ -194,7 +194,7 @@ export function ContentCreation() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                 />
 
                 {/* Dark base overlay */}

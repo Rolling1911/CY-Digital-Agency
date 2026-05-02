@@ -39,11 +39,12 @@ const trustPoints = [
 ];
 
 const inputClass = `
-  w-full bg-transparent text-white placeholder-[#666]
-  border border-white/10 rounded-[10px]
+  w-full text-white placeholder-[#4a4a4a]
+  border border-[rgba(212,175,55,0.14)] rounded-[10px]
   px-4 py-3.5 text-sm outline-none
-  transition-all duration-200
-  focus:border-[#D4AF37] focus:shadow-[0_0_10px_rgba(212,175,55,0.2)]
+  transition-all duration-250
+  focus:border-[#D4AF37] focus:shadow-[0_0_14px_rgba(212,175,55,0.18)]
+  hover:border-[rgba(212,175,55,0.28)]
 `;
 
 export function Contact() {
@@ -186,13 +187,24 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.1 }}
+            className="relative"
             style={{
-              background: "rgba(255,255,255,0.02)",
-              border: "1px solid rgba(212,175,55,0.15)",
-              borderRadius: "16px",
-              padding: "36px 32px",
+              background: "linear-gradient(145deg, rgba(255,255,255,0.042) 0%, rgba(255,255,255,0.016) 100%)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              border: "1px solid rgba(212,175,55,0.18)",
+              borderRadius: "22px",
+              padding: "38px 34px",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 80px rgba(0,0,0,0.35)",
             }}
           >
+            {/* Top shimmer */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px" style={{ width: "55%", background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent)", borderRadius: "99px" }} />
+            {/* Corner accents */}
+            <div className="absolute top-0 left-0 pointer-events-none" style={{ width: "20px", height: "20px", borderTop: "1px solid rgba(212,175,55,0.35)", borderLeft: "1px solid rgba(212,175,55,0.35)", borderTopLeftRadius: "22px" }} />
+            <div className="absolute top-0 right-0 pointer-events-none" style={{ width: "20px", height: "20px", borderTop: "1px solid rgba(212,175,55,0.35)", borderRight: "1px solid rgba(212,175,55,0.35)", borderTopRightRadius: "22px" }} />
+            <div className="absolute bottom-0 left-0 pointer-events-none" style={{ width: "20px", height: "20px", borderBottom: "1px solid rgba(212,175,55,0.35)", borderLeft: "1px solid rgba(212,175,55,0.35)", borderBottomLeftRadius: "22px" }} />
+            <div className="absolute bottom-0 right-0 pointer-events-none" style={{ width: "20px", height: "20px", borderBottom: "1px solid rgba(212,175,55,0.35)", borderRight: "1px solid rgba(212,175,55,0.35)", borderBottomRightRadius: "22px" }} />
             {isSubmitted ? (
               <div style={{ textAlign: "center", padding: "48px 0" }}>
                 <div
@@ -231,18 +243,18 @@ export function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FormField control={form.control} name="name" render={({ field }) => (
                       <FormItem>
-                        <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Το όνομά σας</FormLabel>
+                        <FormLabel style={{ fontSize: "11.5px", color: "rgba(212,175,55,0.7)", letterSpacing: "1px", textTransform: "uppercase" }}>Το όνομά σας</FormLabel>
                         <FormControl>
-                          <input className={inputClass} placeholder="π.χ. Γιάννης Παπαδόπουλος" {...field} data-testid="input-name" />
+                          <input className={inputClass} style={{ background: "rgba(0,0,0,0.25)" }} placeholder="π.χ. Γιάννης Παπαδόπουλος" {...field} data-testid="input-name" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )} />
                     <FormField control={form.control} name="company" render={({ field }) => (
                       <FormItem>
-                        <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Επιχείρηση</FormLabel>
+                        <FormLabel style={{ fontSize: "11.5px", color: "rgba(212,175,55,0.7)", letterSpacing: "1px", textTransform: "uppercase" }}>Επιχείρηση</FormLabel>
                         <FormControl>
-                          <input className={inputClass} placeholder="π.χ. Το Καφέ μου" {...field} data-testid="input-company" />
+                          <input className={inputClass} style={{ background: "rgba(0,0,0,0.25)" }} placeholder="π.χ. Το Καφέ μου" {...field} data-testid="input-company" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -253,18 +265,18 @@ export function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FormField control={form.control} name="phone" render={({ field }) => (
                       <FormItem>
-                        <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Τηλέφωνο επικοινωνίας</FormLabel>
+                        <FormLabel style={{ fontSize: "11.5px", color: "rgba(212,175,55,0.7)", letterSpacing: "1px", textTransform: "uppercase" }}>Τηλέφωνο επικοινωνίας</FormLabel>
                         <FormControl>
-                          <input className={inputClass} placeholder="π.χ. 99 123456" {...field} data-testid="input-phone" />
+                          <input className={inputClass} style={{ background: "rgba(0,0,0,0.25)" }} placeholder="π.χ. 99 123456" {...field} data-testid="input-phone" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )} />
                     <FormField control={form.control} name="email" render={({ field }) => (
                       <FormItem>
-                        <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Email</FormLabel>
+                        <FormLabel style={{ fontSize: "11.5px", color: "rgba(212,175,55,0.7)", letterSpacing: "1px", textTransform: "uppercase" }}>Email</FormLabel>
                         <FormControl>
-                          <input className={inputClass} placeholder="email@example.com" type="email" {...field} data-testid="input-email" />
+                          <input className={inputClass} style={{ background: "rgba(0,0,0,0.25)" }} placeholder="email@example.com" type="email" {...field} data-testid="input-email" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -275,23 +287,27 @@ export function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FormField control={form.control} name="city" render={({ field }) => (
                       <FormItem>
-                        <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Περιοχή</FormLabel>
+                        <FormLabel style={{ fontSize: "11.5px", color: "rgba(212,175,55,0.7)", letterSpacing: "1px", textTransform: "uppercase" }}>Περιοχή</FormLabel>
                         <FormControl>
-                          <input className={inputClass} placeholder="π.χ. Λευκωσία" {...field} data-testid="input-city" />
+                          <input className={inputClass} style={{ background: "rgba(0,0,0,0.25)" }} placeholder="π.χ. Λευκωσία" {...field} data-testid="input-city" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )} />
                     <FormField control={form.control} name="service" render={({ field }) => (
                       <FormItem>
-                        <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Υπηρεσία που σας ενδιαφέρει</FormLabel>
+                        <FormLabel style={{ fontSize: "11.5px", color: "rgba(212,175,55,0.7)", letterSpacing: "1px", textTransform: "uppercase" }}>Υπηρεσία που σας ενδιαφέρει</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger className="bg-transparent border-white/10 focus:ring-[#D4AF37] h-[50px] text-sm rounded-[10px]" data-testid="select-service">
+                            <SelectTrigger
+                              className="focus:ring-[#D4AF37] h-[50px] text-sm rounded-[10px]"
+                              style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(212,175,55,0.14)" }}
+                              data-testid="select-service"
+                            >
                               <SelectValue placeholder="Επιλέξτε..." />
                             </SelectTrigger>
                           </FormControl>
-                          <SelectContent className="bg-[#111] border-white/10">
+                          <SelectContent className="bg-[#0f0f0f] border-[rgba(212,175,55,0.2)]">
                             <SelectItem value="web">Δημιουργία Ιστοσελίδας</SelectItem>
                             <SelectItem value="social">Social Media Management</SelectItem>
                             <SelectItem value="graphics">Γραφιστικά & Δημιουργικά</SelectItem>
@@ -309,11 +325,12 @@ export function Contact() {
                   {/* Message */}
                   <FormField control={form.control} name="message" render={({ field }) => (
                     <FormItem>
-                      <FormLabel style={{ fontSize: "12px", color: "#888", letterSpacing: "0.5px" }}>Μήνυμα (Προαιρετικό)</FormLabel>
+                      <FormLabel style={{ fontSize: "11.5px", color: "rgba(212,175,55,0.7)", letterSpacing: "1px", textTransform: "uppercase" }}>Μήνυμα (Προαιρετικό)</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Πείτε μας λίγα λόγια για τις ανάγκες σας..."
-                          className="bg-transparent border-white/10 focus-visible:ring-[#D4AF37] min-h-[100px] resize-none rounded-[10px] text-sm"
+                          className="focus-visible:ring-[#D4AF37] min-h-[100px] resize-none rounded-[10px] text-sm placeholder-[#4a4a4a]"
+                          style={{ background: "rgba(0,0,0,0.25)", border: "1px solid rgba(212,175,55,0.14)", color: "#fff" }}
                           {...field}
                           data-testid="input-message"
                         />
@@ -368,9 +385,15 @@ export function Contact() {
                   )}
 
                   {/* Trust note */}
-                  <p style={{ textAlign: "center", fontSize: "11.5px", color: "#666", letterSpacing: "0.3px" }}>
-                    🔒 Τα στοιχεία σας παραμένουν απολύτως εμπιστευτικά.
-                  </p>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "7px" }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    <p style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.3)", letterSpacing: "0.4px", margin: 0 }}>
+                      Τα στοιχεία σας παραμένουν απολύτως εμπιστευτικά.
+                    </p>
+                  </div>
 
                 </form>
               </Form>

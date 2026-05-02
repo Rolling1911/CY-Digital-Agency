@@ -22,7 +22,7 @@ router.post("/contact", async (req, res) => {
 
   const serviceLabel = serviceLabels[service] || service;
 
-  const gmailUser = process.env.GMAIL_USER || "rollingcy@gmail.com";
+  const gmailUser = process.env.GMAIL_USER || "fanosafrica@gmail.com";
   const gmailPass = process.env.GMAIL_APP_PASSWORD;
 
   if (!gmailPass) {

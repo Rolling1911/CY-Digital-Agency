@@ -18,6 +18,7 @@ router.post("/contact", async (req, res) => {
     branding: "Logo & Branding",
     google: "Google Business Profile",
     ads: "Διαφημίσεις Facebook & Instagram",
+    content: "Δημιουργία Περιεχομένου",
   };
 
   const serviceLabel = serviceLabels[service] || service;

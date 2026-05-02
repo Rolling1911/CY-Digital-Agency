@@ -298,6 +298,7 @@ export function Contact() {
                             <SelectItem value="branding">Logo & Branding</SelectItem>
                             <SelectItem value="google">Google Business Profile</SelectItem>
                             <SelectItem value="ads">Διαφημίσεις Facebook & Instagram</SelectItem>
+                            <SelectItem value="content">Δημιουργία Περιεχομένου</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />

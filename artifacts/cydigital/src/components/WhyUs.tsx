@@ -62,8 +62,8 @@ export function WhyUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Label */}
-            <div style={{ marginBottom: "16px" }}>
+            {/* Label — hidden on mobile */}
+            <div className="hidden sm:block" style={{ marginBottom: "16px" }}>
               <motion.span
                 animate={{ opacity: [0.5, 1, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

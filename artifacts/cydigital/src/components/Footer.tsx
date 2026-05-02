@@ -17,9 +17,11 @@ const socials = [
 ];
 
 const contactItems = [
-  { icon: MapPin, text: "Λάρνακα, Κύπρος",       href: undefined },
-  { icon: Mail,   text: "info@cydigital.agency",  href: "mailto:info@cydigital.agency" },
-  { icon: Phone,  text: "+357 94 344355",          href: "tel:+35794344355" },
+  { icon: MapPin, text: "Λάρνακα, Κύπρος",        href: undefined },
+  { icon: MapPin, text: "Pietarsaari, Finland",    href: undefined },
+  { icon: Mail,   text: "info@cydigital.agency",   href: "mailto:info@cydigital.agency" },
+  { icon: Phone,  text: "+357 94 344355",           href: "tel:+35794344355" },
+  { icon: Phone,  text: "+358 413697192",           href: "tel:+358413697192" },
 ];
 
 /** Luxury vertical gold divider with diamond ornaments top & bottom */

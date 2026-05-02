@@ -38,7 +38,7 @@ const items: { title: string; category: string; result: string; bg: string; labe
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="py-14 md:py-16 bg-black">
+    <section id="portfolio" className="pt-14 pb-8 md:pt-16 md:pb-10 bg-black">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
           <motion.h2

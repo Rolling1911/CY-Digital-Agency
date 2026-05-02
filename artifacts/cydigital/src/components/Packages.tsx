@@ -50,7 +50,7 @@ export function Packages() {
   };
 
   return (
-    <section id="packages" className="py-14 md:py-16 bg-background">
+    <section id="packages" className="pt-8 pb-14 md:pt-10 md:pb-16 bg-background">
       <div className="container mx-auto px-4 md:px-6">
 
         {/* Heading */}

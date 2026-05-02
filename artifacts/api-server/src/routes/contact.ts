@@ -60,7 +60,7 @@ router.post("/contact", async (req, res) => {
   try {
     await transporter.sendMail({
       from: `"CYDigital Website" <${gmailUser}>`,
-      to: "rollingcy@gmail.com",
+      to: "info@cydigital.agency",
       subject: `Νέα Επικοινωνία — ${name} (${company})`,
       html,
     });

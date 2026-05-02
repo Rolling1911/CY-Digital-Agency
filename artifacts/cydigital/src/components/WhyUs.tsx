@@ -98,10 +98,9 @@ export function WhyUs() {
             {/* Gold rule */}
             <div
               style={{
-                width: "48px",
-                height: "3px",
-                background: "#D4AF37",
-                borderRadius: "2px",
+                width: "80px",
+                height: "1px",
+                background: "linear-gradient(to right, transparent, #D4AF37, transparent)",
                 marginBottom: "28px",
               }}
             />

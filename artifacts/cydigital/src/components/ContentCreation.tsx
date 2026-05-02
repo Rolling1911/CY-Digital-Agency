@@ -108,7 +108,7 @@ export function ContentCreation() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-24 h-px bg-[#D4AF37] mx-auto mb-6"
+            className="w-32 h-px mx-auto mb-6 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
           />
 
           <motion.p

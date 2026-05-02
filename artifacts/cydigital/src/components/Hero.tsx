@@ -40,7 +40,7 @@ export function Hero() {
             >
               Cyprus Digital Agency
             </motion.span>
-            <div className="w-12 h-px bg-[#D4AF37] mt-3" style={{ opacity: 0.6 }} />
+            <div className="w-20 h-px mt-3 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
           </motion.div>
 
           {/* Headline */}

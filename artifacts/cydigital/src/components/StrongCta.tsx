@@ -128,23 +128,6 @@ export function StrongCta() {
           διασφαλίζουμε κορυφαία αποτελέσματα.
         </motion.p>
 
-        {/* Urgency */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.18 }}
-          style={{
-            fontSize: "12px",
-            letterSpacing: "1.5px",
-            textTransform: "uppercase",
-            color: "#D4AF37",
-            fontWeight: 600,
-            marginBottom: "52px",
-          }}
-        >
-          Περιορισμένες θέσεις διαθέσιμες — Επικοινωνήστε σήμερα
-        </motion.p>
 
         {/* Buttons */}
         <motion.div

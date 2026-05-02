@@ -67,7 +67,7 @@ export function Testimonials() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full"
+            className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
           />
         </div>
 

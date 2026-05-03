@@ -3,6 +3,9 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage, Language, languageNames } from "@/contexts/LanguageContext";
 
+const NAV_FONT = "'Cormorant Garamond', Georgia, serif";
+const LABEL_FONT = "'Cinzel', 'Cormorant Garamond', Georgia, serif";
+
 export function Header() {
   const { t, lang, setLang } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,14 +63,19 @@ export function Header() {
           />
         </div>
 
-        {/* CENTER — Nav menu (desktop) */}
-        <nav className="hidden md:flex items-center" style={{ gap: "34px" }}>
+        {/* CENTER — Nav (desktop) */}
+        <nav className="hidden md:flex items-center" style={{ gap: "22px" }}>
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => handleNavClick(link.href)}
               className="uppercase text-white/70 hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap"
-              style={{ fontFamily: "'Cinzel', 'Cormorant Garamond', Georgia, serif", fontSize: "11px", letterSpacing: "3px", fontWeight: 400 }}
+              style={{
+                fontFamily: NAV_FONT,
+                fontSize: "11px",
+                letterSpacing: "2px",
+                fontWeight: 600,
+              }}
               data-testid={`link-${link.href.replace("#", "")}`}
             >
               {link.name}
@@ -76,7 +84,7 @@ export function Header() {
         </nav>
 
         {/* RIGHT — Language switcher + CTA + hamburger */}
-        <div className="flex items-center" style={{ gap: "16px" }}>
+        <div className="flex items-center" style={{ gap: "16px", marginLeft: "16px" }}>
 
           {/* Language switcher */}
           <div className="relative">
@@ -84,7 +92,7 @@ export function Header() {
               onClick={() => setLangOpen(!langOpen)}
               onBlur={() => setTimeout(() => setLangOpen(false), 150)}
               className="flex items-center gap-1 text-white/60 hover:text-[#D4AF37] transition-colors duration-200"
-              style={{ fontSize: "11px", letterSpacing: "2px", fontWeight: 700, fontFamily: "'Cinzel', serif" }}
+              style={{ fontSize: "11px", letterSpacing: "2px", fontWeight: 700, fontFamily: LABEL_FONT }}
             >
               {languageNames[lang]}
               <svg width="8" height="5" viewBox="0 0 8 5" fill="currentColor" style={{ opacity: 0.6, marginTop: "1px" }}>
@@ -103,7 +111,7 @@ export function Header() {
                     className="w-full text-left px-4 py-2 transition-colors duration-150 hover:bg-[rgba(212,175,55,0.08)]"
                     style={{
                       fontSize: "11px", letterSpacing: "2px", fontWeight: 700,
-                      fontFamily: "'Cinzel', serif",
+                      fontFamily: LABEL_FONT,
                       color: l === lang ? "#D4AF37" : "rgba(255,255,255,0.6)",
                     }}
                   >
@@ -118,6 +126,7 @@ export function Header() {
             <Button
               onClick={() => handleNavClick("#contact")}
               className="bg-[#D4AF37] text-black font-semibold tracking-[0.1em] uppercase text-xs px-6 py-2.5 rounded-sm hover:bg-[#D4AF37]/90 transition-all duration-300 hover:shadow-[0_0_18px_rgba(212,175,55,0.3)]"
+              style={{ fontFamily: NAV_FONT, letterSpacing: "2.5px", fontSize: "11px" }}
               data-testid="button-header-cta"
             >
               {t.nav_cta}
@@ -143,7 +152,12 @@ export function Header() {
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
                 className="text-left text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 uppercase"
-                style={{ fontFamily: "'Cinzel', 'Cormorant Garamond', Georgia, serif", fontSize: "12px", letterSpacing: "3px", fontWeight: 400 }}
+                style={{
+                  fontFamily: NAV_FONT,
+                  fontSize: "12px",
+                  letterSpacing: "3px",
+                  fontWeight: 600,
+                }}
                 data-testid={`link-mobile-${link.href.replace("#", "")}`}
               >
                 {link.name}
@@ -156,7 +170,7 @@ export function Header() {
                   onClick={() => { setLang(l); setMobileMenuOpen(false); }}
                   style={{
                     fontSize: "11px", letterSpacing: "2px", fontWeight: 700,
-                    fontFamily: "'Cinzel', serif",
+                    fontFamily: LABEL_FONT,
                     color: l === lang ? "#D4AF37" : "rgba(255,255,255,0.45)",
                     padding: "4px 0",
                     borderBottom: l === lang ? "1px solid #D4AF37" : "1px solid transparent",
@@ -170,6 +184,7 @@ export function Header() {
             <Button
               onClick={() => handleNavClick("#contact")}
               className="bg-[#D4AF37] text-black font-semibold uppercase tracking-widest text-xs px-6 py-3 mt-4 w-full rounded-sm"
+              style={{ fontFamily: NAV_FONT, letterSpacing: "2.5px", fontSize: "11px" }}
               data-testid="button-mobile-header-cta"
             >
               {t.nav_cta}

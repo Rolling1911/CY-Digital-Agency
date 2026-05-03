@@ -1,24 +1,22 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage, Language, languageNames } from "@/contexts/LanguageContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const NAV_FONT = "'Cormorant Garamond', Georgia, serif";
-const LABEL_FONT = "'Cinzel', 'Cormorant Garamond', Georgia, serif";
 
 export function Header() {
-  const { t, lang, setLang } = useLanguage();
+  const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
 
   const navLinks = [
-    { name: t.nav_home, href: "#home" },
-    { name: t.nav_services, href: "#services" },
-    { name: t.nav_packages, href: "#packages" },
+    { name: t.nav_home,      href: "#home" },
+    { name: t.nav_services,  href: "#services" },
+    { name: t.nav_packages,  href: "#packages" },
     { name: t.nav_portfolio, href: "#portfolio" },
-    { name: t.nav_why_us, href: "#why-us" },
-    { name: t.nav_contact, href: "#contact" },
+    { name: t.nav_why_us,   href: "#why-us" },
+    { name: t.nav_contact,  href: "#contact" },
   ];
 
   useEffect(() => {
@@ -31,8 +29,6 @@ export function Header() {
     setMobileMenuOpen(false);
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
-
-  const langs = (["el", "en", "sv", "fi"] as Language[]);
 
   return (
     <header
@@ -64,7 +60,7 @@ export function Header() {
         </div>
 
         {/* CENTER — Nav (desktop) */}
-        <nav className="hidden md:flex items-center" style={{ gap: "22px" }}>
+        <nav className="hidden md:flex items-center" style={{ gap: "28px" }}>
           {navLinks.map((link) => (
             <button
               key={link.name}
@@ -83,45 +79,8 @@ export function Header() {
           ))}
         </nav>
 
-        {/* RIGHT — Language switcher + CTA + hamburger */}
-        <div className="flex items-center" style={{ gap: "16px", marginLeft: "16px" }}>
-
-          {/* Language switcher */}
-          <div className="relative">
-            <button
-              onClick={() => setLangOpen(!langOpen)}
-              onBlur={() => setTimeout(() => setLangOpen(false), 150)}
-              className="flex items-center gap-1 text-white/60 hover:text-[#D4AF37] transition-colors duration-200"
-              style={{ fontSize: "11px", letterSpacing: "2px", fontWeight: 700, fontFamily: LABEL_FONT }}
-            >
-              {languageNames[lang]}
-              <svg width="8" height="5" viewBox="0 0 8 5" fill="currentColor" style={{ opacity: 0.6, marginTop: "1px" }}>
-                <path d="M0 0l4 5 4-5H0z" />
-              </svg>
-            </button>
-            {langOpen && (
-              <div
-                className="absolute right-0 top-full mt-2 py-1 rounded-lg overflow-hidden"
-                style={{ background: "#0f0f0f", border: "1px solid rgba(212,175,55,0.2)", minWidth: "64px", zIndex: 100 }}
-              >
-                {langs.map((l) => (
-                  <button
-                    key={l}
-                    onClick={() => { setLang(l); setLangOpen(false); }}
-                    className="w-full text-left px-4 py-2 transition-colors duration-150 hover:bg-[rgba(212,175,55,0.08)]"
-                    style={{
-                      fontSize: "11px", letterSpacing: "2px", fontWeight: 700,
-                      fontFamily: LABEL_FONT,
-                      color: l === lang ? "#D4AF37" : "rgba(255,255,255,0.6)",
-                    }}
-                  >
-                    {languageNames[l]}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
+        {/* RIGHT — CTA + hamburger */}
+        <div className="flex items-center" style={{ gap: "16px" }}>
           <div className="hidden md:block">
             <Button
               onClick={() => handleNavClick("#contact")}
@@ -163,27 +122,9 @@ export function Header() {
                 {link.name}
               </button>
             ))}
-            <div className="flex gap-3 pt-4 pb-1">
-              {langs.map((l) => (
-                <button
-                  key={l}
-                  onClick={() => { setLang(l); setMobileMenuOpen(false); }}
-                  style={{
-                    fontSize: "11px", letterSpacing: "2px", fontWeight: 700,
-                    fontFamily: LABEL_FONT,
-                    color: l === lang ? "#D4AF37" : "rgba(255,255,255,0.45)",
-                    padding: "4px 0",
-                    borderBottom: l === lang ? "1px solid #D4AF37" : "1px solid transparent",
-                    transition: "color 0.2s ease",
-                  }}
-                >
-                  {languageNames[l]}
-                </button>
-              ))}
-            </div>
             <Button
               onClick={() => handleNavClick("#contact")}
-              className="bg-[#D4AF37] text-black font-semibold uppercase tracking-widest text-xs px-6 py-3 mt-4 w-full rounded-sm"
+              className="bg-[#D4AF37] text-black font-semibold uppercase tracking-widest text-xs px-6 py-3 mt-5 w-full rounded-sm"
               style={{ fontFamily: NAV_FONT, letterSpacing: "2.5px", fontSize: "11px" }}
               data-testid="button-mobile-header-cta"
             >

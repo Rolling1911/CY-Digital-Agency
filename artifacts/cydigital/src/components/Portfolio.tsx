@@ -8,7 +8,7 @@ export function Portfolio() {
     { title: t.portfolio_item1_title, category: "Web Design", result: t.portfolio_item1_result, bg: "from-[#1a1a1a] to-[#2a1f0a]", label: "WEB", image: "/images/portfolio-thalassaki.png" },
     { title: "Social Media Beauty Salon", category: "Social Media", result: "+200% Engagement", bg: "from-[#1a1a1a] to-[#0a1a2a]", label: "SM", image: "/images/portfolio-frosos.png", ratio: "1/1" },
     { title: "Branding Project", category: "Branding", result: t.portfolio_item3_result, bg: "from-[#1a1a1a] to-[#1a0a2a]", label: "BR", image: "/images/portfolio-branding.png" },
-    { title: t.portfolio_item4_title, category: "Advertising", result: t.portfolio_item4_result, bg: "from-[#1a1a1a] to-[#0a2a1a]", label: "AD", image: "/images/portfolio-gym.jpg" },
+    { title: "Africa Trader Edge", category: "Web Design", result: "Premium Trading Platform", bg: "from-[#1a1a1a] to-[#0a2a1a]", label: "WEB", image: "/images/portfolio-africa.png" },
   ];
 
   return (

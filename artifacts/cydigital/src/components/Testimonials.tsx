@@ -57,20 +57,20 @@ export function Testimonials() {
             >
               <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
                 <div style={{ width: "46px", height: "46px", borderRadius: "50%", background: "rgba(212,175,55,0.12)", border: "1px solid rgba(212,175,55,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <span style={{ fontSize: "14px", fontWeight: 700, color: "#D4AF37", fontFamily: "Cormorant Garamond, serif", letterSpacing: "0.5px" }}>{item.initials}</span>
+                  <span style={{ fontSize: "14px", fontWeight: 700, color: "#D4AF37", fontFamily: "'Noto Serif', Georgia, serif", letterSpacing: "0.5px" }}>{item.initials}</span>
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: "14px", fontWeight: 700, color: "#ffffff", marginBottom: "2px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{item.name}</div>
-                  <div style={{ fontSize: "11px", color: "#888", letterSpacing: "0.5px" }}>{item.role}</div>
+                  <div style={{ fontSize: "14px", fontWeight: 700, color: "#ffffff", marginBottom: "2px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontFamily: "'Noto Serif', Georgia, serif" }}>{item.name}</div>
+                  <div style={{ fontSize: "11px", color: "#888", letterSpacing: "0.5px", fontFamily: "'Noto Serif', Georgia, serif" }}>{item.role}</div>
                 </div>
                 <Stars />
               </div>
               <div style={{ height: "1px", background: "rgba(212,175,55,0.08)", marginBottom: "20px" }} />
-              <p className="font-display" style={{ fontSize: "15px", color: "rgba(255,255,255,0.82)", lineHeight: 1.75, fontStyle: "italic", flex: 1, marginBottom: "24px" }}>
+              <p style={{ fontFamily: "'Noto Serif', Georgia, serif", fontSize: "15px", color: "rgba(255,255,255,0.82)", lineHeight: 1.75, fontStyle: "italic", flex: 1, marginBottom: "24px" }}>
                 "{item.quote}"
               </p>
               <div style={{ display: "flex" }}>
-                <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "1.2px", textTransform: "uppercase", color: "#D4AF37", background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.25)", borderRadius: "20px", padding: "5px 14px" }}>
+                <span style={{ fontFamily: "'Noto Serif', Georgia, serif", fontSize: "11px", fontWeight: 700, letterSpacing: "1.2px", textTransform: "uppercase", color: "#D4AF37", background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.25)", borderRadius: "20px", padding: "5px 14px" }}>
                   {item.result}
                 </span>
               </div>

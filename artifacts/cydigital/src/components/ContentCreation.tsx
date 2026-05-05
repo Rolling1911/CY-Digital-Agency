@@ -104,49 +104,6 @@ export function ContentCreation() {
           ))}
         </div>
 
-        <div className="mb-16">
-          <motion.h3
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-2xl md:text-3xl font-display font-bold text-foreground text-center mb-10"
-          >
-            {t.content_samples}
-          </motion.h3>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {portfolioItems.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.55, delay: i * 0.07 }}
-                className="group relative overflow-hidden cursor-pointer"
-                style={{ aspectRatio: "4/5", borderRadius: "12px" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 1px rgba(212,175,55,0.5), 0 0 30px rgba(212,175,55,0.12)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
-              >
-                <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute top-0 left-0 w-8 h-8 z-10">
-                  <div className="absolute top-0 left-0 w-full h-px bg-[#D4AF37]/60" />
-                  <div className="absolute top-0 left-0 h-full w-px bg-[#D4AF37]/60" />
-                </div>
-                <div className="absolute bottom-0 right-0 w-8 h-8 z-10">
-                  <div className="absolute bottom-0 right-0 w-full h-px bg-[#D4AF37]/60" />
-                  <div className="absolute bottom-0 right-0 h-full w-px bg-[#D4AF37]/60" />
-                </div>
-                <div className="absolute inset-0 bg-black/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
-                  <h4 className="font-display font-bold text-white text-lg mb-1">{item.title}</h4>
-                  <p className="text-[#D4AF37]/80 text-xs tracking-wider uppercase">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

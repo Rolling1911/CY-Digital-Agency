@@ -9,13 +9,13 @@ export function Portfolio() {
       title: "FAF Bistro Bar Lounge",
       category: "Web Design",
       result: "+45% Αύξηση Κρατήσεων",
-      image: "/images/portfolio-faf-v3.png",
+      image: "/images/portfolio-faf-v4.png",
     },
     {
       title: "Social Media Beauty Salon",
       category: "Social Media",
       result: "+200% Engagement",
-      image: "/images/portfolio-frosos.png",
+      image: "/images/portfolio-frosos-wide.png",
     },
     {
       title: "Branding Project",

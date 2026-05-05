@@ -16,6 +16,7 @@ export function Header() {
     { name: t.nav_services,  href: "/ypiresies" },
     { name: t.nav_packages,  href: "/paketa" },
     { name: t.nav_portfolio, href: "/portfolio" },
+    { name: "AI",            href: "/#ai-services" },
     { name: t.nav_why_us,   href: "/giati-emas" },
     { name: t.nav_contact,  href: "/epikoinonia" },
   ];

@@ -31,11 +31,11 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <Services />
-        <AIServices />
         <HowItWorks />
         <Portfolio />
         <Packages />
         <ContentCreation />
+        <AIServices />
         <WhyUs />
         <Testimonials />
         <StrongCta />

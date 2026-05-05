@@ -30,7 +30,7 @@ const services = [
 
 export function AIServices() {
   return (
-    <section className="relative py-16 md:py-24 bg-[#0B0B0B] overflow-hidden">
+    <section id="ai-services" className="relative py-16 md:py-24 bg-[#0B0B0B] overflow-hidden">
       {/* Background glow */}
       <div
         className="absolute inset-0 pointer-events-none"

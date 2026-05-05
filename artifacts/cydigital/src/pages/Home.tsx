@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { Services } from "@/components/Services";
+import { AIServices } from "@/components/AIServices";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Packages } from "@/components/Packages";
 import { ContentCreation } from "@/components/ContentCreation";
@@ -30,6 +31,7 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <Services />
+        <AIServices />
         <HowItWorks />
         <Portfolio />
         <Packages />

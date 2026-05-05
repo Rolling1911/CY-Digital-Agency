@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export function Portfolio() {
+export function Portfolio({ showHeading = true }: { showHeading?: boolean }) {
   const { t } = useLanguage();
 
   const items = [
@@ -39,24 +39,26 @@ export function Portfolio() {
     <section id="portfolio" className="pt-9 pb-3 md:pt-16 md:pb-4 bg-black">
       <div className="container mx-auto px-4 md:px-6">
 
-        <div className="text-center mb-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
-          >
-            {t.portfolio_heading}
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
-          />
-        </div>
+        {showHeading && (
+          <div className="text-center mb-10">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
+            >
+              {t.portfolio_heading}
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
+            />
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {items.map((item, index) => (

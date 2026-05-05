@@ -4,6 +4,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Home from "@/pages/Home";
+import ServicesPage from "@/pages/ServicesPage";
+import PackagesPage from "@/pages/PackagesPage";
+import PortfolioPage from "@/pages/PortfolioPage";
+import AboutPage from "@/pages/AboutPage";
+import ContactPage from "@/pages/ContactPage";
+import WebDesignPage from "@/pages/WebDesignPage";
+import SocialMediaPage from "@/pages/SocialMediaPage";
+import GraphicDesignPage from "@/pages/GraphicDesignPage";
+import ContentCreationPage from "@/pages/ContentCreationPage";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -12,6 +21,15 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/ypiresies" component={ServicesPage} />
+      <Route path="/ypiresies/kataskevi-istoselidaas" component={WebDesignPage} />
+      <Route path="/ypiresies/social-media" component={SocialMediaPage} />
+      <Route path="/ypiresies/grafistika" component={GraphicDesignPage} />
+      <Route path="/ypiresies/dimioyrgia-periekhomenou" component={ContentCreationPage} />
+      <Route path="/paketa" component={PackagesPage} />
+      <Route path="/portfolio" component={PortfolioPage} />
+      <Route path="/giati-emas" component={AboutPage} />
+      <Route path="/epikoinonia" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
   );

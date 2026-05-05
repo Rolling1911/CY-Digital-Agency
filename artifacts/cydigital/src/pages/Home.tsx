@@ -12,9 +12,16 @@ import { StrongCta } from "@/components/StrongCta";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Home() {
   const { t } = useLanguage();
+
+  useSEO({
+    title: "CYDigital | Premium Digital Agency Κύπρος",
+    description: "Premium ιστοσελίδες, social media management, γραφιστικά και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν στην Κύπρο.",
+    path: "/",
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">

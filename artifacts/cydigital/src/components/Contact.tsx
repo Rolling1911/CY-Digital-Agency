@@ -22,7 +22,7 @@ const inputClass = `
   hover:border-[rgba(212,175,55,0.28)]
 `;
 
-export function Contact() {
+export function Contact({ showHeading = true }: { showHeading?: boolean }) {
   const { t } = useLanguage();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -67,24 +67,26 @@ export function Contact() {
     <section id="contact" className="py-9 md:py-16 bg-[#0B0B0B] relative">
       <div className="container mx-auto px-4 md:px-6">
 
-        <div className="text-center mb-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
-          >
-            {t.contact_heading}
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
-          />
-        </div>
+        {showHeading && (
+          <div className="text-center mb-10">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
+            >
+              {t.contact_heading}
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
+            />
+          </div>
+        )}
 
         <div style={{ maxWidth: "1100px", margin: "0 auto" }} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
 

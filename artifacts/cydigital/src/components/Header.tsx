@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -11,12 +12,12 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: t.nav_home,      href: "#home" },
-    { name: t.nav_services,  href: "#services" },
-    { name: t.nav_packages,  href: "#packages" },
-    { name: t.nav_portfolio, href: "#portfolio" },
-    { name: t.nav_why_us,   href: "#why-us" },
-    { name: t.nav_contact,  href: "#contact" },
+    { name: t.nav_home,      href: "/" },
+    { name: t.nav_services,  href: "/ypiresies" },
+    { name: t.nav_packages,  href: "/paketa" },
+    { name: t.nav_portfolio, href: "/portfolio" },
+    { name: t.nav_why_us,   href: "/giati-emas" },
+    { name: t.nav_contact,  href: "/epikoinonia" },
   ];
 
   useEffect(() => {
@@ -24,11 +25,6 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <header
@@ -42,9 +38,9 @@ export function Header() {
         className="flex items-center justify-between header-inner"
       >
         {/* LEFT — Logo */}
-        <div
+        <Link
+          href="/"
           className="flex items-center cursor-pointer group"
-          onClick={() => handleNavClick("#home")}
           data-testid="link-logo"
           style={{ flex: "0 0 auto" }}
         >
@@ -57,14 +53,14 @@ export function Header() {
             }}
             className="header-logo group-hover:scale-[1.03] group-hover:[filter:drop-shadow(0_0_10px_rgba(212,175,55,0.55))]"
           />
-        </div>
+        </Link>
 
         {/* CENTER — Nav (desktop) */}
         <nav className="hidden md:flex items-center" style={{ gap: "28px" }}>
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.name}
-              onClick={() => handleNavClick(link.href)}
+              href={link.href}
               className="uppercase text-white/70 hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap"
               style={{
                 fontFamily: NAV_FONT,
@@ -72,10 +68,10 @@ export function Header() {
                 letterSpacing: "2px",
                 fontWeight: 600,
               }}
-              data-testid={`link-${link.href.replace("#", "")}`}
+              data-testid={`link-${link.href.replace("/", "").replace(/\//g, "-") || "home"}`}
             >
               {link.name}
-            </button>
+            </Link>
           ))}
         </nav>
 
@@ -83,12 +79,12 @@ export function Header() {
         <div className="flex items-center" style={{ gap: "16px" }}>
           <div className="hidden md:block">
             <Button
-              onClick={() => handleNavClick("#contact")}
+              asChild
               className="bg-[#D4AF37] text-black font-semibold tracking-[0.1em] uppercase text-xs px-6 py-2.5 rounded-sm hover:bg-[#D4AF37]/90 transition-all duration-300 hover:shadow-[0_0_18px_rgba(212,175,55,0.3)]"
               style={{ fontFamily: NAV_FONT, letterSpacing: "2.5px", fontSize: "11px" }}
               data-testid="button-header-cta"
             >
-              {t.nav_cta}
+              <Link href="/epikoinonia">{t.nav_cta}</Link>
             </Button>
           </div>
 
@@ -107,28 +103,31 @@ export function Header() {
         <div className="md:hidden absolute top-full left-0 right-0 bg-[#0B0B0B]/97 backdrop-blur-xl border-b border-white/5">
           <div className="flex flex-col px-6 py-8 gap-1">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="text-left text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 uppercase"
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-left text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 uppercase block"
                 style={{
                   fontFamily: NAV_FONT,
                   fontSize: "12px",
                   letterSpacing: "3px",
                   fontWeight: 600,
                 }}
-                data-testid={`link-mobile-${link.href.replace("#", "")}`}
+                data-testid={`link-mobile-${link.href.replace("/", "").replace(/\//g, "-") || "home"}`}
               >
                 {link.name}
-              </button>
+              </Link>
             ))}
             <Button
-              onClick={() => handleNavClick("#contact")}
+              asChild
               className="bg-[#D4AF37] text-black font-semibold uppercase tracking-widest text-xs px-6 py-3 mt-5 w-full rounded-sm"
               style={{ fontFamily: NAV_FONT, letterSpacing: "2.5px", fontSize: "11px" }}
               data-testid="button-mobile-header-cta"
             >
-              {t.nav_cta}
+              <Link href="/epikoinonia" onClick={() => setMobileMenuOpen(false)}>
+                {t.nav_cta}
+              </Link>
             </Button>
           </div>
         </div>

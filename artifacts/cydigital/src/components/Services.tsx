@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { MonitorSmartphone, Share2, Palette, PenTool, MapPin, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export function Services() {
+export function Services({ showHeading = true }: { showHeading?: boolean }) {
   const { t } = useLanguage();
 
   const services = [
@@ -19,24 +19,26 @@ export function Services() {
       <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 55% at 50% 40%, rgba(212,175,55,0.04) 0%, transparent 70%)" }} />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-bold font-display text-foreground mb-5"
-          >
-            {t.services_heading}
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
-            whileInView={{ opacity: 1, scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
-          />
-        </div>
+        {showHeading && (
+          <div className="text-center mb-10">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-5xl font-bold font-display text-foreground mb-5"
+            >
+              {t.services_heading}
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, scaleX: 0 }}
+              whileInView={{ opacity: 1, scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
+            />
+          </div>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {services.map((service, i) => (

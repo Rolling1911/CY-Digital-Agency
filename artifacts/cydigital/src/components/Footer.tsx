@@ -4,14 +4,21 @@ import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const socials = [
-  { icon: FiInstagram, href: "#", label: "Instagram" },
-  { icon: FiFacebook,  href: "#", label: "Facebook" },
+  { icon: FiInstagram, href: "https://www.instagram.com/cydigital.agency", label: "Instagram" },
+  { icon: FiFacebook,  href: "https://www.facebook.com/cydigital.agency",  label: "Facebook" },
 ];
 
 const contactItems = [
   { icon: MapPin, text: "Λάρνακα, Κύπρος",        href: undefined },
   { icon: Mail,   text: "info@cydigital.agency",   href: "mailto:info@cydigital.agency" },
   { icon: Phone,  text: "+357 94 344355",           href: "tel:+35794344355" },
+];
+
+const serviceLinks = [
+  { label: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidaas" },
+  { label: "Social Media Management", href: "/ypiresies/social-media" },
+  { label: "Γραφιστικά & Branding", href: "/ypiresies/grafistika" },
+  { label: "Δημιουργία Περιεχομένου", href: "/ypiresies/dimioyrgia-periekhomenou" },
 ];
 
 function VDivider() {
@@ -27,18 +34,13 @@ export function Footer() {
   const { t } = useLanguage();
 
   const navLinks = [
-    { label: t.nav_home,      href: "#home" },
-    { label: t.nav_services,  href: "#services" },
-    { label: t.nav_packages,  href: "#packages" },
-    { label: "Portfolio",     href: "#portfolio" },
-    { label: t.nav_why_us,   href: "#why-us" },
-    { label: t.nav_contact,  href: "#contact" },
+    { label: t.nav_home,      href: "/" },
+    { label: t.nav_services,  href: "/ypiresies" },
+    { label: t.nav_packages,  href: "/paketa" },
+    { label: "Portfolio",     href: "/portfolio" },
+    { label: t.nav_why_us,   href: "/giati-emas" },
+    { label: t.nav_contact,  href: "/epikoinonia" },
   ];
-
-  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <footer className="footer-premium" style={{ padding: "80px 40px 36px" }}>
@@ -61,7 +63,9 @@ export function Footer() {
           <div className="footer-col">
             <div style={{ position: "relative", display: "block", marginBottom: "8px" }}>
               <div style={{ position: "absolute", inset: "-24px", borderRadius: "50%", background: "radial-gradient(circle, rgba(212,175,55,0.16), transparent 70%)", filter: "blur(22px)", pointerEvents: "none" }} />
-              <img src="/images/logo-agency.png" alt="CYDigital" style={{ position: "relative", height: "auto", width: "340px", objectFit: "contain", display: "block", marginLeft: "-56px" }} />
+              <a href="/" style={{ display: "block" }}>
+                <img src="/images/logo-agency.png" alt="CYDigital" style={{ position: "relative", height: "auto", width: "340px", objectFit: "contain", display: "block", marginLeft: "-56px" }} />
+              </a>
             </div>
             <p className="footer-brand-desc" style={{ color: "#BFBFBF", margin: "14px 0 18px", lineHeight: 1.7, fontSize: "13.5px", maxWidth: "260px" }}>
               {t.footer_desc}
@@ -76,7 +80,7 @@ export function Footer() {
             </motion.p>
             <div className="footer-social-icon-row" style={{ display: "flex", gap: "10px", justifyContent: "flex-start" }}>
               {socials.map(({ icon: Icon, href, label }) => (
-                <a key={label} href={href} aria-label={label} className="footer-social-icon">
+                <a key={label} href={href} aria-label={label} target="_blank" rel="noopener noreferrer" className="footer-social-icon">
                   <Icon size={22} />
                 </a>
               ))}
@@ -97,11 +101,17 @@ export function Footer() {
             <div style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", marginBottom: "18px" }} className="footer-col-divider" />
             <nav style={{ display: "flex", flexDirection: "column" }}>
               {navLinks.map(({ label, href }) => (
-                <a key={href} href={href} onClick={e => scrollTo(e, href)} className="footer-link">
-                  {label}
-                </a>
+                <a key={href} href={href} className="footer-link">{label}</a>
               ))}
             </nav>
+            <div style={{ marginTop: "20px" }}>
+              <p style={{ color: "#D4AF37", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", fontWeight: 700, marginBottom: "10px" }}>Υπηρεσίες</p>
+              <nav style={{ display: "flex", flexDirection: "column" }}>
+                {serviceLinks.map(({ label, href }) => (
+                  <a key={href} href={href} className="footer-link" style={{ fontSize: "12px" }}>{label}</a>
+                ))}
+              </nav>
+            </div>
           </div>
 
           <VDivider />

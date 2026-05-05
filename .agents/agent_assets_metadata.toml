@@ -36,3 +36,9 @@ id = "K6DWfkdqOyx8GmUXFqpQy"
 uri = "file://artifacts/cydigital/public/images/portfolio-advertising.png"
 type = "image"
 title = "demorilo luxury real estate ad"
+
+[[generated]]
+id = "Q61wBQTwbM32VfFFEeSIq"
+uri = "file://artifacts/cydigital/public/images/portfolio-faf.png"
+type = "image"
+title = "generated_image"

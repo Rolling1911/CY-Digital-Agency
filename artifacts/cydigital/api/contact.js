@@ -1,7 +1,6 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 
-const serviceLabels: Record<string, string> = {
+const serviceLabels = {
   web: "Δημιουργία Ιστοσελίδας",
   social: "Social Media Management",
   graphics: "Γραφιστικά & Δημιουργικά",
@@ -11,20 +10,12 @@ const serviceLabels: Record<string, string> = {
   content: "Δημιουργία Περιεχομένου",
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, company, phone, email, city, service, message } = req.body as {
-    name: string;
-    company: string;
-    phone: string;
-    email: string;
-    city: string;
-    service: string;
-    message?: string;
-  };
+  const { name, company, phone, email, city, service, message } = req.body;
 
   if (!name || !company || !phone || !email || !city || !service) {
     return res.status(400).json({ error: "Missing required fields" });

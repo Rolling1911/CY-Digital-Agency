@@ -27,6 +27,20 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+    if (!href.includes("#")) return;
+    const id = href.split("#")[1];
+    const el = document.getElementById(id);
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Not on home page — navigate then scroll after load
+      window.location.href = href;
+      e.preventDefault();
+    }
+  }
+
   return (
     <header
       style={{ height: "88px" }}
@@ -62,6 +76,7 @@ export function Header() {
             <Link
               key={link.name}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="uppercase text-white/70 hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap"
               style={{
                 fontFamily: NAV_FONT,
@@ -107,7 +122,7 @@ export function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => { handleNavClick(e, link.href); setMobileMenuOpen(false); }}
                 className="text-left text-white/70 hover:text-[#D4AF37] transition-colors py-3 border-b border-white/5 uppercase block"
                 style={{
                   fontFamily: NAV_FONT,

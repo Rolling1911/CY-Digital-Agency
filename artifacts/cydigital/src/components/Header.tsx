@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const NAV_FONT = "'Cormorant Garamond', Georgia, serif";
+const NAV_FONT = "'Noto Serif', Georgia, serif";
 
 export function Header() {
   const { t } = useLanguage();

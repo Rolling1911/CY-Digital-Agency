@@ -37,6 +37,11 @@ export default defineConfig({
   root: path.resolve(import.meta.dirname),
   build: {
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        sourcemap: false,
+      },
+    },
   },
   server: {
     port,

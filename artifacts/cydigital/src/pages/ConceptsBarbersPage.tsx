@@ -94,7 +94,7 @@ export default function ConceptsBarbersPage() {
                 <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.5, delay: 0.3 }} style={{ width: "60px", height: "1px", background: "linear-gradient(to right, #D4AF37, transparent)", marginBottom: "14px", transformOrigin: "left" }} />
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.35 }}
                   style={{ fontFamily: FONT, fontStyle: "italic", color: "rgba(255,255,255,0.5)", fontSize: "15px", maxWidth: "500px", lineHeight: 1.75 }}>
-                  Τρία διαφορετικά design directions — luxury, modern και vintage — για σύγχρονα κουρεία στην Κύπρο.
+                  Τρία διαφορετικά design directions: luxury, modern και vintage, για σύγχρονα κουρεία στην Κύπρο.
                 </motion.p>
               </div>
 

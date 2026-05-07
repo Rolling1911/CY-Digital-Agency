@@ -19,7 +19,6 @@ export function Header() {
     { name: "Live Previews", href: "/concepts" },
     { name: "AI Υπηρεσίες", href: "/#ai-services" },
     { name: t.nav_why_us,   href: "/giati-emas" },
-    { name: t.nav_contact,  href: "/epikoinonia" },
   ];
 
   useEffect(() => {

@@ -13,6 +13,8 @@ import WebDesignPage from "@/pages/WebDesignPage";
 import SocialMediaPage from "@/pages/SocialMediaPage";
 import GraphicDesignPage from "@/pages/GraphicDesignPage";
 import ContentCreationPage from "@/pages/ContentCreationPage";
+import ConceptsPage from "@/pages/ConceptsPage";
+import ConceptsBarbersPage from "@/pages/ConceptsBarbersPage";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ function Router() {
       <Route path="/portfolio" component={PortfolioPage} />
       <Route path="/giati-emas" component={AboutPage} />
       <Route path="/epikoinonia" component={ContactPage} />
+      <Route path="/concepts" component={ConceptsPage} />
+      <Route path="/concepts/barbers" component={ConceptsBarbersPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -28,16 +28,18 @@ export function Header() {
   }, []);
 
   function handleNavClick(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
-    if (!href.includes("#")) return;
-    const id = href.split("#")[1];
-    const el = document.getElementById(id);
-    if (el) {
-      e.preventDefault();
-      el.scrollIntoView({ behavior: "smooth" });
+    if (href.includes("#")) {
+      const id = href.split("#")[1];
+      const el = document.getElementById(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = href;
+        e.preventDefault();
+      }
     } else {
-      // Not on home page — navigate then scroll after load
-      window.location.href = href;
-      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "instant" });
     }
   }
 

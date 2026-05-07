@@ -35,7 +35,7 @@ export default function ConceptViewerPage({ conceptId }: ConceptViewerPageProps)
     return (
       <div style={{ minHeight: "100vh", background: "#0B0B0B", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "16px" }}>
         <p style={{ fontFamily: FONT, color: "rgba(255,255,255,0.5)", fontSize: "16px" }}>Concept not found.</p>
-        <Link href="/concepts" style={{ fontFamily: FONT, color: "#D4AF37", textDecoration: "none", fontSize: "13px" }}>← Back to Concepts</Link>
+        <Link href="/concepts" style={{ fontFamily: FONT, color: "#D4AF37", textDecoration: "none", fontSize: "13px" }}>← Back to Live Previews</Link>
       </div>
     );
   }
@@ -89,7 +89,7 @@ export default function ConceptViewerPage({ conceptId }: ConceptViewerPageProps)
             textTransform: "uppercase",
           }}>
             <span style={{ color: "#D4AF37" }}>CY Digital Agency</span>
-            <span className="hidden sm:inline"> — Website Concept</span>
+            <span className="hidden sm:inline"> — Live Preview</span>
           </span>
         </div>
 

@@ -48,7 +48,7 @@ const concepts = [
 
 export default function ConceptsBarbersPage() {
   useSEO({
-    title: "Barber Shop Concepts | CYDigital — Demo Ιστοσελίδες Κουρεία Κύπρος",
+    title: "Barber Shop Live Previews | CYDigital — Demo Ιστοσελίδες Κουρεία Κύπρος",
     description: "Premium demo website concepts για κουρεία και barbershops στην Κύπρο. Δείτε live previews από την CYDigital.",
     path: "/concepts/barbers",
   });
@@ -71,7 +71,7 @@ export default function ConceptsBarbersPage() {
               style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "36px" }}
             >
               <Link href="/concepts" style={{ display: "flex", alignItems: "center", gap: "6px", color: "rgba(255,255,255,0.4)", textDecoration: "none", fontFamily: FONT, fontSize: "12px", transition: "color 0.2s" }} className="hover:text-[#D4AF37]">
-                <ArrowLeft size={13} /> Website Concepts
+                <ArrowLeft size={13} /> Live Previews
               </Link>
               <ChevronRight size={12} color="rgba(255,255,255,0.2)" />
               <span style={{ fontFamily: FONT, fontSize: "12px", color: "rgba(255,255,255,0.55)" }}>Barber Shops</span>
@@ -128,7 +128,7 @@ export default function ConceptsBarbersPage() {
             </p>
             <a href="/concepts" style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid rgba(212,175,55,0.35)", color: "#D4AF37", fontFamily: FONT, fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", padding: "13px 28px", textDecoration: "none", borderRadius: "4px" }}
               className="hover:bg-[rgba(212,175,55,0.08)] transition-all duration-300">
-              Όλα τα Concepts
+              Όλα τα Live Previews
             </a>
           </div>
         </section>

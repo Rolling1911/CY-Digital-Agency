@@ -89,8 +89,8 @@ const categories = [
 
 export default function ConceptsPage() {
   useSEO({
-    title: "Website Concepts | CYDigital — Demo Ιστοσελίδες για Κύπρο",
-    description: "Δείτε demo website concepts για διαφορετικούς κλάδους στην Κύπρο — Κουρεία, Εστιατόρια, Γυμναστήρια, Beauty Salons και άλλα.",
+    title: "Live Previews | CYDigital — Demo Ιστοσελίδες για Κύπρο",
+    description: "Δείτε live previews demo ιστοσελίδων για διαφορετικούς κλάδους στην Κύπρο — Κουρεία, Εστιατόρια, Γυμναστήρια, Beauty Salons και άλλα.",
     path: "/concepts",
   });
 
@@ -119,7 +119,7 @@ export default function ConceptsPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{ fontFamily: FONT, fontSize: "clamp(2.2rem, 5vw, 3.8rem)", fontWeight: 700, color: "#ffffff", lineHeight: 1.15, marginBottom: "20px" }}
             >
-              Website Concepts
+              Live Previews
             </motion.h1>
             <motion.div
               initial={{ scaleX: 0 }}
@@ -133,7 +133,7 @@ export default function ConceptsPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               style={{ fontFamily: FONT, fontSize: "1.05rem", color: "rgba(255,255,255,0.55)", maxWidth: "520px", margin: "0 auto", lineHeight: 1.8, fontStyle: "italic" }}
             >
-              Creative website concepts designed for modern businesses in Cyprus.
+              Live demos of real websites built for modern businesses in Cyprus.
             </motion.p>
           </div>
         </section>

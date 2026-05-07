@@ -13,7 +13,7 @@ const concepts = [
     name: "Royal Blade Barber Lounge",
     tagline: "Luxury grooming for the modern gentleman",
     desc: "Ένα premium barbershop concept με σκοτεινή αισθητική, χρυσές λεπτομέρειες και focus στην πολυτελή εμπειρία grooming.",
-    url: "https://barber-shop-demo-3.replit.app",
+    url: "/concepts/royal-blade",
     live: true,
     palette: ["#1a0f05", "#2d1f0a", "#D4AF37"],
     accentColor: "#D4AF37",
@@ -27,7 +27,7 @@ const concepts = [
     name: "The Cut Studio",
     tagline: "Modern cuts. Clean lines. Bold identity.",
     desc: "Καθαρό, minimal barbershop concept με industrial αισθητική, έμφαση στο portfolio κουρέματος και εύκολη online κράτηση.",
-    url: "https://royal-blade-lounge.replit.app",
+    url: "/concepts/the-cut-studio",
     live: true,
     palette: ["#111111", "#1e1e1e", "#e0e0e0"],
     accentColor: "#c8c8c8",
@@ -41,7 +41,7 @@ const concepts = [
     name: "Heritage Barber House",
     tagline: "Craftsmanship rooted in tradition",
     desc: "Vintage-inspired barbershop concept με warm tones, κλασική τυπογραφία και storytelling που αναδεικνύει την παράδοση του craft.",
-    url: "https://barber-shop-demo-3.replit.app",
+    url: "/concepts/heritage-barber",
     live: true,
     palette: ["#1a1208", "#2a1f10", "#C4A257"],
     accentColor: "#C4A257",
@@ -228,16 +228,14 @@ function ConceptCard({ concept, index }: { concept: typeof concepts[0]; index: n
 
           {/* CTA */}
           {concept.live ? (
-            <a
+            <Link
               href={concept.url}
-              target="_blank"
-              rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#D4AF37", color: "#000", fontFamily: FONT, fontWeight: 700, fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", padding: "14px 26px", textDecoration: "none", borderRadius: "6px", transition: "all 0.3s ease", alignSelf: "flex-start" }}
               className="hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:bg-[#C9A832]"
             >
               <ExternalLink size={13} />
               View Live Concept
-            </a>
+            </Link>
           ) : (
             <div>
               <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.3)", fontFamily: FONT, fontSize: "11px", letterSpacing: "2px", textTransform: "uppercase", padding: "13px 26px", borderRadius: "6px" }}>
@@ -266,7 +264,7 @@ function MockBrowser({ concept }: { concept: typeof concepts[0] }) {
         </div>
         <div style={{ flex: 1, background: "#252525", borderRadius: "4px", padding: "5px 10px" }}>
           <span style={{ fontFamily: "monospace", fontSize: "10px", color: "rgba(255,255,255,0.3)" }}>
-            {concept.live ? concept.url.replace("https://", "") : `cydigital.agency/concepts/${concept.id}`}
+            cydigital.agency{concept.url}
           </span>
         </div>
       </div>

@@ -15,6 +15,7 @@ import GraphicDesignPage from "@/pages/GraphicDesignPage";
 import ContentCreationPage from "@/pages/ContentCreationPage";
 import ConceptsPage from "@/pages/ConceptsPage";
 import ConceptsBarbersPage from "@/pages/ConceptsBarbersPage";
+import ConceptViewerPage from "@/pages/ConceptViewerPage";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,9 @@ function Router() {
       <Route path="/epikoinonia" component={ContactPage} />
       <Route path="/concepts" component={ConceptsPage} />
       <Route path="/concepts/barbers" component={ConceptsBarbersPage} />
+      <Route path="/concepts/royal-blade">{() => <ConceptViewerPage conceptId="royal-blade" />}</Route>
+      <Route path="/concepts/the-cut-studio">{() => <ConceptViewerPage conceptId="the-cut-studio" />}</Route>
+      <Route path="/concepts/heritage-barber">{() => <ConceptViewerPage conceptId="heritage-barber" />}</Route>
       <Route component={NotFound} />
     </Switch>
   );

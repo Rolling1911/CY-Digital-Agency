@@ -163,11 +163,11 @@ function ConceptRow({ concept, index }: { concept: typeof concepts[0]; index: nu
         style={{ border: "1px solid rgba(255,255,255,0.07)", borderRadius: "20px", overflow: "hidden", background: "#111111", boxShadow: "0 8px 48px rgba(0,0,0,0.5)" }}
       >
         {/* Screenshot Image */}
-        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden", background: "#0a0a0a" }} className="w-full lg:w-[58%] h-[260px] sm:h-[340px] lg:h-auto lg:min-h-[440px]">
+        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden", background: "#111111" }} className="w-full lg:w-[58%]">
           <img
             src={concept.image}
             alt={concept.name}
-            style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center top", display: "block" }}
+            style={{ width: "100%", height: "auto", display: "block" }}
             loading="lazy"
           />
           {/* Subtle right fade to blend into card on desktop */}

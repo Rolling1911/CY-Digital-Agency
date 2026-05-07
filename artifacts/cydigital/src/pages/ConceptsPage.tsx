@@ -192,7 +192,7 @@ export default function ConceptsPage() {
             </h2>
             <div style={{ width: "60px", height: "1px", background: "linear-gradient(to right, transparent, #D4AF37, transparent)", margin: "0 auto 20px" }} />
             <p style={{ fontFamily: FONT, fontStyle: "italic", color: "rgba(255,255,255,0.5)", marginBottom: "32px", fontSize: "15px" }}>
-              Τα concepts αυτά είναι μόνο η αρχή — κάθε website χτίζεται custom για εσάς.
+              Τα concepts αυτά είναι μόνο η αρχή. Κάθε website χτίζεται custom για εσάς.
             </p>
             <Link
               href="/epikoinonia"

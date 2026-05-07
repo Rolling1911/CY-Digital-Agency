@@ -70,7 +70,7 @@ export default function GraphicDesignPage() {
                   Ταυτότητες που μένουν αξέχαστες
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.8, fontSize: "15px", marginBottom: "20px" }}>
-                  Οπτικό υλικό υψηλής αισθητικής που αναδεικνύει το brand σας σε κάθε ψηφιακό κανάλι. Από logo design έως πλήρη brand guidelines — δημιουργούμε ταυτότητες που μένουν αξέχαστες.
+                  Οπτικό υλικό υψηλής αισθητικής που αναδεικνύει το brand σας σε κάθε ψηφιακό κανάλι. Από logo design έως πλήρη brand guidelines, δημιουργούμε ταυτότητες που μένουν αξέχαστες.
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.8, fontSize: "15px", marginBottom: "32px" }}>
                   Κάθε design αντικατοπτρίζει την ουσία της επιχείρησής σας και μεταφέρει το σωστό μήνυμα στο σωστό κοινό.

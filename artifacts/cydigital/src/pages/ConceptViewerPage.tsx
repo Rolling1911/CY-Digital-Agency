@@ -93,19 +93,30 @@ export default function ConceptViewerPage({ conceptId }: ConceptViewerPageProps)
           </span>
         </div>
 
-        {/* Concept name + open link */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
-          <span style={{
-            fontFamily: FONT,
-            fontSize: "11px",
-            color: "rgba(255,255,255,0.35)",
-            whiteSpace: "nowrap",
-            maxWidth: "160px",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }} className="hidden md:block">
-            {concept.name}
-          </span>
+        {/* Right: CTA + external icon */}
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
+          <Link
+            href="/epikoinonia"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              background: "#D4AF37",
+              color: "#000",
+              fontFamily: FONT,
+              fontWeight: 700,
+              fontSize: "10px",
+              letterSpacing: "1.5px",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              borderRadius: "4px",
+              padding: "6px 14px",
+              whiteSpace: "nowrap",
+              transition: "background 0.2s ease",
+            }}
+            className="hover:bg-[#C9A832]"
+          >
+            Ζητήστε Προσφορά
+          </Link>
           <a
             href={concept.url}
             target="_blank"
@@ -114,22 +125,16 @@ export default function ConceptViewerPage({ conceptId }: ConceptViewerPageProps)
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "5px",
-              color: "#D4AF37",
-              fontFamily: FONT,
-              fontSize: "10px",
-              letterSpacing: "1.5px",
-              textTransform: "uppercase",
+              justifyContent: "center",
+              color: "rgba(255,255,255,0.35)",
               textDecoration: "none",
-              border: "1px solid rgba(212,175,55,0.3)",
+              padding: "6px",
               borderRadius: "4px",
-              padding: "4px 10px",
-              transition: "all 0.2s ease",
+              transition: "color 0.2s ease",
             }}
-            className="hover:bg-[rgba(212,175,55,0.1)]"
+            className="hover:text-[#D4AF37]"
           >
-            <ExternalLink size={10} />
-            <span className="hidden sm:inline">Full Site</span>
+            <ExternalLink size={13} />
           </a>
         </div>
       </div>

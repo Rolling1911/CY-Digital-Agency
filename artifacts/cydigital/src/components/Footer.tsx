@@ -4,8 +4,8 @@ import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const socials = [
-  { icon: FiInstagram, href: "https://www.instagram.com/cydigital.agency", label: "Instagram" },
-  { icon: FiFacebook,  href: "https://www.facebook.com/cydigital.agency",  label: "Facebook" },
+  { icon: FiInstagram, href: "https://www.instagram.com/cy_digital_agency?igsh=MWFydjBqeGtqYW150Q==", label: "Instagram" },
+  { icon: FiFacebook,  href: "https://facebook.com/Cydigitalagaency1", label: "Facebook" },
 ];
 
 const contactItems = [

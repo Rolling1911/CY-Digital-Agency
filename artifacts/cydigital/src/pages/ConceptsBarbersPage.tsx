@@ -163,23 +163,23 @@ function ConceptRow({ concept, index }: { concept: typeof concepts[0]; index: nu
         style={{ border: "1px solid rgba(255,255,255,0.07)", borderRadius: "20px", overflow: "hidden", background: "#111111", boxShadow: "0 8px 48px rgba(0,0,0,0.5)" }}
       >
         {/* Screenshot Image */}
-        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden" }} className="w-full lg:w-[58%] h-[240px] sm:h-[300px] lg:h-auto lg:min-h-[420px]">
+        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden", background: "#0a0a0a" }} className="w-full lg:w-[58%] h-[260px] sm:h-[340px] lg:h-auto lg:min-h-[440px]">
           <img
             src={concept.image}
             alt={concept.name}
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block", transition: "transform 0.6s ease" }}
-            className="hover:scale-[1.03]"
+            style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center top", display: "block" }}
             loading="lazy"
           />
-          {/* Gradient overlay */}
+          {/* Subtle right fade to blend into card on desktop */}
           <div style={{
             position: "absolute", inset: 0,
             background: flip
-              ? "linear-gradient(to left, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.2) 40%, transparent 70%)"
-              : "linear-gradient(to right, rgba(17,17,17,0.85) 0%, rgba(17,17,17,0.2) 40%, transparent 70%)",
+              ? "linear-gradient(to left, rgba(17,17,17,0.6) 0%, transparent 25%)"
+              : "linear-gradient(to right, rgba(17,17,17,0.6) 0%, transparent 25%)",
+            pointerEvents: "none",
           }} className="hidden lg:block" />
           {/* Mobile overlay bottom */}
-          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "60px", background: "linear-gradient(to top, #111111, transparent)" }} className="lg:hidden" />
+          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "40px", background: "linear-gradient(to top, #111111, transparent)", pointerEvents: "none" }} className="lg:hidden" />
 
           {/* Style badge */}
           <div style={{ position: "absolute", top: "16px", left: "16px", background: "rgba(0,0,0,0.6)", backdropFilter: "blur(8px)", border: `1px solid ${concept.accentColor}40`, borderRadius: "20px", padding: "5px 12px" }}>

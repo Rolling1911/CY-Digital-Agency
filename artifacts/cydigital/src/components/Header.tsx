@@ -35,8 +35,9 @@ export function Header() {
         e.preventDefault();
         el.scrollIntoView({ behavior: "smooth" });
       } else {
-        window.location.href = href;
         e.preventDefault();
+        sessionStorage.setItem("scrollTo", id);
+        window.location.href = "/";
       }
     } else {
       window.scrollTo({ top: 0, behavior: "instant" });

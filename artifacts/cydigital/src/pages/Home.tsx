@@ -12,11 +12,27 @@ import { Testimonials } from "@/components/Testimonials";
 import { StrongCta } from "@/components/StrongCta";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Home() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    const target = sessionStorage.getItem("scrollTo");
+    if (!target) return;
+    sessionStorage.removeItem("scrollTo");
+    const attempt = (tries: number) => {
+      const el = document.getElementById(target);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      } else if (tries > 0) {
+        setTimeout(() => attempt(tries - 1), 150);
+      }
+    };
+    setTimeout(() => attempt(10), 200);
+  }, []);
 
   useSEO({
     title: "CYDigital | Premium Digital Agency Κύπρος",

@@ -58,6 +58,7 @@ export function Header() {
           className="flex items-center cursor-pointer group"
           data-testid="link-logo"
           style={{ flex: "0 0 auto" }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
         >
           <img
             src="/images/logo-agency.png"

@@ -18,9 +18,7 @@ const concepts = [
     palette: ["#1a0f05", "#2d1f0a", "#D4AF37"],
     accentColor: "#D4AF37",
     highlights: ["Online Κρατήσεις", "Premium Design", "Mobile Optimized"],
-    mockBg: "linear-gradient(135deg, #1a0f05 0%, #2a1a08 40%, #1a0f05 100%)",
-    mockAccent: "#D4AF37",
-    mockPattern: "royal",
+    screenshotUrl: "https://image.thum.io/get/width/1200/crop/630/noanimate/https://barber-shop-demo-3.replit.app",
   },
   {
     id: "cut-studio",
@@ -32,9 +30,7 @@ const concepts = [
     palette: ["#111111", "#1e1e1e", "#e0e0e0"],
     accentColor: "#c8c8c8",
     highlights: ["Minimal Design", "Portfolio Gallery", "Fast Loading"],
-    mockBg: "linear-gradient(135deg, #111111 0%, #1e1e1e 50%, #111111 100%)",
-    mockAccent: "#d0d0d0",
-    mockPattern: "studio",
+    screenshotUrl: "https://image.thum.io/get/width/1200/crop/630/noanimate/https://royal-blade-lounge.replit.app",
   },
   {
     id: "heritage-barber",
@@ -46,9 +42,7 @@ const concepts = [
     palette: ["#1a1208", "#2a1f10", "#C4A257"],
     accentColor: "#C4A257",
     highlights: ["Vintage Aesthetic", "Story-Driven", "Trust Building"],
-    mockBg: "linear-gradient(135deg, #1a1208 0%, #2a1f10 50%, #1a1208 100%)",
-    mockAccent: "#C4A257",
-    mockPattern: "heritage",
+    screenshotUrl: "https://image.thum.io/get/width/1200/crop/630/noanimate/https://barber-shop-demo-3.replit.app",
   },
 ];
 
@@ -269,84 +263,14 @@ function MockBrowser({ concept }: { concept: typeof concepts[0] }) {
         </div>
       </div>
 
-      {/* Mock page content */}
-      <div style={{ height: "280px", background: concept.mockBg, position: "relative", overflow: "hidden" }}>
-        {concept.mockPattern === "royal" && <RoyalMock accent={concept.mockAccent} />}
-        {concept.mockPattern === "studio" && <StudioMock accent={concept.mockAccent} />}
-        {concept.mockPattern === "heritage" && <HeritageMock accent={concept.mockAccent} />}
-      </div>
-    </div>
-  );
-}
-
-function RoyalMock({ accent }: { accent: string }) {
-  return (
-    <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "32px 24px", position: "relative" }}>
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: `radial-gradient(ellipse at 50% 30%, ${accent}22 0%, transparent 70%)` }} />
-      <div style={{ position: "absolute", top: "16px", left: "50%", transform: "translateX(-50%)", width: "100%", textAlign: "center" }}>
-        <div style={{ display: "inline-flex", gap: "4px", alignItems: "center" }}>
-          {[...Array(3)].map((_, i) => <div key={i} style={{ width: "18px", height: "1px", background: accent, opacity: 0.4 }} />)}
-          <Scissors size={12} color={accent} style={{ opacity: 0.6 }} />
-          {[...Array(3)].map((_, i) => <div key={i} style={{ width: "18px", height: "1px", background: accent, opacity: 0.4 }} />)}
-        </div>
-      </div>
-      <div style={{ textAlign: "center", zIndex: 1 }}>
-        <p style={{ fontFamily: FONT, fontSize: "9px", letterSpacing: "4px", color: accent, textTransform: "uppercase", opacity: 0.7, marginBottom: "8px" }}>LUXURY GROOMING</p>
-        <h3 style={{ fontFamily: FONT, fontSize: "1.4rem", fontWeight: 700, color: "#fff", marginBottom: "6px", lineHeight: 1.2 }}>ROYAL BLADE</h3>
-        <p style={{ fontFamily: FONT, fontSize: "0.6rem", letterSpacing: "3px", color: "rgba(255,255,255,0.35)", textTransform: "uppercase" }}>BARBER LOUNGE</p>
-        <div style={{ width: "40px", height: "1px", background: accent, margin: "12px auto" }} />
-        <div style={{ display: "inline-block", border: `1px solid ${accent}`, padding: "6px 18px" }}>
-          <span style={{ fontFamily: FONT, fontSize: "8px", letterSpacing: "2.5px", color: accent, textTransform: "uppercase" }}>Book Now</span>
-        </div>
-      </div>
-      <div style={{ position: "absolute", bottom: "16px", left: 0, right: 0, display: "flex", justifyContent: "center", gap: "24px" }}>
-        {["Services", "Gallery", "Contact"].map(item => (
-          <span key={item} style={{ fontFamily: FONT, fontSize: "7px", letterSpacing: "2px", color: "rgba(255,255,255,0.25)", textTransform: "uppercase" }}>{item}</span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function StudioMock({ accent }: { accent: string }) {
-  return (
-    <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
-      <div style={{ width: "45%", background: "#111", borderRight: "1px solid rgba(255,255,255,0.06)", display: "flex", flexDirection: "column", justifyContent: "center", padding: "28px 20px" }}>
-        <p style={{ fontFamily: FONT, fontSize: "7px", letterSpacing: "3px", color: accent, textTransform: "uppercase", opacity: 0.6, marginBottom: "8px" }}>EST. 2020</p>
-        <h3 style={{ fontFamily: FONT, fontSize: "1.1rem", fontWeight: 700, color: "#fff", lineHeight: 1.1, marginBottom: "10px" }}>THE CUT<br />STUDIO</h3>
-        <div style={{ width: "24px", height: "2px", background: accent, opacity: 0.5, marginBottom: "10px" }} />
-        <div style={{ display: "inline-block", background: accent, padding: "5px 14px", alignSelf: "flex-start" }}>
-          <span style={{ fontFamily: FONT, fontSize: "7px", letterSpacing: "2px", color: "#000", fontWeight: 700, textTransform: "uppercase" }}>Book</span>
-        </div>
-      </div>
-      <div style={{ flex: 1, background: "#1a1a1a", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", padding: "2px" }}>
-        {[...Array(4)].map((_, i) => (
-          <div key={i} style={{ background: `rgba(255,255,255,${0.03 + i * 0.01})`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Scissors size={14} color={accent} style={{ opacity: 0.25 }} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function HeritageMock({ accent }: { accent: string }) {
-  return (
-    <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "28px", position: "relative" }}>
-      <div style={{ position: "absolute", inset: "12px", border: `1px solid ${accent}20`, borderRadius: "4px", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", inset: "20px", border: `1px solid ${accent}10`, borderRadius: "2px", pointerEvents: "none" }} />
-      <div style={{ textAlign: "center", zIndex: 1 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", justifyContent: "center", marginBottom: "10px" }}>
-          <div style={{ width: "30px", height: "1px", background: accent, opacity: 0.4 }} />
-          <Scissors size={13} color={accent} style={{ opacity: 0.5 }} />
-          <div style={{ width: "30px", height: "1px", background: accent, opacity: 0.4 }} />
-        </div>
-        <p style={{ fontFamily: "Georgia, serif", fontSize: "8px", letterSpacing: "4px", color: accent, textTransform: "uppercase", opacity: 0.6, marginBottom: "6px" }}>SINCE 1987</p>
-        <h3 style={{ fontFamily: "Georgia, serif", fontSize: "1.2rem", fontWeight: 700, color: "#fff", marginBottom: "4px" }}>Heritage</h3>
-        <p style={{ fontFamily: "Georgia, serif", fontSize: "0.65rem", letterSpacing: "2px", color: "rgba(255,255,255,0.3)", textTransform: "uppercase" }}>BARBER HOUSE</p>
-        <div style={{ display: "flex", gap: "6px", justifyContent: "center", marginTop: "14px" }}>
-          {[...Array(3)].map((_, i) => <div key={i} style={{ width: "4px", height: "4px", borderRadius: "50%", background: accent, opacity: 0.4 + i * 0.2 }} />)}
-        </div>
+      {/* Real screenshot */}
+      <div style={{ height: "280px", overflow: "hidden", position: "relative", background: "#111" }}>
+        <img
+          src={concept.screenshotUrl}
+          alt={concept.name}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
+          loading="lazy"
+        />
       </div>
     </div>
   );

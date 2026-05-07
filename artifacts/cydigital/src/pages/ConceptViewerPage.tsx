@@ -6,13 +6,13 @@ const FONT = "'Noto Serif', Georgia, serif";
 const CONCEPTS: Record<string, { name: string; url: string; category: string; categoryHref: string }> = {
   "royal-blade": {
     name: "Royal Blade Barber Lounge",
-    url: "https://barber-shop-demo-3.replit.app",
+    url: "https://royal-blade-lounge.replit.app",
     category: "Barber Shops",
     categoryHref: "/concepts/barbers",
   },
   "the-cut-studio": {
     name: "The Cut Studio",
-    url: "https://royal-blade-lounge.replit.app",
+    url: "https://barber-studio-cyprus.replit.app",
     category: "Barber Shops",
     categoryHref: "/concepts/barbers",
   },

@@ -18,7 +18,7 @@ const concepts = [
     palette: ["#1a0f05", "#2d1f0a", "#D4AF37"],
     accentColor: "#D4AF37",
     highlights: ["Online Κρατήσεις", "Premium Design", "Mobile Optimized"],
-    screenshotUrl: "https://image.thum.io/get/width/1200/crop/630/noanimate/https://barber-shop-demo-3.replit.app",
+    screenshotUrl: "https://image.thum.io/get/width/1200/crop/630/noanimate/https://royal-blade-lounge.replit.app",
   },
   {
     id: "cut-studio",
@@ -30,7 +30,7 @@ const concepts = [
     palette: ["#111111", "#1e1e1e", "#e0e0e0"],
     accentColor: "#c8c8c8",
     highlights: ["Minimal Design", "Portfolio Gallery", "Fast Loading"],
-    screenshotUrl: "https://image.thum.io/get/width/1200/crop/630/noanimate/https://royal-blade-lounge.replit.app",
+    screenshotUrl: "https://image.thum.io/get/width/1200/crop/630/noanimate/https://barber-studio-cyprus.replit.app",
   },
   {
     id: "heritage-barber",

@@ -194,13 +194,13 @@ export default function ConceptsPage() {
             <p style={{ fontFamily: FONT, fontStyle: "italic", color: "rgba(255,255,255,0.5)", marginBottom: "32px", fontSize: "15px" }}>
               Τα concepts αυτά είναι μόνο η αρχή. Κάθε website χτίζεται custom για εσάς.
             </p>
-            <Link
+            <a
               href="/epikoinonia"
               style={{ display: "inline-block", background: "#D4AF37", color: "#000", fontFamily: FONT, fontWeight: 700, fontSize: "11px", letterSpacing: "2.5px", textTransform: "uppercase", padding: "16px 40px", textDecoration: "none", transition: "all 0.3s ease" }}
               className="hover:shadow-[0_0_24px_rgba(212,175,55,0.35)] hover:bg-[#C9A832]"
             >
               Ζητήστε Προσφορά
-            </Link>
+            </a>
           </div>
         </section>
       </main>

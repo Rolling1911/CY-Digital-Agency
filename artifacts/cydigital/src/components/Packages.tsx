@@ -74,7 +74,7 @@ export function Packages() {
           />
         </div>
 
-        <div className="max-w-5xl mx-auto pkg-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "24px", alignItems: "end" }}>
+        <div className="max-w-5xl mx-auto pkg-grid" style={{ display: "grid", gap: "24px", alignItems: "end" }}>
           {packages.map((pkg, index) => {
             const scaleMap   = [0.92, 1.0, 1.08];
             const opacityMap = [0.88, 1.0, 1.0];

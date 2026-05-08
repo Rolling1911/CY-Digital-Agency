@@ -210,7 +210,7 @@ export function Hero() {
         padding: "0",
       }}>
         <div style={{ width: "100%", padding: "0 clamp(20px, 4vw, 56px) 0 clamp(20px, 4vw, 56px)" }}>
-          <div style={{ maxWidth: "92%", paddingTop: "80px" }}>
+          <div className="hero-content-top" style={{ maxWidth: "92%", paddingTop: "80px" }}>
 
             {/* Label */}
             <motion.div
@@ -240,39 +240,36 @@ export function Hero() {
               style={{ margin: 0, padding: 0 }}
             >
               {/* Row 1 */}
-              <span style={{
+              <span className="hero-headline-row" style={{
                 display: "block",
                 fontFamily: FONT,
                 fontWeight: 700,
                 color: "#ffffff",
                 lineHeight: 1.15,
-                fontSize: "clamp(2.6rem, 6vw, 5.8rem)",
-                whiteSpace: "nowrap",
+                fontSize: "clamp(1.55rem, 6vw, 5.8rem)",
               }}>
                 Χτίζουμε ψηφιακές
               </span>
               {/* Row 2 */}
-              <span style={{
+              <span className="hero-headline-row" style={{
                 display: "block",
                 fontFamily: FONT,
                 fontWeight: 700,
                 color: "#ffffff",
                 lineHeight: 1.15,
-                fontSize: "clamp(2.6rem, 6vw, 5.8rem)",
-                whiteSpace: "nowrap",
-                marginBottom: "6px",
+                fontSize: "clamp(1.55rem, 6vw, 5.8rem)",
+                marginBottom: "4px",
               }}>
                 εμπειρίες που φέρνουν
               </span>
               {/* Row 3 — gold */}
-              <span style={{
+              <span className="hero-headline-row" style={{
                 display: "block",
                 fontFamily: FONT,
                 fontWeight: 700,
                 lineHeight: 1.15,
-                fontSize: "clamp(2.6rem, 6vw, 5.8rem)",
-                whiteSpace: "nowrap",
-                marginBottom: "28px",
+                fontSize: "clamp(1.55rem, 6vw, 5.8rem)",
+                marginBottom: "24px",
                 background: "linear-gradient(135deg, #C8960C 0%, #F5D96B 40%, #D4AF37 70%, #A0750A 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
@@ -289,10 +286,10 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 fontFamily: FONT,
-                fontSize: "clamp(14px, 1.5vw, 16px)",
+                fontSize: "clamp(13px, 1.5vw, 16px)",
                 lineHeight: 1.8,
                 color: "rgba(255,255,255,0.6)",
-                marginBottom: "36px",
+                marginBottom: "32px",
                 maxWidth: "480px",
               }}
             >
@@ -304,14 +301,17 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="hero-cta-buttons"
               style={{ display: "flex", flexWrap: "wrap", gap: "14px", alignItems: "center" }}
             >
               <button
                 onClick={scrollToContact}
                 data-testid="button-hero-primary"
+                className="hero-cta-btn-primary"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
+                  justifyContent: "center",
                   gap: "10px",
                   background: "#D4AF37",
                   color: "#000",
@@ -343,9 +343,11 @@ export function Hero() {
               <button
                 onClick={scrollToPortfolio}
                 data-testid="button-hero-secondary"
+                className="hero-cta-btn-secondary"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
+                  justifyContent: "center",
                   gap: "10px",
                   background: "rgba(255,255,255,0.05)",
                   color: "rgba(255,255,255,0.85)",
@@ -383,6 +385,7 @@ export function Hero() {
 
       {/* Stats Bar */}
       <div
+        className="hero-stats-bar"
         style={{
           position: "absolute",
           bottom: 0,
@@ -393,24 +396,26 @@ export function Hero() {
           background: "#0c0c0c",
         }}
       >
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 80px)", display: "flex" }}>
+        <div className="hero-stats-inner" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(12px, 5vw, 80px)", display: "flex", flexWrap: "wrap" }}>
           {stats.map((stat, i) => (
             <div
               key={i}
+              className="hero-stat-item"
               style={{
                 flex: 1,
+                minWidth: "50%",
                 display: "flex",
                 alignItems: "center",
-                gap: "12px",
-                padding: "18px 16px",
-                borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                gap: "10px",
+                padding: "14px 12px",
+                borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
               }}
             >
-              <stat.icon size={18} color="#D4AF37" strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.75 }} />
-              <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
+              <stat.icon size={16} color="#D4AF37" strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.75 }} />
+              <div style={{ display: "flex", alignItems: "baseline", gap: "6px", flexWrap: "wrap" }}>
                 <span style={{
                   fontFamily: FONT,
-                  fontSize: "clamp(1.1rem, 1.6vw, 1.4rem)",
+                  fontSize: "clamp(1rem, 1.6vw, 1.4rem)",
                   fontWeight: 700,
                   color: "#D4AF37",
                   lineHeight: 1,
@@ -420,7 +425,7 @@ export function Hero() {
                 </span>
                 <span style={{
                   fontFamily: FONT,
-                  fontSize: "clamp(8px, 0.65vw, 9px)",
+                  fontSize: "clamp(7px, 0.65vw, 9px)",
                   letterSpacing: "1.5px",
                   color: "rgba(255,255,255,0.38)",
                   textTransform: "uppercase",

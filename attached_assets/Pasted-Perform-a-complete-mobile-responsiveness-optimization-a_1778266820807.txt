@@ -1,0 +1,140 @@
+Perform a complete mobile responsiveness optimization across the entire CY Digital Agency website.
+
+IMPORTANT:
+Do NOT redesign the desktop version.
+Keep the desktop layout exactly as it is.
+Only improve and perfect the mobile experience.
+
+Goal:
+The website must feel premium, modern, smooth and world-class on mobile devices.
+
+Target devices:
+- iPhone SE
+- iPhone 12/13/14/15
+- Samsung Galaxy devices
+- tablets
+- all modern mobile browsers
+
+MAIN OBJECTIVES:
+- eliminate overflow issues
+- improve spacing
+- improve typography scaling
+- improve button sizing
+- improve mobile navigation
+- improve section responsiveness
+- improve loading performance
+- improve readability
+- improve animations on mobile
+- make everything feel polished and premium
+
+GLOBAL MOBILE FIXES:
+
+1. Prevent horizontal scrolling everywhere
+- no elements should overflow screen width
+- fix large containers
+- fix oversized images
+- fix iframe overflow
+- fix padding causing overflow
+
+2. Typography optimization
+- headings must scale perfectly on mobile
+- improve line-height
+- improve readability
+- prevent text clipping
+- avoid giant desktop-sized headings on phones
+
+3. Section spacing
+- improve vertical rhythm
+- reduce oversized desktop spacing
+- optimize padding/margins for mobile
+- ensure sections breathe correctly
+
+4. Buttons
+- make buttons mobile friendly
+- full-width where appropriate
+- proper spacing between buttons
+- improve tap targets
+
+5. Navigation
+- optimize mobile navbar
+- improve hamburger menu
+- smooth opening/closing animation
+- prevent menu overlap bugs
+- improve mobile menu spacing
+
+6. Hero section
+- ensure hero text scales beautifully
+- maintain cinematic feeling
+- optimize background positioning
+- improve CTA placement
+- avoid text overlapping the image
+- maintain premium appearance
+
+7. Portfolio & Live Preview sections
+- stack cards correctly on mobile
+- improve card spacing
+- responsive image scaling
+- ensure preview buttons are visible
+- optimize iframe previews for phones
+
+8. Forms
+- improve mobile form layout
+- optimize input spacing
+- better mobile keyboard usability
+- full-width fields
+- no cutoff inputs
+
+9. Images & media
+- responsive scaling everywhere
+- proper object-fit usage
+- no stretched images
+- optimized loading
+
+10. Performance optimization
+- reduce laggy animations on mobile
+- optimize heavy effects
+- improve rendering smoothness
+- preserve premium feel without hurting performance
+
+11. Animations
+- reduce excessive motion on small screens
+- maintain elegance
+- smooth fade transitions
+- smooth scroll behavior
+
+12. Footer
+- optimize spacing/layout
+- improve readability
+- better stacking on mobile
+
+13. Responsive breakpoints
+Optimize for:
+- 320px
+- 375px
+- 390px
+- 414px
+- 768px
+- tablets
+
+14. Luxury mobile feel
+The mobile experience should feel:
+- ultra smooth
+- elegant
+- premium
+- fast
+- modern
+- cinematic
+- professional
+
+15. Final audit
+After all fixes:
+- inspect every page
+- inspect every section
+- inspect every route
+- inspect all live previews
+- inspect all forms
+- inspect navbar/footer
+- fix every remaining responsiveness issue
+
+IMPORTANT:
+The final result must feel like a premium international agency website on mobile — not a typical template.

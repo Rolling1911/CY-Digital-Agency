@@ -43,7 +43,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="footer-premium" style={{ padding: "80px 40px 36px" }}>
+    <footer className="footer-premium footer-padding-responsive" style={{ padding: "80px 40px 36px" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img src="/images/hero-bg.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.45 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(5,5,5,0.82) 0%, rgba(5,5,5,0.78) 60%, rgba(5,5,5,0.88) 100%)" }} />
@@ -64,7 +64,7 @@ export function Footer() {
             <div style={{ position: "relative", display: "block", marginBottom: "8px" }}>
               <div style={{ position: "absolute", inset: "-24px", borderRadius: "50%", background: "radial-gradient(circle, rgba(212,175,55,0.16), transparent 70%)", filter: "blur(22px)", pointerEvents: "none" }} />
               <a href="/" style={{ display: "block" }}>
-                <img src="/images/logo-agency.png" alt="CYDigital" style={{ position: "relative", height: "auto", width: "340px", objectFit: "contain", display: "block", marginLeft: "-56px" }} />
+                <img src="/images/logo-agency.png" alt="CYDigital" className="footer-logo-img" style={{ position: "relative", height: "auto", width: "340px", objectFit: "contain", display: "block", marginLeft: "-56px" }} />
               </a>
             </div>
             <p className="footer-brand-desc" style={{ color: "#BFBFBF", margin: "14px 0 18px", lineHeight: 1.7, fontSize: "13.5px", maxWidth: "260px" }}>

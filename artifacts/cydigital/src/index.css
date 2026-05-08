@@ -147,6 +147,11 @@
   .text-gold { color: #D4AF37; }
 }
 
+/* ── Packages grid: 3 cols desktop → 1 col mobile ─────────────────── */
+.pkg-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 /* ── Why Us 2-col → 1-col on mobile ───────────────────────────────── */
 @media (max-width: 768px) {
   .why-us-grid {
@@ -537,13 +542,62 @@ img { max-width: 100%; height: auto; }
   /* — Packages — */
   .pkg-grid {
     grid-template-columns: 1fr !important;
+    max-width: 480px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .pkg-wrapper {
     transform: none !important;
     opacity: 1 !important;
-    max-width: 480px !important;
+    max-width: 100% !important;
     margin: 0 auto;
     width: 100%;
+  }
+
+  /* — Footer padding: tighten on mobile — */
+  .footer-padding-responsive {
+    padding: 56px 20px 32px !important;
+  }
+
+  /* — Footer logo: remove negative margin on tablet — */
+  .footer-logo-img {
+    width: 260px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /* — Hero: slightly reduce top padding — */
+  .hero-content-top {
+    padding-top: 60px !important;
+  }
+
+  /* — Hero CTA buttons: full-width stack — */
+  .hero-cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+  .hero-cta-btn-primary,
+  .hero-cta-btn-secondary {
+    width: 100% !important;
+    max-width: 340px !important;
+    justify-content: center !important;
+  }
+
+  /* — Hero stats bar: 2×2 grid on mobile — */
+  .hero-stat-item {
+    flex: 1 1 50% !important;
+    min-width: 50% !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 12px 10px !important;
+  }
+  .hero-stat-item:nth-child(3),
+  .hero-stat-item:nth-child(4) {
+    border-bottom: none !important;
+  }
+  .hero-stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.06) !important;
   }
 
   /* — Footer grid: stack columns — */
@@ -632,6 +686,60 @@ img { max-width: 100%; height: auto; }
   .footer-bottom-bar p,
   .footer-bottom-bar a {
     font-size: 12px !important;
+  }
+
+  /* — Footer logo: remove negative margin, shrink — */
+  .footer-logo-img {
+    width: 220px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /* — Hero: reduce top padding for short viewports — */
+  .hero-content-top {
+    padding-top: 48px !important;
+  }
+
+  /* — Hero CTA buttons: stack vertically — */
+  .hero-cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+  .hero-cta-btn-primary,
+  .hero-cta-btn-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* — Hero stats: 2x2 grid visible — */
+  .hero-stat-item {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    min-width: 50% !important;
+    flex: 1 1 50% !important;
+    padding: 12px 10px !important;
+  }
+  /* Remove border-bottom from last row */
+  .hero-stat-item:nth-child(3),
+  .hero-stat-item:nth-child(4) {
+    border-bottom: none !important;
+  }
+  /* Add vertical divider between col 1 and col 2 */
+  .hero-stat-item:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.06) !important;
+  }
+}
+
+/* ── Very small phones (≤375px) ── */
+@media (max-width: 375px) {
+  /* Header logo: shrink further */
+  .header-logo {
+    width: 190px !important;
+  }
+  /* Footer logo */
+  .footer-logo-img {
+    width: 190px !important;
   }
 }
 

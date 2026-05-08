@@ -568,8 +568,8 @@ img { max-width: 100%; height: auto; }
 
   /* ── Hero mobile redesign ── */
   .hero-section {
-    height: 100dvh !important;
-    min-height: 640px !important;
+    height: 76vh !important;
+    min-height: 560px !important;
   }
 
   /* Space-between: text block at top, buttons pinned to bottom */

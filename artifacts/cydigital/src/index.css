@@ -614,7 +614,7 @@ img { max-width: 100%; height: auto; }
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 10px !important;
-    margin-top: 4px !important;
+    margin-top: 100px !important;
   }
   .hero-cta-btn-primary,
   .hero-cta-btn-secondary {

@@ -572,12 +572,11 @@ img { max-width: 100%; height: auto; }
     min-height: 580px !important;
   }
   .hero-main-content {
-    align-items: flex-start !important;
-    padding-top: 0 !important;
+    align-items: center !important;
+    padding-top: 64px !important;
   }
-  /* Top padding = header height (64px) + extra vertical push */
   .hero-content-top {
-    padding-top: 150px !important;
+    padding-top: 0 !important;
     max-width: 100% !important;
   }
 
@@ -614,7 +613,7 @@ img { max-width: 100%; height: auto; }
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 10px !important;
-    margin-top: 100px !important;
+    margin-top: 24px !important;
   }
   .hero-cta-btn-primary,
   .hero-cta-btn-secondary {

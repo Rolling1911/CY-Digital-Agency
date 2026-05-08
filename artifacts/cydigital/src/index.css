@@ -575,9 +575,9 @@ img { max-width: 100%; height: auto; }
     align-items: flex-start !important;
     padding-top: 0 !important;
   }
-  /* Top padding = new header height (64px) + breathing room (20px) */
+  /* Top padding = header height (64px) + extra vertical push */
   .hero-content-top {
-    padding-top: 84px !important;
+    padding-top: 150px !important;
     max-width: 100% !important;
   }
 

@@ -151,27 +151,24 @@ export function Hero() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "right center",
+            objectPosition: "55% center",
             opacity: 1,
           }}
         />
-        {/* Left overlay — fully opaque on left to erase all baked image text, opens to city from centre */}
+        {/* Left overlay — dark on far left for text readability, fades to show sea + city */}
         <div style={{
           position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: "linear-gradient(to right, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 44%, rgba(5,5,5,0.45) 56%, rgba(5,5,5,0.08) 70%, rgba(5,5,5,0.0) 82%)",
+          inset: 0,
+          background: "linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.70) 25%, rgba(5,5,5,0.30) 48%, rgba(5,5,5,0.05) 65%, rgba(5,5,5,0.0) 80%)",
         }} />
-        {/* Bottom overlay — covers baked-in bottom text/stats from the source image */}
+        {/* Bottom fade into stats bar */}
         <div style={{
           position: "absolute",
           bottom: 0,
           left: 0,
           right: 0,
-          height: "260px",
-          background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 38%, rgba(5,5,5,0.65) 58%, transparent 100%)",
+          height: "160px",
+          background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.85) 40%, transparent 100%)",
         }} />
         {/* Top vignette */}
         <div style={{
@@ -180,7 +177,7 @@ export function Hero() {
           left: 0,
           right: 0,
           height: "120px",
-          background: "linear-gradient(to bottom, rgba(8,8,8,0.5) 0%, transparent 100%)",
+          background: "linear-gradient(to bottom, rgba(5,5,5,0.5) 0%, transparent 100%)",
         }} />
       </div>
 

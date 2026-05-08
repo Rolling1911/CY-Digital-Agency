@@ -161,11 +161,11 @@ function RestaurantRow({ restaurant, index }: { restaurant: typeof restaurants[0
         style={{ border: "1px solid rgba(255,255,255,0.07)", borderRadius: "20px", overflow: "hidden", background: "#111111", boxShadow: "0 8px 48px rgba(0,0,0,0.5)" }}
       >
         {/* Screenshot */}
-        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden", background: "#111111" }} className="w-full lg:w-[58%]">
+        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden", background: "#111111" }} className="w-full lg:w-[58%] lg:self-stretch">
           <img
             src={restaurant.image}
             alt={restaurant.name}
-            style={{ width: "100%", height: "auto", display: "block" }}
+            className="block w-full h-auto lg:absolute lg:inset-0 lg:h-full lg:w-full lg:object-cover lg:object-top"
             loading="lazy"
           />
           <div style={{

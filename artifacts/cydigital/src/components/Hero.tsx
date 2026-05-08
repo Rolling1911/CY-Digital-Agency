@@ -232,42 +232,55 @@ export function Hero() {
               <div style={{ width: "40px", height: "1px", background: "linear-gradient(to right, #D4AF37, transparent)" }} />
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline — 3 explicit rows */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              style={{
+              style={{ margin: 0, padding: 0 }}
+            >
+              {/* Row 1 */}
+              <span style={{
+                display: "block",
                 fontFamily: FONT,
                 fontWeight: 700,
                 color: "#ffffff",
-                lineHeight: 1.2,
-                marginBottom: "4px",
-                fontSize: "clamp(3rem, 6.5vw, 6.2rem)",
-              }}
-            >
-              Χτίζουμε ψηφιακές εμπειρίες που φέρνουν
-            </motion.h1>
-
-            {/* Gold accent word */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              style={{
+                lineHeight: 1.15,
+                fontSize: "clamp(2.6rem, 6vw, 5.8rem)",
+                whiteSpace: "nowrap",
+              }}>
+                Χτίζουμε ψηφιακές
+              </span>
+              {/* Row 2 */}
+              <span style={{
+                display: "block",
                 fontFamily: FONT,
                 fontWeight: 700,
-                fontSize: "clamp(3rem, 6.5vw, 6.2rem)",
-                lineHeight: 1.2,
-                marginBottom: "24px",
+                color: "#ffffff",
+                lineHeight: 1.15,
+                fontSize: "clamp(2.6rem, 6vw, 5.8rem)",
+                whiteSpace: "nowrap",
+                marginBottom: "6px",
+              }}>
+                εμπειρίες που φέρνουν
+              </span>
+              {/* Row 3 — gold */}
+              <span style={{
+                display: "block",
+                fontFamily: FONT,
+                fontWeight: 700,
+                lineHeight: 1.15,
+                fontSize: "clamp(2.6rem, 6vw, 5.8rem)",
+                whiteSpace: "nowrap",
+                marginBottom: "28px",
                 background: "linear-gradient(135deg, #C8960C 0%, #F5D96B 40%, #D4AF37 70%, #A0750A 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-              }}
-            >
-              ΑΠΟΤΕΛΕΣΜΑΤΑ.
-            </motion.div>
+              }}>
+                ΑΠΟΤΕΛΕΣΜΑΤΑ.
+              </span>
+            </motion.h1>
 
             {/* Subtitle */}
             <motion.p

@@ -566,17 +566,22 @@ img { max-width: 100%; height: auto; }
     margin-right: auto !important;
   }
 
-  /* — Hero: height and layout — */
+  /* ── Hero mobile redesign ── */
   .hero-section {
-    height: 88vh !important;
-    min-height: 580px !important;
+    height: 100dvh !important;
+    min-height: 640px !important;
   }
+
+  /* Space-between: text block at top, buttons pinned to bottom */
   .hero-main-content {
+    flex-direction: column !important;
+    justify-content: space-between !important;
     align-items: flex-start !important;
-    padding-top: 0 !important;
+    padding: 96px 24px 32px !important;
   }
+
   .hero-content-top {
-    padding-top: 170px !important;
+    padding-top: 0 !important;
     max-width: 100% !important;
   }
 
@@ -585,44 +590,45 @@ img { max-width: 100%; height: auto; }
     margin-bottom: 14px !important;
   }
 
-  /* — Hero headline: balanced size that keeps each phrase ~1 line — */
+  /* — Hero headline — */
   .hero-headline-row {
-    font-size: clamp(1.35rem, 6vw, 5.8rem) !important;
-    line-height: 1.22 !important;
+    font-size: clamp(1.5rem, 6.5vw, 5.8rem) !important;
+    line-height: 1.2 !important;
   }
 
-  /* — Hero background: shift image to show city lights on mobile — */
+  /* — Background: shift to show city on mobile — */
   .hero-bg-img {
-    object-position: 63% center !important;
+    object-position: 58% center !important;
   }
 
-  /* — Hero overlay: stronger dark wash on mobile for readability — */
+  /* — Overlay: dark top-left + dark bottom, clear middle for city — */
   .hero-text-overlay {
     background: linear-gradient(
-      to right,
-      rgba(5,5,5,0.93) 0%,
-      rgba(5,5,5,0.82) 30%,
-      rgba(5,5,5,0.55) 55%,
-      rgba(5,5,5,0.20) 75%,
+      160deg,
+      rgba(5,5,5,0.90) 0%,
+      rgba(5,5,5,0.72) 30%,
+      rgba(5,5,5,0.30) 55%,
+      rgba(5,5,5,0.10) 80%,
       rgba(5,5,5,0.00) 100%
     ) !important;
   }
 
-  /* — Hero CTA buttons: stack, full-width, proper tap area — */
+  /* — CTA buttons: full-width, pinned to bottom — */
   .hero-cta-buttons {
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 10px !important;
-    margin-top: 24px !important;
+    margin-top: 0 !important;
+    width: 100% !important;
   }
   .hero-cta-btn-primary,
   .hero-cta-btn-secondary {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 100% !important;
     justify-content: center !important;
-    padding: 14px 20px !important;
+    padding: 16px 20px !important;
     font-size: 10px !important;
-    letter-spacing: 1.8px !important;
+    letter-spacing: 2px !important;
   }
 
   /* — Hero stats bar: 2×2 grid on mobile — */

@@ -15,6 +15,7 @@ import GraphicDesignPage from "@/pages/GraphicDesignPage";
 import ContentCreationPage from "@/pages/ContentCreationPage";
 import ConceptsPage from "@/pages/ConceptsPage";
 import ConceptsBarbersPage from "@/pages/ConceptsBarbersPage";
+import ConceptsGymsPage from "@/pages/ConceptsGymsPage";
 import ConceptViewerPage from "@/pages/ConceptViewerPage";
 import NotFound from "@/pages/not-found";
 
@@ -38,6 +39,10 @@ function Router() {
       <Route path="/concepts/royal-blade">{() => <ConceptViewerPage conceptId="royal-blade" />}</Route>
       <Route path="/concepts/the-cut-studio">{() => <ConceptViewerPage conceptId="the-cut-studio" />}</Route>
       <Route path="/concepts/heritage-barber">{() => <ConceptViewerPage conceptId="heritage-barber" />}</Route>
+      <Route path="/concepts/gyms" component={ConceptsGymsPage} />
+      <Route path="/live-previews/gyms/titan-house">{() => <ConceptViewerPage conceptId="titan-house" />}</Route>
+      <Route path="/live-previews/gyms/aura-wellness">{() => <ConceptViewerPage conceptId="aura-wellness" />}</Route>
+      <Route path="/live-previews/gyms/velocity-lab">{() => <ConceptViewerPage conceptId="velocity-lab" />}</Route>
       <Route component={NotFound} />
     </Switch>
   );

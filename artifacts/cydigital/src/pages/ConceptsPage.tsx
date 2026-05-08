@@ -39,7 +39,7 @@ const categories = [
     count: 3,
     gradient: "linear-gradient(135deg, #0d1212 0%, #0d0d0d 60%, #0B0B0B 100%)",
     accent: "#4CAF7D",
-    ready: false,
+    ready: true,
   },
   {
     id: "beauty",

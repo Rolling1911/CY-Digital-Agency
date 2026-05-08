@@ -22,6 +22,24 @@ const CONCEPTS: Record<string, { name: string; url: string; category: string; ca
     category: "Barber Shops",
     categoryHref: "/concepts/barbers",
   },
+  "titan-house": {
+    name: "Titan House",
+    url: "https://titanhouse.replit.app",
+    category: "Gyms & Fitness",
+    categoryHref: "/concepts/gyms",
+  },
+  "aura-wellness": {
+    name: "Aura Wellness Club",
+    url: "https://wellnessstudio.replit.app",
+    category: "Gyms & Fitness",
+    categoryHref: "/concepts/gyms",
+  },
+  "velocity-lab": {
+    name: "Velocity Lab",
+    url: "https://velocitylab.replit.app",
+    category: "Gyms & Fitness",
+    categoryHref: "/concepts/gyms",
+  },
 };
 
 interface ConceptViewerPageProps {

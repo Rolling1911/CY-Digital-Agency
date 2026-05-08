@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 const FONT = "'Noto Serif', Georgia, serif";
 
@@ -135,25 +135,6 @@ export default function ConceptViewerPage({ conceptId }: ConceptViewerPageProps)
           >
             Ζητήστε Προσφορά
           </Link>
-          <a
-            href={concept.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Open original demo"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "rgba(255,255,255,0.35)",
-              textDecoration: "none",
-              padding: "6px",
-              borderRadius: "4px",
-              transition: "color 0.2s ease",
-            }}
-            className="hover:text-[#D4AF37]"
-          >
-            <ExternalLink size={13} />
-          </a>
         </div>
       </div>
 

@@ -210,7 +210,7 @@ export function Hero() {
         padding: "0",
       }}>
         <div style={{ width: "100%", padding: "0 0 0 clamp(20px, 4vw, 56px)" }}>
-          <div style={{ maxWidth: "580px", paddingTop: "88px" }}>
+          <div style={{ maxWidth: "720px", paddingTop: "88px" }}>
 
             {/* Label */}
             <motion.div
@@ -243,7 +243,7 @@ export function Hero() {
                 color: "#ffffff",
                 lineHeight: 1.2,
                 marginBottom: "4px",
-                fontSize: "clamp(2rem, 4vw, 3.4rem)",
+                fontSize: "clamp(2.6rem, 5.2vw, 5rem)",
               }}
             >
               Χτίζουμε ψηφιακές εμπειρίες που φέρνουν
@@ -257,7 +257,7 @@ export function Hero() {
               style={{
                 fontFamily: FONT,
                 fontWeight: 700,
-                fontSize: "clamp(2rem, 4vw, 3.4rem)",
+                fontSize: "clamp(2.6rem, 5.2vw, 5rem)",
                 lineHeight: 1.2,
                 marginBottom: "24px",
                 background: "linear-gradient(135deg, #C8960C 0%, #F5D96B 40%, #D4AF37 70%, #A0750A 100%)",

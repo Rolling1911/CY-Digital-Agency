@@ -580,17 +580,24 @@ img { max-width: 100%; height: auto; }
     max-width: 100% !important;
   }
 
-  /* — Hero CTA buttons: full-width stack — */
+  /* — Hero headline: restore larger font on mobile — */
+  .hero-headline-row {
+    font-size: clamp(2.1rem, 8.5vw, 5.8rem) !important;
+  }
+
+  /* — Hero CTA buttons: smaller, full-width stack — */
   .hero-cta-buttons {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 10px !important;
+    gap: 8px !important;
   }
   .hero-cta-btn-primary,
   .hero-cta-btn-secondary {
     width: 100% !important;
-    max-width: 340px !important;
+    max-width: 300px !important;
     justify-content: center !important;
+    padding: 11px 18px !important;
+    font-size: 10px !important;
   }
 
   /* — Hero stats bar: 2×2 grid on mobile — */

@@ -1,0 +1,102 @@
+Redesign the hero section of my CY Digital Agency website to match a premium cinematic luxury digital agency style.
+
+IMPORTANT:
+Do NOT change the website structure or navigation.
+Only redesign the hero section visually.
+
+Style direction:
+- ultra premium
+- cinematic
+- modern luxury
+- elegant
+- dark but clean
+- not overcrowded
+- professional agency aesthetic
+
+DO NOT use:
+- giant CY background logos
+- flashy particles everywhere
+- cheap animations
+- generic SaaS look
+- crypto style visuals
+
+Visual concept:
+Create a cinematic night aerial view of a Cyprus coastal city (similar to Limassol or Larnaca at night).
+
+Background should include:
+- city lights
+- coastline
+- modern skyline
+- dark luxury atmosphere
+- subtle glowing golden light trails flowing across the sky
+- realistic depth
+- elegant cinematic grading
+
+Color palette:
+- black
+- deep charcoal
+- warm gold
+- subtle bronze highlights
+- white typography
+
+Hero layout:
+LEFT SIDE:
+Small label:
+CYPRUS DIGITAL AGENCY
+
+Main heading:
+Χτίζουμε ψηφιακές εμπειρίες που φέρνουν ΑΠΟΤΕΛΕΣΜΑΤΑ.
+
+The word:
+ΑΠΟΤΕΛΕΣΜΑΤΑ
+must be gold gradient and visually stronger.
+
+Subtitle:
+Premium ιστοσελίδες, branding και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν και να αναπτυχθούν.
+
+Buttons:
+Primary:
+ΚΛΕΙΣΤΕ ΜΙΑ ΣΥΝΑΝΤΗΣΗ
+
+Secondary:
+ΔΕΙΤΕ ΤΗ ΔΟΥΛΕΙΑ ΜΑΣ
+
+RIGHT SIDE:
+Cinematic city visual blending naturally into the hero.
+
+Add:
+- subtle ambient glow
+- cinematic depth
+- smooth animated golden wave/light trails
+- elegant movement only
+- soft vignette
+
+BOTTOM STATS BAR:
+Create a premium horizontal statistics bar with:
+120+ ΟΛΟΚΛΗΡΩΜΕΝΑ ΕΡΓΑ
+300% ΜΕΣΗ ΑΥΞΗΣΗ ΠΕΛΑΤΩΝ
+5.0 ΑΞΙΟΛΟΓΗΣΗ ΠΕΛΑΤΩΝ
+100% ΠΡΟΣΑΝΑΤΟΛΙΣΜΟΣ ΣΤΟ ΑΠΟΤΕΛΕΣΜΑ
+
+Design requirements:
+- fully responsive
+- premium mobile version
+- smooth transitions
+- elegant hover effects
+- glassmorphism subtle effects
+- luxury typography
+- optimized performance
+- cinematic atmosphere
+- clean spacing
+- no visual clutter
+
+Animation requirements:
+- subtle floating golden particles
+- moving light trails
+- slow cinematic parallax
+- smooth fade-in text
+- elegant button hover animations
+
+Very important:
+Keep it looking like a real high-end creative agency website, not a template.
+The final result should feel world-class and premium.

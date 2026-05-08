@@ -1,10 +1,126 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { ArrowRight, Play, Rocket, TrendingUp, Star, Target } from "lucide-react";
+import { useEffect, useRef } from "react";
+
+const FONT = "'Noto Serif', Georgia, serif";
+
+const stats = [
+  { icon: Rocket, number: "120+", label: "ΟΛΟΚΛΗΡΩΜΕΝΑ ΕΡΓΑ" },
+  { icon: TrendingUp, number: "300%", label: "ΜΕΣΗ ΑΥΞΗΣΗ ΠΕΛΑΤΩΝ" },
+  { icon: Star, number: "5.0", label: "ΑΞΙΟΛΟΓΗΣΗ ΠΕΛΑΤΩΝ" },
+  { icon: Target, number: "100%", label: "ΠΡΟΣΑΝΑΤΟΛΙΣΜΟΣ ΣΤΟ ΑΠΟΤΕΛΕΣΜΑ" },
+];
+
+function GoldenWaves() {
+  return (
+    <svg
+      style={{ position: "absolute", top: 0, right: 0, width: "62%", height: "100%", pointerEvents: "none", zIndex: 5 }}
+      viewBox="0 0 700 600"
+      preserveAspectRatio="xMidYMid slice"
+      fill="none"
+    >
+      <motion.path
+        d="M700 80 C580 120, 460 60, 340 140 C220 220, 160 160, 80 200"
+        stroke="url(#gold1)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 0.6 }}
+        transition={{ duration: 2.5, ease: "easeOut", delay: 0.5 }}
+      />
+      <motion.path
+        d="M700 140 C560 190, 420 100, 300 200 C200 280, 130 240, 0 280"
+        stroke="url(#gold2)"
+        strokeWidth="1"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 0.45 }}
+        transition={{ duration: 3, ease: "easeOut", delay: 0.8 }}
+      />
+      <motion.path
+        d="M700 200 C600 160, 500 220, 380 170 C260 120, 180 200, 60 160"
+        stroke="url(#gold3)"
+        strokeWidth="0.8"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 0.35 }}
+        transition={{ duration: 3.5, ease: "easeOut", delay: 1.1 }}
+      />
+      <motion.path
+        d="M700 60 C620 100, 540 40, 440 100 C340 160, 260 100, 160 140 C80 170, 40 130, -20 160"
+        stroke="url(#gold1)"
+        strokeWidth="0.6"
+        strokeLinecap="round"
+        fill="none"
+        initial={{ pathLength: 0, opacity: 0 }}
+        animate={{ pathLength: 1, opacity: 0.25 }}
+        transition={{ duration: 4, ease: "easeOut", delay: 1.4 }}
+      />
+      <defs>
+        <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
+          <stop offset="40%" stopColor="#F5D96B" stopOpacity="1" />
+          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.3" />
+        </linearGradient>
+        <linearGradient id="gold2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="#B8922E" stopOpacity="0" />
+          <stop offset="50%" stopColor="#D4AF37" stopOpacity="1" />
+          <stop offset="100%" stopColor="#F5D96B" stopOpacity="0.2" />
+        </linearGradient>
+        <linearGradient id="gold3" x1="100%" y1="0%" x2="0%" y2="0%">
+          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.1" />
+          <stop offset="50%" stopColor="#E8C84A" stopOpacity="1" />
+          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+function FloatingParticles() {
+  const particles = Array.from({ length: 18 }, (_, i) => ({
+    id: i,
+    x: 45 + Math.random() * 55,
+    y: 5 + Math.random() * 85,
+    size: 1 + Math.random() * 2,
+    delay: Math.random() * 4,
+    duration: 3 + Math.random() * 4,
+  }));
+
+  return (
+    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 6 }}>
+      {particles.map((p) => (
+        <motion.div
+          key={p.id}
+          style={{
+            position: "absolute",
+            left: `${p.x}%`,
+            top: `${p.y}%`,
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            borderRadius: "50%",
+            background: "#D4AF37",
+          }}
+          animate={{
+            y: [-8, 8, -8],
+            opacity: [0, 0.7, 0],
+          }}
+          transition={{
+            duration: p.duration,
+            delay: p.delay,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 export function Hero() {
-  const { t } = useLanguage();
-
   const scrollToContact = () => {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -14,91 +130,288 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative overflow-hidden flex items-start md:items-center justify-center md:min-h-[100dvh]">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-background/60 md:bg-background/50 z-10" />
+    <section
+      id="home"
+      style={{
+        position: "relative",
+        height: "100dvh",
+        minHeight: "640px",
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+        background: "#0a0a0a",
+      }}
+    >
+      {/* Background image */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
         <img
-          src="/images/hero-bg.png"
-          alt="CYDigital Hero"
-          className="w-full h-full object-cover object-center opacity-75"
+          src="/images/hero-cyprus-night.jpg"
+          alt="Cyprus night cityscape"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center center",
+            opacity: 0.85,
+          }}
         />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-20" />
+        {/* Left-side readability overlay — stops 80px from bottom to clear stats bar */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: "80px",
+          background: "linear-gradient(to right, rgba(6,6,6,0.99) 0%, rgba(6,6,6,0.99) 40%, rgba(6,6,6,0.88) 55%, rgba(6,6,6,0.35) 72%, rgba(6,6,6,0.04) 100%)",
+        }} />
+        {/* Top vignette */}
+        <div style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          height: "120px",
+          background: "linear-gradient(to bottom, rgba(8,8,8,0.6) 0%, transparent 100%)",
+        }} />
       </div>
 
-      <div className="container mx-auto px-6 md:px-8 relative z-30">
-        <div className="max-w-[900px] mx-auto text-center flex flex-col items-center pt-[100px] pb-8 md:pt-[100px] md:pb-[80px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-5 hidden sm:flex flex-col items-center"
-          >
-            <motion.span
-              className="text-[#D4AF37] font-semibold uppercase"
-              style={{ fontSize: "12px", letterSpacing: "2px" }}
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      {/* Animated golden waves */}
+      <GoldenWaves />
+
+      {/* Floating particles */}
+      <FloatingParticles />
+
+      {/* Ambient glow */}
+      <div style={{
+        position: "absolute",
+        top: "20%",
+        right: "20%",
+        width: "400px",
+        height: "400px",
+        background: "radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%)",
+        borderRadius: "50%",
+        pointerEvents: "none",
+        zIndex: 4,
+      }} />
+
+      {/* Main content */}
+      <div style={{
+        position: "relative",
+        zIndex: 10,
+        flex: 1,
+        display: "flex",
+        alignItems: "center",
+        padding: "0",
+      }}>
+        <div style={{ width: "100%", maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 80px)" }}>
+          <div style={{ maxWidth: "600px", paddingTop: "88px" }}>
+
+            {/* Label */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}
             >
-              {t.hero_label}
-            </motion.span>
-            <div className="w-20 h-px mt-3 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
-          </motion.div>
+              <span style={{
+                fontFamily: FONT,
+                fontSize: "11px",
+                letterSpacing: "3px",
+                color: "#D4AF37",
+                textTransform: "uppercase",
+                fontWeight: 600,
+              }}>
+                Cyprus Digital Agency
+              </span>
+              <div style={{ width: "40px", height: "1px", background: "linear-gradient(to right, #D4AF37, transparent)" }} />
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-bold text-foreground text-center"
-            style={{ fontSize: "clamp(26px, 4.2vw, 58px)", lineHeight: 1.35, letterSpacing: "0.5px", maxWidth: "860px" }}
-          >
-            {t.hero_headline}
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display font-bold text-[#D4AF37] text-center"
-            style={{ fontSize: "clamp(28px, 4.8vw, 66px)", lineHeight: 1.2, letterSpacing: "4px", marginTop: "8px" }}
-          >
-            {t.hero_accent}
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="text-center"
-            style={{ fontSize: "18px", lineHeight: 1.7, color: "#BFBFBF", maxWidth: "600px", margin: "18px auto 0" }}
-          >
-            {t.hero_subtitle}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            style={{ marginTop: "28px" }}
-          >
-            <Button
-              onClick={scrollToContact}
-              className="w-full sm:w-auto bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 font-semibold tracking-widest uppercase rounded-none transition-all hover:scale-[1.03] active:scale-95"
-              style={{ padding: "14px 28px", fontSize: "13px", height: "auto" }}
-              data-testid="button-hero-primary"
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontFamily: FONT,
+                fontWeight: 700,
+                color: "#ffffff",
+                lineHeight: 1.2,
+                marginBottom: "4px",
+                fontSize: "clamp(2rem, 4vw, 3.4rem)",
+              }}
             >
-              {t.hero_btn_primary}
-            </Button>
-            <Button
-              onClick={scrollToPortfolio}
-              variant="outline"
-              className="w-full sm:w-auto border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 font-semibold tracking-widest uppercase rounded-none transition-all hover:scale-[1.03] active:scale-95"
-              style={{ padding: "14px 28px", fontSize: "13px", height: "auto" }}
-              data-testid="button-hero-secondary"
+              Χτίζουμε ψηφιακές εμπειρίες που φέρνουν
+            </motion.h1>
+
+            {/* Gold accent word */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontFamily: FONT,
+                fontWeight: 700,
+                fontSize: "clamp(2rem, 4vw, 3.4rem)",
+                lineHeight: 1.2,
+                marginBottom: "24px",
+                background: "linear-gradient(135deg, #C8960C 0%, #F5D96B 40%, #D4AF37 70%, #A0750A 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
             >
-              {t.hero_btn_secondary}
-            </Button>
-          </motion.div>
+              ΑΠΟΤΕΛΕΣΜΑΤΑ.
+            </motion.div>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontFamily: FONT,
+                fontSize: "clamp(14px, 1.5vw, 16px)",
+                lineHeight: 1.8,
+                color: "rgba(255,255,255,0.6)",
+                marginBottom: "36px",
+                maxWidth: "480px",
+              }}
+            >
+              Premium ιστοσελίδες, branding και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν και να αναπτυχθούν.
+            </motion.p>
+
+            {/* Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              style={{ display: "flex", flexWrap: "wrap", gap: "14px", alignItems: "center" }}
+            >
+              <button
+                onClick={scrollToContact}
+                data-testid="button-hero-primary"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  background: "#D4AF37",
+                  color: "#000",
+                  fontFamily: FONT,
+                  fontWeight: 700,
+                  fontSize: "11px",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  padding: "15px 28px",
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  borderRadius: "2px",
+                  whiteSpace: "nowrap",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLButtonElement).style.background = "#C9A832";
+                  (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 28px rgba(212,175,55,0.45)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLButtonElement).style.background = "#D4AF37";
+                  (e.currentTarget as HTMLButtonElement).style.boxShadow = "none";
+                }}
+              >
+                ΚΛΕΙΣΤΕ ΜΙΑ ΣΥΝΑΝΤΗΣΗ
+                <ArrowRight size={13} />
+              </button>
+
+              <button
+                onClick={scrollToPortfolio}
+                data-testid="button-hero-secondary"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  background: "rgba(255,255,255,0.05)",
+                  color: "rgba(255,255,255,0.85)",
+                  fontFamily: FONT,
+                  fontWeight: 600,
+                  fontSize: "11px",
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
+                  padding: "14px 26px",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  borderRadius: "2px",
+                  whiteSpace: "nowrap",
+                  backdropFilter: "blur(4px)",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "#D4AF37";
+                  (e.currentTarget as HTMLButtonElement).style.color = "#D4AF37";
+                  (e.currentTarget as HTMLButtonElement).style.background = "rgba(212,175,55,0.06)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.2)";
+                  (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.85)";
+                  (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.05)";
+                }}
+              >
+                <Play size={12} fill="currentColor" />
+                ΔΕΙΤΕ ΤΗ ΔΟΥΛΕΙΑ ΜΑΣ
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Bar */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 20,
+          borderTop: "1px solid rgba(212,175,55,0.18)",
+          background: "#0c0c0c",
+        }}
+      >
+        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 80px)", display: "flex" }}>
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              style={{
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                padding: "18px 16px",
+                borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
+              }}
+            >
+              <stat.icon size={18} color="#D4AF37" strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.75 }} />
+              <div style={{ display: "flex", alignItems: "baseline", gap: "8px", flexWrap: "wrap" }}>
+                <span style={{
+                  fontFamily: FONT,
+                  fontSize: "clamp(1.1rem, 1.6vw, 1.4rem)",
+                  fontWeight: 700,
+                  color: "#D4AF37",
+                  lineHeight: 1,
+                  whiteSpace: "nowrap",
+                }}>
+                  {stat.number}
+                </span>
+                <span style={{
+                  fontFamily: FONT,
+                  fontSize: "clamp(8px, 0.65vw, 9px)",
+                  letterSpacing: "1.5px",
+                  color: "rgba(255,255,255,0.38)",
+                  textTransform: "uppercase",
+                  lineHeight: 1.2,
+                }}>
+                  {stat.label}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

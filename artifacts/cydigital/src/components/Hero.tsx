@@ -151,18 +151,27 @@ export function Hero() {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: "center center",
-            opacity: 0.85,
+            objectPosition: "right center",
+            opacity: 1,
           }}
         />
-        {/* Left-side readability overlay — stops 80px from bottom to clear stats bar */}
+        {/* Left overlay — opaque enough to erase baked text, fades out at centre so sea shows */}
         <div style={{
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: "80px",
-          background: "linear-gradient(to right, rgba(6,6,6,0.99) 0%, rgba(6,6,6,0.99) 40%, rgba(6,6,6,0.88) 55%, rgba(6,6,6,0.35) 72%, rgba(6,6,6,0.04) 100%)",
+          background: "linear-gradient(to right, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.92) 30%, rgba(5,5,5,0.60) 44%, rgba(5,5,5,0.18) 58%, rgba(5,5,5,0.0) 75%)",
+        }} />
+        {/* Bottom overlay — covers baked-in stats/text from the source image */}
+        <div style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "220px",
+          background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.98) 35%, rgba(5,5,5,0.6) 60%, transparent 100%)",
         }} />
         {/* Top vignette */}
         <div style={{
@@ -171,7 +180,7 @@ export function Hero() {
           left: 0,
           right: 0,
           height: "120px",
-          background: "linear-gradient(to bottom, rgba(8,8,8,0.6) 0%, transparent 100%)",
+          background: "linear-gradient(to bottom, rgba(8,8,8,0.5) 0%, transparent 100%)",
         }} />
       </div>
 
@@ -203,8 +212,8 @@ export function Hero() {
         alignItems: "center",
         padding: "0",
       }}>
-        <div style={{ width: "100%", maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(24px, 5vw, 80px)" }}>
-          <div style={{ maxWidth: "600px", paddingTop: "88px" }}>
+        <div style={{ width: "100%", padding: "0 0 0 clamp(20px, 4vw, 56px)" }}>
+          <div style={{ maxWidth: "580px", paddingTop: "88px" }}>
 
             {/* Label */}
             <motion.div

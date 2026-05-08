@@ -155,23 +155,23 @@ export function Hero() {
             opacity: 1,
           }}
         />
-        {/* Left overlay — opaque enough to erase baked text, fades out at centre so sea shows */}
+        {/* Left overlay — fully opaque on left to erase all baked image text, opens to city from centre */}
         <div style={{
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
-          bottom: "80px",
-          background: "linear-gradient(to right, rgba(5,5,5,0.92) 0%, rgba(5,5,5,0.92) 30%, rgba(5,5,5,0.60) 44%, rgba(5,5,5,0.18) 58%, rgba(5,5,5,0.0) 75%)",
+          bottom: 0,
+          background: "linear-gradient(to right, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 44%, rgba(5,5,5,0.45) 56%, rgba(5,5,5,0.08) 70%, rgba(5,5,5,0.0) 82%)",
         }} />
-        {/* Bottom overlay — covers baked-in stats/text from the source image */}
+        {/* Bottom overlay — covers baked-in bottom text/stats from the source image */}
         <div style={{
           position: "absolute",
           bottom: 0,
           left: 0,
           right: 0,
-          height: "220px",
-          background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.98) 35%, rgba(5,5,5,0.6) 60%, transparent 100%)",
+          height: "260px",
+          background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 38%, rgba(5,5,5,0.65) 58%, transparent 100%)",
         }} />
         {/* Top vignette */}
         <div style={{

@@ -22,6 +22,24 @@ const CONCEPTS: Record<string, { name: string; url: string; category: string; ca
     category: "Barber Shops",
     categoryHref: "/concepts/barbers",
   },
+  "mare-vista": {
+    name: "Mare Vista",
+    url: "https://MareVista.replit.app",
+    category: "Restaurants & Takeaways",
+    categoryHref: "/concepts/restaurants",
+  },
+  "smash-district": {
+    name: "SMASH District",
+    url: "https://SmashDistrict.replit.app",
+    category: "Restaurants & Takeaways",
+    categoryHref: "/concepts/restaurants",
+  },
+  "evora-mediterranean": {
+    name: "Évora Mediterranean",
+    url: "https://EvoraBistro.replit.app",
+    category: "Restaurants & Takeaways",
+    categoryHref: "/concepts/restaurants",
+  },
   "titan-house": {
     name: "Titan House",
     url: "https://titanhouse.replit.app",

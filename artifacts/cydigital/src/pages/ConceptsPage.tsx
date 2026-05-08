@@ -28,7 +28,7 @@ const categories = [
     count: 3,
     gradient: "linear-gradient(135deg, #120d08 0%, #0d0d0d 60%, #0B0B0B 100%)",
     accent: "#C4763A",
-    ready: false,
+    ready: true,
   },
   {
     id: "gyms",

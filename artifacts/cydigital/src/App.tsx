@@ -16,6 +16,7 @@ import ContentCreationPage from "@/pages/ContentCreationPage";
 import ConceptsPage from "@/pages/ConceptsPage";
 import ConceptsBarbersPage from "@/pages/ConceptsBarbersPage";
 import ConceptsGymsPage from "@/pages/ConceptsGymsPage";
+import ConceptsRestaurantsPage from "@/pages/ConceptsRestaurantsPage";
 import ConceptViewerPage from "@/pages/ConceptViewerPage";
 import NotFound from "@/pages/not-found";
 
@@ -40,6 +41,10 @@ function Router() {
       <Route path="/concepts/the-cut-studio">{() => <ConceptViewerPage conceptId="the-cut-studio" />}</Route>
       <Route path="/concepts/heritage-barber">{() => <ConceptViewerPage conceptId="heritage-barber" />}</Route>
       <Route path="/concepts/gyms" component={ConceptsGymsPage} />
+      <Route path="/concepts/restaurants" component={ConceptsRestaurantsPage} />
+      <Route path="/live-previews/restaurants/mare-vista">{() => <ConceptViewerPage conceptId="mare-vista" />}</Route>
+      <Route path="/live-previews/restaurants/smash-district">{() => <ConceptViewerPage conceptId="smash-district" />}</Route>
+      <Route path="/live-previews/restaurants/evora-mediterranean">{() => <ConceptViewerPage conceptId="evora-mediterranean" />}</Route>
       <Route path="/live-previews/gyms/titan-house">{() => <ConceptViewerPage conceptId="titan-house" />}</Route>
       <Route path="/live-previews/gyms/aura-wellness">{() => <ConceptViewerPage conceptId="aura-wellness" />}</Route>
       <Route path="/live-previews/gyms/velocity-lab">{() => <ConceptViewerPage conceptId="velocity-lab" />}</Route>

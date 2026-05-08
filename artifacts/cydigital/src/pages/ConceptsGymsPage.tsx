@@ -161,11 +161,11 @@ function GymRow({ gym, index }: { gym: typeof gyms[0]; index: number }) {
         style={{ border: "1px solid rgba(255,255,255,0.07)", borderRadius: "20px", overflow: "hidden", background: "#111111", boxShadow: "0 8px 48px rgba(0,0,0,0.5)" }}
       >
         {/* Screenshot */}
-        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden", background: "#111111" }} className="w-full lg:w-[58%]">
+        <div style={{ flex: "0 0 auto", position: "relative", overflow: "hidden", background: "#111111", aspectRatio: "16/9" }} className="w-full lg:w-[58%]">
           <img
             src={gym.image}
             alt={gym.name}
-            style={{ width: "100%", height: "auto", display: "block" }}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
             loading="lazy"
           />
           <div style={{

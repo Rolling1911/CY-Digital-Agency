@@ -148,6 +148,7 @@ export function Hero() {
         <img
           src="/images/hero-cyprus-night.jpg"
           alt="Cyprus night cityscape"
+          className="hero-bg-img"
           style={{
             width: "100%",
             height: "100%",
@@ -157,7 +158,7 @@ export function Hero() {
           }}
         />
         {/* Left overlay — dark on far left for text readability, fades to show sea + city */}
-        <div style={{
+        <div className="hero-text-overlay" style={{
           position: "absolute",
           inset: 0,
           background: "linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.70) 25%, rgba(5,5,5,0.30) 48%, rgba(5,5,5,0.05) 65%, rgba(5,5,5,0.0) 80%)",
@@ -218,6 +219,7 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="hero-label"
               style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}
             >
               <span style={{

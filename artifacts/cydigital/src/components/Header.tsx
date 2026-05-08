@@ -47,7 +47,7 @@ export function Header() {
   return (
     <header
       style={{ height: "88px" }}
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
+      className={`header-bar fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
         isScrolled ? "bg-black/85 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
       }`}
     >

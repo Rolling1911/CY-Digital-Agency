@@ -566,38 +566,64 @@ img { max-width: 100%; height: auto; }
     margin-right: auto !important;
   }
 
-  /* — Hero: shorten height, push text toward top — */
+  /* — Hero: height and layout — */
   .hero-section {
-    height: 78vh !important;
-    min-height: 520px !important;
+    height: 88vh !important;
+    min-height: 580px !important;
   }
   .hero-main-content {
     align-items: flex-start !important;
     padding-top: 0 !important;
   }
+  /* Top padding = new header height (64px) + breathing room (20px) */
   .hero-content-top {
-    padding-top: 104px !important;
+    padding-top: 84px !important;
     max-width: 100% !important;
   }
 
-  /* — Hero headline: restore larger font on mobile — */
-  .hero-headline-row {
-    font-size: clamp(2.1rem, 8.5vw, 5.8rem) !important;
+  /* — Hero label — */
+  .hero-label {
+    margin-bottom: 14px !important;
   }
 
-  /* — Hero CTA buttons: smaller, full-width stack — */
+  /* — Hero headline: balanced size that keeps each phrase ~1 line — */
+  .hero-headline-row {
+    font-size: clamp(1.35rem, 6vw, 5.8rem) !important;
+    line-height: 1.22 !important;
+  }
+
+  /* — Hero background: shift image to show city lights on mobile — */
+  .hero-bg-img {
+    object-position: 63% center !important;
+  }
+
+  /* — Hero overlay: stronger dark wash on mobile for readability — */
+  .hero-text-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(5,5,5,0.93) 0%,
+      rgba(5,5,5,0.82) 30%,
+      rgba(5,5,5,0.55) 55%,
+      rgba(5,5,5,0.20) 75%,
+      rgba(5,5,5,0.00) 100%
+    ) !important;
+  }
+
+  /* — Hero CTA buttons: stack, full-width, proper tap area — */
   .hero-cta-buttons {
     flex-direction: column !important;
     align-items: stretch !important;
-    gap: 8px !important;
+    gap: 10px !important;
+    margin-top: 4px !important;
   }
   .hero-cta-btn-primary,
   .hero-cta-btn-secondary {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 320px !important;
     justify-content: center !important;
-    padding: 11px 18px !important;
+    padding: 14px 20px !important;
     font-size: 10px !important;
+    letter-spacing: 1.8px !important;
   }
 
   /* — Hero stats bar: 2×2 grid on mobile — */
@@ -802,11 +828,15 @@ img { max-width: 100%; height: auto; }
 
 /* — Header mobile fixes — */
 @media (max-width: 768px) {
+  /* Shrink header bar height */
+  .header-bar {
+    height: 64px !important;
+  }
   .header-inner {
-    padding: 0 20px !important;
+    padding: 0 16px !important;
   }
   .header-logo {
-    width: 240px !important;
+    width: 160px !important;
   }
   .strong-cta-buttons {
     flex-direction: column;

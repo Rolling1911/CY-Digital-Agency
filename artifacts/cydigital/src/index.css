@@ -572,11 +572,11 @@ img { max-width: 100%; height: auto; }
     min-height: 580px !important;
   }
   .hero-main-content {
-    align-items: center !important;
-    padding-top: 64px !important;
+    align-items: flex-start !important;
+    padding-top: 0 !important;
   }
   .hero-content-top {
-    padding-top: 0 !important;
+    padding-top: 108px !important;
     max-width: 100% !important;
   }
 

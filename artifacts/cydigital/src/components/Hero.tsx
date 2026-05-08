@@ -132,6 +132,7 @@ export function Hero() {
   return (
     <section
       id="home"
+      className="hero-section"
       style={{
         position: "relative",
         height: "100dvh",
@@ -201,7 +202,7 @@ export function Hero() {
       }} />
 
       {/* Main content */}
-      <div style={{
+      <div className="hero-main-content" style={{
         position: "relative",
         zIndex: 10,
         flex: 1,
@@ -403,12 +404,11 @@ export function Hero() {
               className="hero-stat-item"
               style={{
                 flex: 1,
-                minWidth: "50%",
                 display: "flex",
                 alignItems: "center",
                 gap: "10px",
-                padding: "14px 12px",
-                borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
+                padding: "18px 16px",
+                borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
               }}
             >
               <stat.icon size={16} color="#D4AF37" strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.75 }} />

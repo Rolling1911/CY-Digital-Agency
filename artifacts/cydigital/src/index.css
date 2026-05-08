@@ -566,9 +566,18 @@ img { max-width: 100%; height: auto; }
     margin-right: auto !important;
   }
 
-  /* — Hero: slightly reduce top padding — */
+  /* — Hero: shorten height, push text toward top — */
+  .hero-section {
+    height: 78vh !important;
+    min-height: 520px !important;
+  }
+  .hero-main-content {
+    align-items: flex-start !important;
+    padding-top: 0 !important;
+  }
   .hero-content-top {
-    padding-top: 60px !important;
+    padding-top: 24px !important;
+    max-width: 100% !important;
   }
 
   /* — Hero CTA buttons: full-width stack — */
@@ -589,7 +598,7 @@ img { max-width: 100%; height: auto; }
     flex: 1 1 50% !important;
     min-width: 50% !important;
     border-right: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
     padding: 12px 10px !important;
   }
   .hero-stat-item:nth-child(3),

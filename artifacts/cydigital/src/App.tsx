@@ -18,6 +18,7 @@ import ConceptsBarbersPage from "@/pages/ConceptsBarbersPage";
 import ConceptsGymsPage from "@/pages/ConceptsGymsPage";
 import ConceptsRestaurantsPage from "@/pages/ConceptsRestaurantsPage";
 import ConceptViewerPage from "@/pages/ConceptViewerPage";
+import InvestorsDianiPage from "@/pages/InvestorsDianiPage";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/live-previews/gyms/titan-house">{() => <ConceptViewerPage conceptId="titan-house" />}</Route>
       <Route path="/live-previews/gyms/aura-wellness">{() => <ConceptViewerPage conceptId="aura-wellness" />}</Route>
       <Route path="/live-previews/gyms/velocity-lab">{() => <ConceptViewerPage conceptId="velocity-lab" />}</Route>
+      <Route path="/investors/diani" component={InvestorsDianiPage} />
       <Route component={NotFound} />
     </Switch>
   );

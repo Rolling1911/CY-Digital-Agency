@@ -28,7 +28,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/ypiresies" component={ServicesPage} />
-      <Route path="/ypiresies/kataskevi-istoselidaas" component={WebDesignPage} />
+      <Route path="/ypiresies/kataskevi-istoselidas" component={WebDesignPage} />
       <Route path="/ypiresies/social-media" component={SocialMediaPage} />
       <Route path="/ypiresies/grafistika" component={GraphicDesignPage} />
       <Route path="/ypiresies/dimioyrgia-periekhomenou" component={ContentCreationPage} />

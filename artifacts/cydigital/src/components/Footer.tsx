@@ -38,7 +38,7 @@ export function Footer() {
   const serviceLinks = [
     {
       label: isGreek ? "Κατασκευή Ιστοσελίδων" : "Website Development",
-      href: "/ypiresies/kataskevi-istoselidaas",
+      href: "/ypiresies/kataskevi-istoselidas",
     },
     {
       label: "Social Media",

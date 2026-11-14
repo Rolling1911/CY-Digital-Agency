@@ -21,7 +21,7 @@ export function Services({ showHeading = true }: { showHeading?: boolean }) {
       icon: MonitorSmartphone,
       title: t.service_web_title,
       description: t.service_web_desc,
-      href: "/ypiresies/kataskevi-istoselidaas",
+      href: "/ypiresies/kataskevi-istoselidas",
       color: "#3155F5",
     },
     {

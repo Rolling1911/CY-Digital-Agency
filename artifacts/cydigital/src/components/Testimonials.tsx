@@ -1,80 +1,117 @@
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-function Stars() {
-  return (
-    <div style={{ display: "flex", gap: "3px" }}>
-      {[...Array(5)].map((_, i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#D4AF37" style={{ flexShrink: 0 }}>
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
-
 export function Testimonials() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const testimonials = [
-    { initials: "ΑΣ", name: "Αντώνης Σταύρου", role: t.t1_role, quote: t.t1_quote, result: t.t1_result },
-    { initials: "ΜΧ", name: "Μαρία Χριστοδούλου", role: t.t2_role, quote: t.t2_quote, result: t.t2_result },
-    { initials: "ΚΝ", name: "Κώστας Νεοφύτου", role: t.t3_role, quote: t.t3_quote, result: t.t3_result },
+    {
+      initials: "ΑΣ",
+      name: "Αντώνης Σταύρου",
+      role: t.t1_role,
+      quote: t.t1_quote,
+      result: t.t1_result,
+      accent: "#3155F5",
+    },
+    {
+      initials: "ΜΧ",
+      name: "Μαρία Χριστοδούλου",
+      role: t.t2_role,
+      quote: t.t2_quote,
+      result: t.t2_result,
+      accent: "#FF6633",
+    },
+    {
+      initials: "ΚΝ",
+      name: "Κώστας Νεοφύτου",
+      role: t.t3_role,
+      quote: t.t3_quote,
+      result: t.t3_result,
+      accent: "#3155F5",
+    },
   ];
 
   return (
-    <section className="py-9 md:py-16 bg-black">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
-          >
-            {t.testimonials_heading}
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
-          />
-        </div>
+    <section className="relative overflow-hidden bg-[#F7F5EF] py-20 md:py-28">
+      <div className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-[#3155F5]/[0.045] blur-[120px]" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {testimonials.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+      <div className="relative mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12 xl:px-16">
+        <div className="mb-14 grid gap-6 md:mb-16 md:grid-cols-[1fr_0.7fr] md:items-end">
+          <div>
+            <span className="mb-5 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.24em] text-[#FF6633]">
+              <span className="h-px w-8 bg-[#FF6633]" />
+              {language === "el" ? "ΤΙ ΛΕΝΕ ΟΙ ΠΕΛΑΤΕΣ ΜΑΣ" : "WHAT CLIENTS SAY"}
+            </span>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, borderColor: "rgba(212,175,55,0.55)", boxShadow: "0 0 28px rgba(212,175,55,0.13)" }}
-              style={{ background: "#111111", border: "1px solid rgba(212,175,55,0.15)", borderRadius: "14px", padding: "32px", display: "flex", flexDirection: "column", gap: "0", transition: "border-color 0.3s ease, box-shadow 0.3s ease", cursor: "default" }}
+              transition={{ duration: 0.65 }}
+              className="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#171717] md:text-5xl lg:text-6xl"
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
-                <div style={{ width: "46px", height: "46px", borderRadius: "50%", background: "rgba(212,175,55,0.12)", border: "1px solid rgba(212,175,55,0.35)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  <span style={{ fontSize: "14px", fontWeight: 700, color: "#D4AF37", fontFamily: "'Noto Serif', Georgia, serif", letterSpacing: "0.5px" }}>{item.initials}</span>
+              {t.testimonials_heading}
+              <span className="text-[#3155F5]">.</span>
+            </motion.h2>
+          </div>
+
+          <p className="max-w-md text-sm leading-7 text-[#171717]/65 md:justify-self-end">
+            {language === "en"
+              ? "Real experiences from people who have worked with us. The best measure of our work is the value it creates for the businesses behind it."
+              : "Πραγματικές εμπειρίες από ανθρώπους που συνεργάστηκαν μαζί μας. Η αξία της δουλειάς μας φαίνεται στο αποτέλεσμα που δημιουργεί για κάθε επιχείρηση."}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          {testimonials.map((item, index) => (
+            <motion.article
+              key={item.name}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: index * 0.12 }}
+              whileHover={{ y: -6 }}
+              className="group flex min-h-[340px] flex-col rounded-sm border border-[#171717]/[0.08] bg-white p-7 transition-all duration-300 hover:border-[#3155F5]/30 hover:shadow-[0_14px_40px_rgba(23,23,23,0.06)] md:p-8"
+            >
+              <div className="mb-8 flex items-start justify-between">
+                <div
+                  className="flex h-11 w-11 items-center justify-center rounded-full text-sm font-semibold text-white"
+                  style={{ backgroundColor: item.accent }}
+                >
+                  {item.initials}
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: "14px", fontWeight: 700, color: "#ffffff", marginBottom: "2px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontFamily: "'Noto Serif', Georgia, serif" }}>{item.name}</div>
-                  <div style={{ fontSize: "11px", color: "#888", letterSpacing: "0.5px", fontFamily: "'Noto Serif', Georgia, serif" }}>{item.role}</div>
-                </div>
-                <Stars />
+
+                <Quote
+                  size={30}
+                  strokeWidth={1.5}
+                  className="text-[#171717]/15 transition-colors duration-300 group-hover:text-[#FF6633]"
+                />
               </div>
-              <div style={{ height: "1px", background: "rgba(212,175,55,0.08)", marginBottom: "20px" }} />
-              <p style={{ fontFamily: "'Noto Serif', Georgia, serif", fontSize: "15px", color: "rgba(255,255,255,0.82)", lineHeight: 1.75, fontStyle: "italic", flex: 1, marginBottom: "24px" }}>
-                "{item.quote}"
+
+              <p className="mb-8 flex-1 text-[15px] leading-[1.85] text-[#171717]/75">
+                “{item.quote}”
               </p>
-              <div style={{ display: "flex" }}>
-                <span style={{ fontFamily: "'Noto Serif', Georgia, serif", fontSize: "11px", fontWeight: 700, letterSpacing: "1.2px", textTransform: "uppercase", color: "#D4AF37", background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.25)", borderRadius: "20px", padding: "5px 14px" }}>
-                  {item.result}
-                </span>
+
+              <div className="mb-6 h-px bg-[#171717]/10" />
+
+              <div className="mb-5">
+                <h3 className="text-sm font-semibold text-[#171717]">
+                  {item.name}
+                </h3>
+                <p className="mt-1 text-xs text-[#171717]/50">{item.role}</p>
               </div>
-            </motion.div>
+
+              <div
+                className="inline-flex self-start rounded-sm px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em]"
+                style={{
+                  color: item.accent,
+                  backgroundColor: `${item.accent}18`,
+                }}
+              >
+                {item.result}
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>

@@ -1,22 +1,34 @@
 import { motion } from "framer-motion";
-import { Camera, Video, Clapperboard, Film } from "lucide-react";
+import { Camera, Video, Clapperboard, Film, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function ContentCreation() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const features = [
-    { icon: Camera, title: t.content_f1_title, desc: t.content_f1_desc },
-    { icon: Video, title: t.content_f2_title, desc: t.content_f2_desc },
-    { icon: Clapperboard, title: t.content_f3_title, desc: t.content_f3_desc },
-    { icon: Film, title: t.content_f4_title, desc: t.content_f4_desc },
+    { icon: Camera, number: "01", title: t.content_f1_title, desc: t.content_f1_desc },
+    { icon: Video, number: "02", title: t.content_f2_title, desc: t.content_f2_desc },
+    { icon: Clapperboard, number: "03", title: t.content_f3_title, desc: t.content_f3_desc },
+    { icon: Film, number: "04", title: t.content_f4_title, desc: t.content_f4_desc },
   ];
 
-  const portfolioItems = [
-    { title: t.content_p1_title, desc: "Product photography", image: "/images/content-rose.jpeg", isVideo: false },
-    { title: "Lifestyle Content", desc: "Authentic brand moments", image: "/images/content-drink.jpeg", isVideo: false },
-    { title: t.content_p3_title, desc: "Product photography", image: "/images/content-grapefruit.jpeg", isVideo: false },
+  const examples = [
+    {
+      image: "/images/content-rose.jpeg",
+      title: language === "el" ? "Προϊοντική φωτογραφία" : "Product photography",
+      category: language === "el" ? "ΠΡΟΪΟΝ" : "PRODUCT",
+    },
+    {
+      image: "/images/content-drink.jpeg",
+      title: language === "el" ? "Lifestyle περιεχόμενο" : "Lifestyle content",
+      category: "LIFESTYLE",
+    },
+    {
+      image: "/images/content-grapefruit.jpeg",
+      title: language === "el" ? "Οπτική ταυτότητα προϊόντος" : "Product visual identity",
+      category: language === "el" ? "ΔΗΜΙΟΥΡΓΙΚΟ" : "CREATIVE",
+    },
   ];
 
   const scrollToContact = () => {
@@ -24,102 +36,169 @@ export function ContentCreation() {
   };
 
   return (
-    <section id="content-creation" className="py-9 md:py-16 bg-[#050505] relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none" style={{ background: "radial-gradient(ellipse, rgba(212,175,55,0.06) 0%, transparent 70%)" }} />
+    <section
+      id="content-creation"
+      className="relative overflow-hidden bg-[#F7F5EF] py-20 md:py-28"
+    >
+      <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full bg-[#3155F5]/[0.045] blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-48 -left-40 h-[450px] w-[450px] rounded-full bg-[#FF6633]/[0.035] blur-[120px]" />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-10">
+      <div className="container relative z-10 mx-auto px-5 md:px-8">
+        <div className="mb-14 grid gap-8 md:grid-cols-2 md:items-end">
           <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-            className="inline-flex items-center gap-2 mb-6"
+            transition={{ duration: 0.6 }}
           >
-            <motion.span
-              animate={{ boxShadow: ["0 0 10px rgba(212,175,55,0.4), 0 0 30px rgba(212,175,55,0.15), inset 0 0 10px rgba(212,175,55,0.08)", "0 0 20px rgba(212,175,55,0.7), 0 0 50px rgba(212,175,55,0.3), inset 0 0 18px rgba(212,175,55,0.15)", "0 0 10px rgba(212,175,55,0.4), 0 0 30px rgba(212,175,55,0.15), inset 0 0 10px rgba(212,175,55,0.08)"] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="relative overflow-hidden text-[#D4AF37] font-bold uppercase tracking-[0.4em] text-[11px] px-5 py-2 border border-[#D4AF37]/60"
-              style={{ background: "rgba(212,175,55,0.08)" }}
-            >
-              <span className="absolute inset-0 pointer-events-none new-badge-shimmer" />
-              ✦ NEW ✦
-            </motion.span>
+            <p className="mb-5 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.28em] text-[#FF6633]">
+              <span className="h-px w-8 bg-[#FF6633]" />
+              {language === "el" ? "ΔΗΜΙΟΥΡΓΙΚΗ ΠΑΡΑΓΩΓΗ" : "CREATIVE PRODUCTION"}
+            </p>
+
+            <h2 className="max-w-2xl text-4xl font-bold leading-[1.08] tracking-tight text-[#171717] md:text-6xl">
+              {language === "el" ? (
+                <>
+                  Περιεχόμενο που
+                  <span className="text-[#3155F5]"> τραβάει</span>
+                  <br />
+                  την προσοχή.
+                </>
+              ) : (
+                <>
+                  Content that
+                  <span className="text-[#3155F5]"> earns</span>
+                  <br />
+                  attention.
+                </>
+              )}
+            </h2>
           </motion.div>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4"
-          >
-            {t.content_heading}
-          </motion.h2>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-32 h-px mx-auto mb-6 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
-          />
-
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="text-[#D4AF37] font-display italic text-lg md:text-xl mb-4"
+            transition={{ duration: 0.6, delay: 0.12 }}
+            className="max-w-lg text-base leading-8 text-[#171717]/65 md:justify-self-end md:text-lg"
           >
             {t.content_subtitle}
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-          {features.map((f, i) => (
+        <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+
+            return (
+              <motion.div
+                key={feature.number}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="group border border-[#171717]/[0.08] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#3155F5]/30 hover:shadow-[0_14px_40px_rgba(23,23,23,0.06)] md:p-7"
+              >
+                <div className="mb-9 flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#3155F5]/[0.09] text-[#3155F5] transition-colors group-hover:bg-[#3155F5] group-hover:text-white">
+                    <Icon size={21} strokeWidth={1.6} />
+                  </div>
+
+                  <span className="text-xs font-medium tracking-widest text-[#171717]/30">
+                    / {feature.number}
+                  </span>
+                </div>
+
+                <h3 className="mb-3 text-lg font-semibold leading-snug text-[#171717]">
+                  {feature.title}
+                </h3>
+
+                <p className="text-sm leading-7 text-[#171717]/60">
+                  {feature.desc}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <div className="mb-10 flex flex-col justify-between gap-4 border-t border-[#171717]/15 pt-8 sm:flex-row sm:items-end">
+          <div>
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#FF6633]">
+              {language === "el" ? "ΕΠΙΛΕΓΜΕΝΗ ΔΟΥΛΕΙΑ" : "SELECTED WORK"}
+            </p>
+
+            <h3 className="text-2xl font-semibold tracking-tight text-[#171717] md:text-3xl">
+              {language === "el" ? "Η δύναμη της εικόνας." : "The power of visuals."}
+            </h3>
+          </div>
+
+          <p className="max-w-sm text-sm leading-6 text-[#171717]/55">
+            {language === "el"
+              ? "Ενδεικτικά δείγματα δημιουργικού περιεχομένου και φωτογραφίας προϊόντων."
+              : "Selected examples of creative content and product photography."}
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {examples.map((item, index) => (
             <motion.div
-              key={i}
+              key={item.image}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -6 }}
-              className="group relative cursor-default"
-              style={{ padding: "28px 24px 26px", background: "linear-gradient(145deg, rgba(255,255,255,0.042) 0%, rgba(255,255,255,0.016) 100%)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", border: "1px solid rgba(212,175,55,0.14)", borderRadius: "18px", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.05)", transition: "box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease" }}
-              onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(212,175,55,0.48)"; el.style.boxShadow = "0 0 0 1px rgba(212,175,55,0.15), 0 14px 40px rgba(212,175,55,0.1), inset 0 1px 0 rgba(255,255,255,0.07)"; }}
-              onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(212,175,55,0.14)"; el.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.05)"; }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: index * 0.1 }}
+              className="group"
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ width: "50%", background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
-              <div className="mb-5 relative" style={{ width: "fit-content" }}>
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%)", filter: "blur(8px)", transform: "scale(1.5)" }} />
-                <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(212,175,55,0.07)", border: "1px solid rgba(212,175,55,0.2)", display: "flex", alignItems: "center", justifyContent: "center", position: "relative" }}>
-                  <f.icon size={22} className="text-[#D4AF37]" strokeWidth={1.5} />
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#171717]/5">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+
+                <span className="absolute left-5 top-5 border border-white/30 bg-black/30 px-3 py-1.5 text-[9px] font-semibold tracking-[0.2em] text-white backdrop-blur-sm">
+                  {item.category}
+                </span>
+
+                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3">
+                  <h4 className="text-lg font-semibold text-white">
+                    {item.title}
+                  </h4>
+
+                  <ArrowUpRight
+                    size={20}
+                    className="shrink-0 text-white/80 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                  />
                 </div>
               </div>
-              <h3 style={{ fontSize: "15px", fontWeight: 700, color: "rgba(255,255,255,0.92)", marginBottom: "8px", lineHeight: 1.3 }}>{f.title}</h3>
-              <div style={{ width: "22px", height: "1px", background: "rgba(212,175,55,0.4)", marginBottom: "10px" }} />
-              <p style={{ color: "rgba(255,255,255,0.42)", lineHeight: 1.75, fontSize: "13px" }}>{f.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <p className="text-white/70 text-lg font-display italic mb-6">{t.content_cta_question}</p>
+        <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-[#171717]/15 pt-9 md:flex-row md:items-center">
+          <div>
+            <h3 className="mb-2 text-xl font-semibold text-[#171717] md:text-2xl">
+              {t.content_cta_question}
+            </h3>
+
+            <p className="text-sm text-[#171717]/55">
+              {language === "el"
+                ? "Ας δημιουργήσουμε κάτι που αξίζει να προσέξουν."
+                : "Let's create something worth paying attention to."}
+            </p>
+          </div>
+
           <Button
             onClick={scrollToContact}
-            className="bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 font-semibold tracking-widest uppercase rounded-none transition-all hover:scale-[1.03] active:scale-95"
-            style={{ padding: "14px 36px", fontSize: "13px", height: "auto", boxShadow: "0 0 24px rgba(212,175,55,0.25)" }}
+            className="h-auto rounded-none bg-[#3155F5] px-7 py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#2444D8]"
           >
             {t.content_cta_btn}
+            <ArrowUpRight size={16} className="ml-2" />
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

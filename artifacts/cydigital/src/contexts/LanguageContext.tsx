@@ -1,4 +1,9 @@
-import { createContext, useContext, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  type ReactNode,
+} from "react";
 
 export const translations = {
   nav_home: "Αρχική", nav_services: "Υπηρεσίες", nav_packages: "Πακέτα",
@@ -92,15 +97,131 @@ export const translations = {
   floating_cta: "Ζητήστε Προσφορά",
 };
 
+const englishTranslations: Partial<typeof translations> = {
+  nav_home: "Home", nav_services: "Services", nav_packages: "Packages",
+  nav_portfolio: "Portfolio", nav_why_us: "Why Us", nav_contact: "Contact",
+  nav_cta: "Request a Quote",
+  hero_label: "Cyprus Digital Agency",
+  hero_headline: "We build digital experiences that deliver",
+  hero_accent: "RESULTS",
+  hero_subtitle: "Premium websites, branding and digital strategy for businesses that want to stand out.",
+  hero_btn_primary: "Book a Meeting", hero_btn_secondary: "Explore Our Work",
+  trust_years: "Years of Experience", trust_dedication: "Client Commitment", trust_communication: "Fast Communication",
+  services_heading: "Our Services",
+  service_web_title: "Website Development", service_web_desc: "We design fast, professional websites that turn visitors into customers.",
+  service_social_title: "Social Media Management", service_social_desc: "We create content that increases engagement and builds communities.",
+  service_graphics_title: "Graphic Design & Creative", service_graphics_desc: "High-quality visual assets for every digital channel.",
+  service_logo_title: "Logo & Branding", service_logo_desc: "We build memorable brand identities.",
+  service_google_title: "Google Business Profile", service_google_desc: "We make your business visible in local searches.",
+  service_ads_title: "Facebook & Instagram Ads", service_ads_desc: "Targeted campaigns designed to deliver measurable results.",
+  how_heading_1: "How we can", how_heading_2: "help you",
+  how_step1_title: "Strategy", how_step1_desc: "We analyse your goals and build the right growth plan.",
+  how_step2_title: "Design", how_step2_desc: "We create visual identities and experiences that leave a lasting impression.",
+  how_step3_title: "Development", how_step3_desc: "We deliver solutions with precision, speed and attention to detail.",
+  how_step4_title: "Launch & Scale", how_step4_desc: "We launch, monitor and grow your results.",
+  portfolio_heading: "Selected Work",
+  portfolio_item1_title: "Restaurant Website", portfolio_item1_result: "Sales increase claim — verify before publishing",
+  portfolio_item3_result: "Brand Identity from the Ground Up",
+  portfolio_item4_title: "Gym Advertising Campaign", portfolio_item4_result: "3x ROAS in 30 Days — verify before publishing",
+  packages_heading: "Strategic solutions for your growth",
+  packages_customized: "Tailored to your needs",
+  packages_footer_note: "Packages are tailored to your business needs.",
+  pkg_launch_tagline: "Ideal for businesses building their digital presence.",
+  pkg_growth_tagline: "For businesses ready to grow and generate leads.",
+  pkg_scale_tagline: "For brands seeking a stronger position in their market.",
+  pkg_cta_quote: "Request a Quote", pkg_cta_talk: "Talk to Us", pkg_cta_meeting: "Book a Meeting",
+  content_heading: "Content Creation",
+  content_subtitle: "Professional photography and video that bring your brand to life",
+  content_samples: "Selected Work", content_cta_question: "Want content that stands out?",
+  content_cta_btn: "Request a Quote",
+  content_f1_title: "Location & Product Photography", content_f1_desc: "Professional photography that showcases your business identity.",
+  content_f2_title: "Social Media & Advertising Videos", content_f2_desc: "Cinematic videos designed for engagement, brand awareness and sales.",
+  content_f3_title: "Reels & Short-Form Content", content_f3_desc: "Dynamic short videos for Instagram, TikTok and Facebook.",
+  content_f4_title: "Brand Storytelling Videos", content_f4_desc: "Story-led videos that build trust and strengthen your brand image.",
+  content_p1_title: "Product Photography", content_p3_title: "Products & Branding",
+  whyus_label: "Why CYDigital", whyus_heading_1: "Why choose",
+  whyus_paragraph: "We combine strategy, design and technology to create digital experiences that help businesses stand out.",
+  whyus_cta: "Talk to Us",
+  whyus_r1_title: "Strategy-First Approach", whyus_r1_desc: "Every decision is guided by goals, data and growth.",
+  whyus_r2_title: "Premium Execution", whyus_r2_desc: "Custom solutions with thoughtful design and a clear user experience.",
+  whyus_r3_title: "Results-Driven Mindset", whyus_r3_desc: "We don't just design for looks. We design with purpose.",
+  whyus_r4_title: "Scalable Growth", whyus_r4_desc: "Systems that grow alongside your business.",
+  whyus_r5_title: "Local Knowledge", whyus_r5_desc: "We understand the Cyprus market, culture and business needs.",
+  whyus_r6_title: "Dedicated Service", whyus_r6_desc: "We work with a limited number of clients to maintain quality.",
+  testimonials_heading: "What Our Clients Say",
+  t1_quote: "CYDigital transformed our online presence. The website is fast, polished and brings us more bookings.",
+  t1_role: "Restaurant Owner", t1_result: "Booking increase claim — verify before publishing",
+  t2_quote: "Our branding and content now look professional. Customers immediately understand our value.",
+  t2_role: "Beauty Salon Owner", t2_result: "Premium brand image",
+  t3_quote: "Our campaigns became more targeted and efficient. We saw better leads and lower advertising costs.",
+  t3_role: "FitLife Gym", t3_result: "Lead improvement claim — verify before publishing",
+  cta_label: "Start Today", cta_heading_1: "Let's build your next", cta_heading_2: "digital success",
+  cta_subtitle: "Premium websites, branding and digital strategy for businesses that want to stand out.",
+  cta_btn_primary: "Book a Meeting", cta_btn_secondary: "Explore Our Solutions",
+  contact_heading: "Contact", contact_subheading_1: "Let's talk about", contact_subheading_2: "your business",
+  contact_desc: "Complete the form and we'll contact you within 24 hours to discuss your needs.",
+  contact_trust1: "Free initial consultation", contact_trust2: "Recommendations tailored to your needs", contact_trust3: "No obligation",
+  contact_label_name: "Your Name", contact_label_company: "Business",
+  contact_label_phone: "Phone Number", contact_label_email: "Email",
+  contact_label_city: "Location", contact_label_service: "Service You're Interested In",
+  contact_label_message: "Message (Optional)",
+  contact_placeholder_name: "e.g. John Smith", contact_placeholder_company: "e.g. My Cafe",
+  contact_placeholder_phone: "e.g. 99 123456", contact_placeholder_city: "e.g. Nicosia",
+  contact_select_placeholder: "Select...",
+  contact_service_web: "Website Development", contact_service_social: "Social Media Management",
+  contact_service_graphics: "Graphic Design & Creative", contact_service_branding: "Logo & Branding",
+  contact_service_google: "Google Business Profile", contact_service_ads: "Facebook & Instagram Ads",
+  contact_service_content: "Content Creation",
+  contact_message_placeholder: "Tell us a little about what you need...",
+  contact_submit_loading: "Sending...", contact_submit: "Request a Quote",
+  contact_privacy: "Your details will remain strictly confidential.",
+  contact_error: "Something went wrong. Please try again or contact us directly.",
+  contact_success_title: "Thank You!",
+  contact_success_desc: "We'll be in touch soon to discuss your business needs.",
+  contact_send_new: "Send Another Message",
+  val_name: "Name must contain at least 2 characters", val_company: "Business name is required",
+  val_phone: "Invalid phone number", val_email: "Invalid email address",
+  val_city: "Location is required", val_service: "Please select a service",
+  footer_menu: "Menu", footer_contact: "Contact", footer_follow: "Follow Us",
+  footer_desc: "A premium digital agency for businesses that want to stand out.",
+  footer_response_title: "Typical Response Time", footer_response_desc: "Within 24 hours",
+  footer_rights: "All rights reserved.", footer_terms: "Terms of Use", footer_privacy_link: "Privacy Policy",
+  floating_cta: "Request a Quote",
+};
+
+type Language = "el" | "en";
+type TranslationSet = typeof translations;
+
 interface LanguageContextType {
-  t: typeof translations;
+  t: TranslationSet;
+  language: Language;
+  setLanguage: (language: Language) => void;
 }
 
-const LanguageContext = createContext<LanguageContextType>({ t: translations });
+const LanguageContext = createContext<LanguageContextType>({
+  t: translations,
+  language: "el",
+  setLanguage: () => {},
+});
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window === "undefined") return "el";
+    return window.localStorage.getItem("cydigital-language") === "en" ? "en" : "el";
+  });
+
+  function setLanguage(nextLanguage: Language) {
+    setLanguageState(nextLanguage);
+    window.localStorage.setItem("cydigital-language", nextLanguage);
+    document.documentElement.lang = nextLanguage;
+  }
+
+  const t = (language === "en"
+    ? { ...translations, ...englishTranslations }
+    : translations) as TranslationSet;
+
   return (
-    <LanguageContext.Provider value={{ t: translations }}>
+    <LanguageContext.Provider value={{ t, language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

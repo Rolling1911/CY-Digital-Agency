@@ -1,443 +1,253 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Rocket, TrendingUp, Star, Target } from "lucide-react";
-import { useEffect, useRef } from "react";
-
-const FONT = "'Noto Serif', Georgia, serif";
-
-const stats = [
-  { icon: Rocket, number: "120+", label: "ΟΛΟΚΛΗΡΩΜΕΝΑ ΕΡΓΑ" },
-  { icon: TrendingUp, number: "300%", label: "ΜΕΣΗ ΑΥΞΗΣΗ ΠΕΛΑΤΩΝ" },
-  { icon: Star, number: "5.0", label: "ΑΞΙΟΛΟΓΗΣΗ ΠΕΛΑΤΩΝ" },
-  { icon: Target, number: "100%", label: "ΠΡΟΣΑΝΑΤΟΛΙΣΜΟΣ ΣΤΟ ΑΠΟΤΕΛΕΣΜΑ" },
-];
-
-function GoldenWaves() {
-  return (
-    <svg
-      style={{ position: "absolute", top: 0, right: 0, width: "62%", height: "100%", pointerEvents: "none", zIndex: 5 }}
-      viewBox="0 0 700 600"
-      preserveAspectRatio="xMidYMid slice"
-      fill="none"
-    >
-      <motion.path
-        d="M700 80 C580 120, 460 60, 340 140 C220 220, 160 160, 80 200"
-        stroke="url(#gold1)"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.6 }}
-        transition={{ duration: 2.5, ease: "easeOut", delay: 0.5 }}
-      />
-      <motion.path
-        d="M700 140 C560 190, 420 100, 300 200 C200 280, 130 240, 0 280"
-        stroke="url(#gold2)"
-        strokeWidth="1"
-        strokeLinecap="round"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.45 }}
-        transition={{ duration: 3, ease: "easeOut", delay: 0.8 }}
-      />
-      <motion.path
-        d="M700 200 C600 160, 500 220, 380 170 C260 120, 180 200, 60 160"
-        stroke="url(#gold3)"
-        strokeWidth="0.8"
-        strokeLinecap="round"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.35 }}
-        transition={{ duration: 3.5, ease: "easeOut", delay: 1.1 }}
-      />
-      <motion.path
-        d="M700 60 C620 100, 540 40, 440 100 C340 160, 260 100, 160 140 C80 170, 40 130, -20 160"
-        stroke="url(#gold1)"
-        strokeWidth="0.6"
-        strokeLinecap="round"
-        fill="none"
-        initial={{ pathLength: 0, opacity: 0 }}
-        animate={{ pathLength: 1, opacity: 0.25 }}
-        transition={{ duration: 4, ease: "easeOut", delay: 1.4 }}
-      />
-      <defs>
-        <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
-          <stop offset="40%" stopColor="#F5D96B" stopOpacity="1" />
-          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.3" />
-        </linearGradient>
-        <linearGradient id="gold2" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#B8922E" stopOpacity="0" />
-          <stop offset="50%" stopColor="#D4AF37" stopOpacity="1" />
-          <stop offset="100%" stopColor="#F5D96B" stopOpacity="0.2" />
-        </linearGradient>
-        <linearGradient id="gold3" x1="100%" y1="0%" x2="0%" y2="0%">
-          <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.1" />
-          <stop offset="50%" stopColor="#E8C84A" stopOpacity="1" />
-          <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-}
-
-function FloatingParticles() {
-  const particles = Array.from({ length: 18 }, (_, i) => ({
-    id: i,
-    x: 45 + Math.random() * 55,
-    y: 5 + Math.random() * 85,
-    size: 1 + Math.random() * 2,
-    delay: Math.random() * 4,
-    duration: 3 + Math.random() * 4,
-  }));
-
-  return (
-    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 6 }}>
-      {particles.map((p) => (
-        <motion.div
-          key={p.id}
-          style={{
-            position: "absolute",
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: `${p.size}px`,
-            height: `${p.size}px`,
-            borderRadius: "50%",
-            background: "#D4AF37",
-          }}
-          animate={{
-            y: [-8, 8, -8],
-            opacity: [0, 0.7, 0],
-          }}
-          transition={{
-            duration: p.duration,
-            delay: p.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
+import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Hero() {
-  const scrollToContact = () => {
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-  };
+  const { language } = useLanguage();
+  const isGreek = language === "el";
 
-  const scrollToPortfolio = () => {
-    document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section
       id="home"
-      className="hero-section"
+      className="relative overflow-hidden bg-[#F7F5EF] text-[#171717]"
       style={{
-        position: "relative",
-        height: "100dvh",
-        minHeight: "640px",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
-        background: "#0a0a0a",
+        minHeight: "min(850px, calc(100svh - 76px))",
+        paddingTop: "clamp(118px, 15vh, 165px)",
       }}
     >
-      {/* Background image */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
-        <img
-          src="/images/hero-cyprus-night.jpg"
-          alt="Cyprus night cityscape"
-          className="hero-bg-img"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "55% center",
-            opacity: 1,
-          }}
-        />
-        {/* Left overlay — dark on far left for text readability, fades to show sea + city */}
-        <div className="hero-text-overlay" style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(to right, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.70) 25%, rgba(5,5,5,0.30) 48%, rgba(5,5,5,0.05) 65%, rgba(5,5,5,0.0) 80%)",
-        }} />
-        {/* Bottom fade into stats bar */}
-        <div style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "160px",
-          background: "linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.85) 40%, transparent 100%)",
-        }} />
-        {/* Top vignette */}
-        <div style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "120px",
-          background: "linear-gradient(to bottom, rgba(5,5,5,0.5) 0%, transparent 100%)",
-        }} />
-      </div>
-
-      {/* Animated golden waves */}
-      <GoldenWaves />
-
-      {/* Floating particles */}
-      <FloatingParticles />
-
-      {/* Ambient glow */}
-      <div style={{
-        position: "absolute",
-        top: "20%",
-        right: "20%",
-        width: "400px",
-        height: "400px",
-        background: "radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%)",
-        borderRadius: "50%",
-        pointerEvents: "none",
-        zIndex: 4,
-      }} />
-
-      {/* Main content */}
-      <div className="hero-main-content" style={{
-        position: "relative",
-        zIndex: 10,
-        flex: 1,
-        display: "flex",
-        alignItems: "center",
-        padding: "0",
-      }}>
-        <div style={{ width: "100%", padding: "0 clamp(20px, 4vw, 56px) 0 clamp(20px, 4vw, 56px)" }}>
-          <div className="hero-content-top" style={{ maxWidth: "92%", paddingTop: "80px" }}>
-
-            {/* Label */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-label"
-              style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px" }}
-            >
-              <span style={{
-                fontFamily: FONT,
-                fontSize: "11px",
-                letterSpacing: "3px",
-                color: "#D4AF37",
-                textTransform: "uppercase",
-                fontWeight: 600,
-              }}>
-                Cyprus Digital Agency
-              </span>
-              <div style={{ width: "40px", height: "1px", background: "linear-gradient(to right, #D4AF37, transparent)" }} />
-            </motion.div>
-
-            {/* Headline — 3 explicit rows */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              style={{ margin: 0, padding: 0 }}
-            >
-              {/* Row 1 */}
-              <span className="hero-headline-row" style={{
-                display: "block",
-                fontFamily: FONT,
-                fontWeight: 700,
-                color: "#ffffff",
-                lineHeight: 1.15,
-                fontSize: "clamp(1.55rem, 6vw, 5.8rem)",
-              }}>
-                Χτίζουμε ψηφιακές
-              </span>
-              {/* Row 2 */}
-              <span className="hero-headline-row" style={{
-                display: "block",
-                fontFamily: FONT,
-                fontWeight: 700,
-                color: "#ffffff",
-                lineHeight: 1.15,
-                fontSize: "clamp(1.55rem, 6vw, 5.8rem)",
-                marginBottom: "4px",
-              }}>
-                εμπειρίες που φέρνουν
-              </span>
-              {/* Row 3 — gold */}
-              <span className="hero-headline-row" style={{
-                display: "block",
-                fontFamily: FONT,
-                fontWeight: 700,
-                lineHeight: 1.15,
-                fontSize: "clamp(1.55rem, 6vw, 5.8rem)",
-                marginBottom: "24px",
-                background: "linear-gradient(135deg, #C8960C 0%, #F5D96B 40%, #D4AF37 70%, #A0750A 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}>
-                ΑΠΟΤΕΛΕΣΜΑΤΑ.
-              </span>
-            </motion.h1>
-
-            {/* Subtitle */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                fontFamily: FONT,
-                fontSize: "clamp(13px, 1.5vw, 16px)",
-                lineHeight: 1.8,
-                color: "rgba(255,255,255,0.6)",
-                marginBottom: "32px",
-                maxWidth: "480px",
-              }}
-            >
-              Premium ιστοσελίδες, branding και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν και να αναπτυχθούν.
-            </motion.p>
-
-            {/* Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="hero-cta-buttons"
-              style={{ display: "flex", flexWrap: "wrap", gap: "14px", alignItems: "center" }}
-            >
-              <button
-                onClick={scrollToContact}
-                data-testid="button-hero-primary"
-                className="hero-cta-btn-primary"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "10px",
-                  background: "#D4AF37",
-                  color: "#000",
-                  fontFamily: FONT,
-                  fontWeight: 700,
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "15px 28px",
-                  border: "none",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  borderRadius: "2px",
-                  whiteSpace: "nowrap",
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLButtonElement).style.background = "#C9A832";
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 28px rgba(212,175,55,0.45)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLButtonElement).style.background = "#D4AF37";
-                  (e.currentTarget as HTMLButtonElement).style.boxShadow = "none";
-                }}
-              >
-                ΚΛΕΙΣΤΕ ΜΙΑ ΣΥΝΑΝΤΗΣΗ
-                <ArrowRight size={13} />
-              </button>
-
-              <button
-                onClick={scrollToPortfolio}
-                data-testid="button-hero-secondary"
-                className="hero-cta-btn-secondary"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "10px",
-                  background: "rgba(255,255,255,0.05)",
-                  color: "rgba(255,255,255,0.85)",
-                  fontFamily: FONT,
-                  fontWeight: 600,
-                  fontSize: "11px",
-                  letterSpacing: "2px",
-                  textTransform: "uppercase",
-                  padding: "14px 26px",
-                  border: "1px solid rgba(255,255,255,0.2)",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  borderRadius: "2px",
-                  whiteSpace: "nowrap",
-                  backdropFilter: "blur(4px)",
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLButtonElement).style.borderColor = "#D4AF37";
-                  (e.currentTarget as HTMLButtonElement).style.color = "#D4AF37";
-                  (e.currentTarget as HTMLButtonElement).style.background = "rgba(212,175,55,0.06)";
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.2)";
-                  (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.85)";
-                  (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.05)";
-                }}
-              >
-                <Play size={12} fill="currentColor" />
-                ΔΕΙΤΕ ΤΗ ΔΟΥΛΕΙΑ ΜΑΣ
-              </button>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Stats Bar */}
       <div
-        className="hero-stats-bar"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
         style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 20,
-          borderTop: "1px solid rgba(212,175,55,0.18)",
-          background: "#0c0c0c",
+          backgroundImage:
+            "linear-gradient(rgba(23,23,23,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(23,23,23,0.045) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
+          maskImage: "linear-gradient(to bottom, black, transparent 85%)",
         }}
-      >
-        <div className="hero-stats-inner" style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 clamp(12px, 5vw, 80px)", display: "flex", flexWrap: "wrap" }}>
-          {stats.map((stat, i) => (
-            <div
-              key={i}
-              className="hero-stat-item"
-              style={{
-                flex: 1,
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                padding: "18px 16px",
-                borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
-              }}
+      />
+
+      <div className="relative mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-12 px-5 pb-16 md:px-8 lg:grid-cols-[1.04fr_0.96fr] lg:gap-8 lg:px-12 xl:px-16">
+        {/* LEFT: MESSAGE */}
+        <div className="relative z-10 max-w-[720px]">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8 flex items-center gap-3"
+          >
+            <span className="h-[2px] w-8 bg-[#FF6633]" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#3155F5]">
+              {isGreek
+                ? "ΑΝΕΞΑΡΤΗΤΟ DIGITAL STUDIO · ΚΥΠΡΟΣ"
+                : "INDEPENDENT DIGITAL STUDIO · CYPRUS"}
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 26 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.12 }}
+            className="max-w-[760px] text-[clamp(2.8rem,6.3vw,6.1rem)] font-extrabold leading-[0.99] tracking-[-0.075em]"
+          >
+            {isGreek ? (
+              <>
+                Η επόμενη
+                <br />
+                ψηφιακή σας
+                <br />
+                <span className="relative inline-block text-[#3155F5]">
+                  κίνηση.
+                  <span className="absolute -bottom-1 left-0 h-[7px] w-[72%] bg-[#FF6633]" />
+                </span>
+              </>
+            ) : (
+              <>
+                Your next
+                <br />
+                digital
+                <br />
+                <span className="relative inline-block text-[#3155F5]">
+                  move.
+                  <span className="absolute -bottom-1 left-0 h-[7px] w-[72%] bg-[#FF6633]" />
+                </span>
+              </>
+            )}
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-8 max-w-[510px] text-[15px] leading-[1.85] text-[#171717]/65 md:text-[17px]"
+          >
+            {isGreek
+              ? "Σχεδιάζουμε και δημιουργούμε ιστοσελίδες, e-commerce, branding και digital εμπειρίες που δίνουν στην επιχείρησή σας ξεκάθαρη ταυτότητα και ουσιαστική παρουσία."
+              : "We design and build websites, e-commerce experiences, branding and digital platforms that give your business a distinctive identity and a stronger online presence."}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="mt-9 flex flex-wrap items-center gap-3"
+          >
+            <button
+              type="button"
+              onClick={() => scrollTo("contact")}
+              data-testid="button-hero-primary"
+              className="group inline-flex min-h-[54px] items-center gap-5 rounded-full bg-[#3155F5] px-7 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#2444D8] hover:shadow-[0_12px_30px_rgba(49,85,245,0.22)]"
             >
-              <stat.icon size={16} color="#D4AF37" strokeWidth={1.5} style={{ flexShrink: 0, opacity: 0.75 }} />
-              <div style={{ display: "flex", alignItems: "baseline", gap: "6px", flexWrap: "wrap" }}>
-                <span style={{
-                  fontFamily: FONT,
-                  fontSize: "clamp(1rem, 1.6vw, 1.4rem)",
-                  fontWeight: 700,
-                  color: "#D4AF37",
-                  lineHeight: 1,
-                  whiteSpace: "nowrap",
-                }}>
-                  {stat.number}
-                </span>
-                <span style={{
-                  fontFamily: FONT,
-                  fontSize: "clamp(7px, 0.65vw, 9px)",
-                  letterSpacing: "1.5px",
-                  color: "rgba(255,255,255,0.38)",
-                  textTransform: "uppercase",
-                  lineHeight: 1.2,
-                }}>
-                  {stat.label}
-                </span>
+              {isGreek ? "Ας μιλήσουμε" : "Let's talk"}
+              <ArrowUpRight size={17} />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => scrollTo("portfolio")}
+              data-testid="button-hero-secondary"
+              className="group inline-flex min-h-[54px] items-center gap-3 rounded-full border border-[#171717]/20 px-7 text-[11px] font-bold uppercase tracking-[0.12em] text-[#171717] transition-all duration-300 hover:border-[#171717] hover:bg-white"
+            >
+              {isGreek ? "Δείτε τα έργα μας" : "Explore our work"}
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+            className="mt-14 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-[#171717]/15 pt-5"
+          >
+            {["STRATEGY", "DESIGN", "DEVELOPMENT", "GROWTH"].map((item) => (
+              <span
+                key={item}
+                className="text-[9px] font-bold tracking-[0.17em] text-[#171717]/45"
+              >
+                {item}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* RIGHT: ORIGINAL BRAND COMPOSITION */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, x: 24 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mx-auto w-full max-w-[590px] lg:ml-auto"
+        >
+          <div className="relative aspect-[1.02/1] w-full">
+            {/* Main blue canvas */}
+            <div className="absolute inset-[5%_3%_7%_8%] overflow-hidden bg-[#3155F5]">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px)",
+                  backgroundSize: "38px 38px",
+                }}
+              />
+
+              <div className="absolute -right-[10%] -top-[8%] h-[62%] w-[62%] rounded-full border border-white/25" />
+              <div className="absolute -right-[2%] top-[1%] h-[47%] w-[47%] rounded-full border border-white/25" />
+
+              <div className="absolute bottom-[7%] left-[8%] text-white">
+                <div className="text-[10px] font-bold tracking-[0.25em] text-white/65">
+                  CY DIGITAL
+                </div>
+                <div className="mt-2 text-[clamp(3.8rem,9vw,7.5rem)] font-extrabold leading-[0.8] tracking-[-0.1em]">
+                  MOVE
+                  <span className="text-[#FF6633]">.</span>
+                </div>
+                <div className="mt-5 text-[9px] font-semibold tracking-[0.2em] text-white/65">
+                  {isGreek ? "ΙΔΕΕΣ ΣΕ ΚΙΝΗΣΗ" : "IDEAS IN MOTION"}
+                </div>
+              </div>
+
+              <div className="absolute right-[9%] top-[9%] flex h-16 w-16 items-center justify-center rounded-full bg-[#FF6633] text-white">
+                <ArrowUpRight size={29} strokeWidth={1.5} />
               </div>
             </div>
-          ))}
+
+            {/* Floating website preview */}
+            <div className="absolute left-0 top-[17%] w-[55%] overflow-hidden rounded-[3px] border border-[#171717]/10 bg-white shadow-[0_24px_70px_rgba(23,23,23,0.18)]">
+              <div className="flex h-8 items-center gap-1.5 border-b border-[#171717]/10 px-3">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#FF6633]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#3155F5]/50" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#171717]/15" />
+                <div className="ml-3 h-2 w-[42%] rounded-full bg-[#171717]/[0.07]" />
+              </div>
+              <div className="p-4 md:p-5">
+                <div className="flex items-center justify-between">
+                  <div className="h-2 w-12 bg-[#171717]" />
+                  <div className="h-2 w-8 bg-[#3155F5]" />
+                </div>
+                <div className="mt-7 text-[clamp(1.1rem,2.5vw,2rem)] font-extrabold leading-[0.98] tracking-[-0.07em] text-[#171717]">
+                  {isGreek ? (
+                    <>
+                      Σχεδίασε
+                      <br />
+                      το μέλλον.
+                    </>
+                  ) : (
+                    <>
+                      Design
+                      <br />
+                      what's next.
+                    </>
+                  )}
+                </div>
+                <div className="mt-3 h-1.5 w-[85%] bg-[#171717]/10" />
+                <div className="mt-1.5 h-1.5 w-[65%] bg-[#171717]/10" />
+                <div className="mt-5 flex items-center justify-between">
+                  <div className="h-6 w-[43%] rounded-full bg-[#3155F5]" />
+                  <div className="h-6 w-[43%] bg-[#F7F5EF]" />
+                </div>
+                <div className="mt-4 grid grid-cols-3 gap-2">
+                  <div className="h-12 bg-[#F7F5EF]" />
+                  <div className="h-12 bg-[#FF6633]/20" />
+                  <div className="h-12 bg-[#3155F5]/10" />
+                </div>
+              </div>
+            </div>
+
+            {/* Orange graphic block */}
+            <div className="absolute bottom-[2%] right-[1%] flex h-[27%] w-[29%] items-end justify-end overflow-hidden bg-[#FF6633] p-4 text-white">
+              <span className="text-[clamp(2.5rem,6vw,5rem)] font-extrabold leading-none tracking-[-0.1em]">
+                +
+              </span>
+              <div className="absolute left-4 top-4 text-[8px] font-bold tracking-[0.18em]">
+                THINK
+                <br />
+                BIGGER
+              </div>
+            </div>
+
+            {/* Small caption */}
+            <div className="absolute -bottom-1 left-[9%] text-[9px] font-bold uppercase tracking-[0.18em] text-[#171717]/45">
+              {isGreek ? "ΣΤΡΑΤΗΓΙΚΗ · ΔΗΜΙΟΥΡΓΙΑ · ΕΞΕΛΙΞΗ" : "STRATEGY · CREATIVITY · PROGRESS"}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Bottom brand line */}
+      <div className="relative border-t border-[#171717]/10">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-5 md:px-8 lg:px-12 xl:px-16">
+          <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#171717]/45">
+            CY DIGITAL AGENCY
+          </span>
+          <span className="text-right text-[9px] font-bold uppercase tracking-[0.16em] text-[#171717]/45">
+            {isGreek ? "ΚΥΠΡΟΣ · ΠΑΓΚΟΣΜΙΑ ΠΡΟΣΕΓΓΙΣΗ" : "CYPRUS · GLOBAL PERSPECTIVE"}
+          </span>
         </div>
       </div>
     </section>

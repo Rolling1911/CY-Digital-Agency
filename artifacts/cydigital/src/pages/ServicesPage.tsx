@@ -2,84 +2,101 @@ import { Header } from "@/components/Header";
 import { Services } from "@/components/Services";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { InternalPageHero } from "@/components/InternalPageHero";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
-const serviceLinks = [
-  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidas", desc: "Custom websites που μετατρέπουν επισκέπτες σε πελάτες." },
-  { name: "Social Media Management", href: "/ypiresies/social-media", desc: "Στρατηγική & περιεχόμενο που αυξάνει το engagement." },
-  { name: "Γραφιστικά & Branding", href: "/ypiresies/grafistika", desc: "Οπτική ταυτότητα που αναδεικνύει το brand σας." },
-  { name: "Δημιουργία Περιεχομένου", href: "/ypiresies/dimioyrgia-periekhomenou", desc: "Επαγγελματικές φωτογραφίες & βίντεο για το brand σας." },
-];
-
 export default function ServicesPage() {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   useSEO({
-    title: "Υπηρεσίες | CYDigital - Digital Agency Κύπρος",
-    description: "Ολοκληρωμένες ψηφιακές υπηρεσίες στην Κύπρο: κατασκευή ιστοσελίδας, social media management, γραφιστικά, branding και δημιουργία περιεχομένου.",
+    title: isEnglish
+      ? "Digital Services | CYDigital Cyprus"
+      : "Υπηρεσίες | CYDigital - Digital Agency Κύπρος",
+    description: isEnglish
+      ? "Explore digital services in Cyprus, including website development, social media management, graphic design, branding and content creation."
+      : "Ολοκληρωμένες ψηφιακές υπηρεσίες στην Κύπρο: κατασκευή ιστοσελίδας, social media management, γραφιστικά, branding και δημιουργία περιεχομένου.",
     path: "/ypiresies",
   });
 
+  const serviceLinks = [
+    {
+      href: "/ypiresies/kataskevi-istoselidas",
+      el: "Κατασκευή Ιστοσελίδας",
+      en: "Website Design",
+      descEl: "Custom websites που μετατρέπουν επισκέπτες σε πελάτες.",
+      descEn: "Custom websites designed to turn visitors into customers.",
+    },
+    {
+      href: "/ypiresies/social-media",
+      el: "Social Media Management",
+      en: "Social Media Management",
+      descEl: "Στρατηγική & περιεχόμενο που αυξάνει το engagement.",
+      descEn: "Strategy and content that build engagement and community.",
+    },
+    {
+      href: "/ypiresies/grafistika",
+      el: "Γραφιστικά & Branding",
+      en: "Graphic Design & Branding",
+      descEl: "Οπτική ταυτότητα που αναδεικνύει το brand σας.",
+      descEn: "Visual identities that make your brand stand out.",
+    },
+    {
+      href: "/ypiresies/dimioyrgia-periekhomenou",
+      el: "Δημιουργία Περιεχομένου",
+      en: "Content Creation",
+      descEl: "Επαγγελματικές φωτογραφίες & βίντεο για το brand σας.",
+      descEn: "Professional photography and video for your brand.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="flex min-h-screen flex-col bg-[#F7F5EF] text-[#171717]">
       <Header />
       <main className="flex-1">
-        {/* Page Hero */}
-        <section className="pt-[88px] pb-10 bg-black text-center">
-          <div className="container mx-auto px-4 md:px-6 pt-12">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Οι Υπηρεσίες μας
-            </h1>
-            <div className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mb-4" />
-            <p className="text-white/60 max-w-xl mx-auto font-display italic text-lg">
-              Ολοκληρωμένες ψηφιακές λύσεις για επιχειρήσεις στην Κύπρο
-            </p>
-          </div>
-        </section>
-
-        {/* Services grid */}
+        <InternalPageHero
+          eyebrow={isEnglish ? "WHAT WE DO" : "ΤΙ ΠΡΟΣΦΕΡΟΥΜΕ"}
+          title={isEnglish ? "Our Services" : "Οι Υπηρεσίες μας"}
+          subtitle={
+            isEnglish
+              ? "Connected digital solutions that help businesses build their presence and grow."
+              : "Ολοκληρωμένες ψηφιακές λύσεις για επιχειρήσεις που θέλουν να ξεχωρίσουν και να αναπτυχθούν."
+          }
+        />
         <Services showHeading={false} />
-
-        {/* Service sub-pages internal links */}
-        <section className="py-14 bg-black border-t border-white/5">
-          <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-white text-center mb-3">
-              Εξερευνήστε κάθε Υπηρεσία
-            </h2>
-            <div className="w-24 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mb-10" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-              {serviceLinks.map((s) => (
+        <section className="border-t border-[#171717]/10 bg-[#F7F5EF] py-16 md:py-20">
+          <div className="mx-auto max-w-[1280px] px-5 md:px-8 lg:px-12">
+            <div className="mb-10 text-center">
+              <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.22em] text-[#3155F5]">
+                {isEnglish ? "EXPLORE OUR EXPERTISE" : "ΑΝΑΚΑΛΥΨΤΕ ΤΙΣ ΥΠΗΡΕΣΙΕΣ ΜΑΣ"}
+              </div>
+              <h2 className="text-2xl font-extrabold tracking-[-0.05em] md:text-3xl">
+                {isEnglish ? "A closer look at what we do" : "Ανακαλύψτε κάθε υπηρεσία"}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {serviceLinks.map((service, index) => (
                 <a
-                  key={s.href}
-                  href={s.href}
-                  style={{
-                    display: "block",
-                    padding: "24px 20px",
-                    background: "linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
-                    border: "1px solid rgba(212,175,55,0.15)",
-                    borderRadius: "12px",
-                    textDecoration: "none",
-                    transition: "border-color 0.3s ease, box-shadow 0.3s ease",
-                  }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,55,0.5)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(212,175,55,0.1)";
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,55,0.15)";
-                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                  }}
+                  key={service.href}
+                  href={service.href}
+                  className="group border border-[#171717]/10 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#3155F5]/50 hover:shadow-[0_14px_35px_rgba(23,23,23,0.06)]"
                 >
-                  <h3 style={{ color: "#D4AF37", fontSize: "14px", fontWeight: 700, marginBottom: "8px", fontFamily: "'Cormorant Garamond', serif" }}>
-                    {s.name}
+                  <div className="mb-6 text-xs font-bold tabular-nums text-[#FF6633]">
+                    0{index + 1}
+                  </div>
+                  <h3 className="mb-3 text-base font-extrabold tracking-[-0.035em] transition-colors group-hover:text-[#3155F5]">
+                    {isEnglish ? service.en : service.el}
                   </h3>
-                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", lineHeight: 1.6, margin: 0 }}>
-                    {s.desc}
+                  <p className="text-sm leading-relaxed text-[#171717]/60">
+                    {isEnglish ? service.descEn : service.descEl}
                   </p>
+                  <div className="mt-6 text-sm font-bold text-[#3155F5]">↗</div>
                 </a>
               ))}
             </div>
           </div>
         </section>
-
         <Contact />
       </main>
       <Footer />

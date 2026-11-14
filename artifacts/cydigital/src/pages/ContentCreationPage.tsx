@@ -2,71 +2,82 @@ import { Header } from "@/components/Header";
 import { ContentCreation } from "@/components/ContentCreation";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { InternalPageHero } from "@/components/InternalPageHero";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
-const otherServices = [
-  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidas" },
-  { name: "Social Media Management", href: "/ypiresies/social-media" },
-  { name: "Γραφιστικά & Branding", href: "/ypiresies/grafistika" },
-];
-
 export default function ContentCreationPage() {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   useSEO({
-    title: "Δημιουργία Περιεχομένου Κύπρος | CYDigital",
-    description: "Επαγγελματική φωτογράφιση και βίντεο για επιχειρήσεις στην Κύπρο. Περιεχόμενο που αναδεικνύει το brand σας και αυξάνει τις πωλήσεις.",
+    title: isEnglish
+      ? "Content Creation Cyprus | CYDigital"
+      : "Δημιουργία Περιεχομένου Κύπρος | CYDigital",
+    description: isEnglish
+      ? "Professional photography and video production for businesses in Cyprus. Create content that elevates your brand and connects with your audience."
+      : "Επαγγελματική φωτογράφιση και βίντεο για επιχειρήσεις στην Κύπρο. Περιεχόμενο που αναδεικνύει το brand σας και αυξάνει τις πωλήσεις.",
     path: "/ypiresies/dimioyrgia-periekhomenou",
   });
 
+  const otherServices = [
+    {
+      href: "/ypiresies/kataskevi-istoselidas",
+      el: "Κατασκευή Ιστοσελίδας",
+      en: "Website Design",
+    },
+    {
+      href: "/ypiresies/social-media",
+      el: "Social Media Management",
+      en: "Social Media Management",
+    },
+    {
+      href: "/ypiresies/grafistika",
+      el: "Γραφιστικά & Branding",
+      en: "Graphic Design & Branding",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="flex min-h-screen flex-col bg-[#F7F5EF] text-[#171717]">
       <Header />
       <main className="flex-1">
-        {/* Page Hero */}
-        <section className="pt-[88px] pb-10 bg-black text-center">
-          <div className="container mx-auto px-4 md:px-6 pt-12">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Δημιουργία Περιεχομένου στην Κύπρο
-            </h1>
-            <div className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mb-4" />
-            <p className="text-white/60 max-w-xl mx-auto font-display italic text-lg">
-              Επαγγελματικές φωτογραφίες & βίντεο που αναδεικνύουν το brand σας
-            </p>
-          </div>
-        </section>
-
+        <InternalPageHero
+          eyebrow={isEnglish ? "CONTENT PRODUCTION" : "ΠΑΡΑΓΩΓΗ ΠΕΡΙΕΧΟΜΕΝΟΥ"}
+          title={
+            isEnglish
+              ? "Content Creation in Cyprus"
+              : "Δημιουργία Περιεχομένου στην Κύπρο"
+          }
+          subtitle={
+            isEnglish
+              ? "Professional photography and video that bring your brand to life."
+              : "Επαγγελματικές φωτογραφίες & βίντεο που αναδεικνύουν το brand σας."
+          }
+        />
         <ContentCreation />
-
-        {/* Other Services */}
-        <section className="py-12 bg-black border-t border-white/5">
-          <div className="container mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-xl font-display font-bold text-white mb-6">Άλλες Υπηρεσίες</h2>
+        <section className="border-t border-[#171717]/10 bg-[#F7F5EF] py-14">
+          <div className="mx-auto max-w-[1280px] px-5 text-center md:px-8 lg:px-12">
+            <div className="mb-4 text-[10px] font-bold uppercase tracking-[0.22em] text-[#3155F5]">
+              {isEnglish ? "EXPLORE MORE" : "ΑΝΑΚΑΛΥΨΤΕ ΠΕΡΙΣΣΟΤΕΡΑ"}
+            </div>
+            <h2 className="mb-8 text-2xl font-extrabold tracking-[-0.05em] md:text-3xl">
+              {isEnglish ? "Our other services" : "Άλλες υπηρεσίες"}
+            </h2>
             <div className="flex flex-wrap justify-center gap-3">
-              {otherServices.map((s) => (
+              {otherServices.map((service) => (
                 <a
-                  key={s.href}
-                  href={s.href}
-                  style={{
-                    border: "1px solid rgba(212,175,55,0.3)",
-                    color: "rgba(212,175,55,0.8)",
-                    padding: "10px 24px",
-                    fontSize: "11px",
-                    letterSpacing: "2px",
-                    textTransform: "uppercase",
-                    textDecoration: "none",
-                    transition: "border-color 0.2s, color 0.2s",
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontWeight: 700,
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "#D4AF37"; (e.currentTarget as HTMLElement).style.color = "#D4AF37"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,55,0.3)"; (e.currentTarget as HTMLElement).style.color = "rgba(212,175,55,0.8)"; }}
+                  key={service.href}
+                  href={service.href}
+                  className="border border-[#171717]/15 bg-white px-5 py-3 text-xs font-bold text-[#171717]/75 transition-all hover:border-[#3155F5] hover:text-[#3155F5]"
                 >
-                  {s.name}
+                  {isEnglish ? service.en : service.el}
+                  <span className="ml-2 text-[#FF6633]">↗</span>
                 </a>
               ))}
             </div>
           </div>
         </section>
-
         <Contact />
       </main>
       <Footer />

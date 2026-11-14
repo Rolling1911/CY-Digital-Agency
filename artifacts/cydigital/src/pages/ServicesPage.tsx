@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
 
 const serviceLinks = [
-  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidaas", desc: "Custom websites που μετατρέπουν επισκέπτες σε πελάτες." },
+  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidas", desc: "Custom websites που μετατρέπουν επισκέπτες σε πελάτες." },
   { name: "Social Media Management", href: "/ypiresies/social-media", desc: "Στρατηγική & περιεχόμενο που αυξάνει το engagement." },
   { name: "Γραφιστικά & Branding", href: "/ypiresies/grafistika", desc: "Οπτική ταυτότητα που αναδεικνύει το brand σας." },
   { name: "Δημιουργία Περιεχομένου", href: "/ypiresies/dimioyrgia-periekhomenou", desc: "Επαγγελματικές φωτογραφίες & βίντεο για το brand σας." },

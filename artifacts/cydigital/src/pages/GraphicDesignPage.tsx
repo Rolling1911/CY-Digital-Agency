@@ -14,7 +14,7 @@ const features = [
 ];
 
 const otherServices = [
-  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidaas" },
+  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidas" },
   { name: "Social Media Management", href: "/ypiresies/social-media" },
   { name: "Δημιουργία Περιεχομένου", href: "/ypiresies/dimioyrgia-periekhomenou" },
 ];

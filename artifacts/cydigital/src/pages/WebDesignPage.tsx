@@ -33,7 +33,7 @@ export default function WebDesignPage() {
   useSEO({
     title: "Κατασκευή Ιστοσελίδας Κύπρος | CYDigital",
     description: "Επαγγελματική κατασκευή ιστοσελίδας στην Κύπρο. Custom, γρήγορα και responsive websites που μετατρέπουν επισκέπτες σε πελάτες.",
-    path: "/ypiresies/kataskevi-istoselidaas",
+    path: "/ypiresies/kataskevi-istoselidas",
   });
 
   return (

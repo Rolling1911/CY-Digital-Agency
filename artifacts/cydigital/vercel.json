@@ -1,5 +1,15 @@
 {
+  "redirects": [
+    {
+      "source": "/ypiresies/kataskevi-istoselidaas",
+      "destination": "/ypiresies/kataskevi-istoselidas",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

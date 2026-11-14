@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { useSEO } from "@/hooks/useSEO";
 
 const otherServices = [
-  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidaas" },
+  { name: "Κατασκευή Ιστοσελίδας", href: "/ypiresies/kataskevi-istoselidas" },
   { name: "Social Media Management", href: "/ypiresies/social-media" },
   { name: "Γραφιστικά & Branding", href: "/ypiresies/grafistika" },
 ];

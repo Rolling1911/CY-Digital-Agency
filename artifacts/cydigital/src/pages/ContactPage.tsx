@@ -1,32 +1,35 @@
 import { Header } from "@/components/Header";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { InternalPageHero } from "@/components/InternalPageHero";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function ContactPage() {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   useSEO({
-    title: "Επικοινωνία | CYDigital Κύπρος",
-    description: "Επικοινωνήστε με την CYDigital για να συζητήσουμε τις ψηφιακές ανάγκες της επιχείρησής σας. Δωρεάν αρχική αξιολόγηση χωρίς δέσμευση.",
+    title: isEnglish ? "Contact | CYDigital Cyprus" : "Επικοινωνία | CYDigital Κύπρος",
+    description: isEnglish
+      ? "Get in touch with CYDigital to discuss your business's digital needs. Start with an initial consultation, with no obligation."
+      : "Επικοινωνήστε με την CYDigital για να συζητήσουμε τις ψηφιακές ανάγκες της επιχείρησής σας. Δωρεάν αρχική αξιολόγηση χωρίς δέσμευση.",
     path: "/epikoinonia",
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="flex min-h-screen flex-col bg-[#F7F5EF] text-[#171717]">
       <Header />
       <main className="flex-1">
-        {/* Page Hero */}
-        <section className="pt-[88px] pb-10 bg-black text-center">
-          <div className="container mx-auto px-4 md:px-6 pt-12">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Επικοινωνία
-            </h1>
-            <div className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mb-4" />
-            <p className="text-white/60 max-w-xl mx-auto font-display italic text-lg">
-              Συμπληρώστε τη φόρμα και θα επικοινωνήσουμε εντός 24 ωρών
-            </p>
-          </div>
-        </section>
-
+        <InternalPageHero
+          eyebrow={isEnglish ? "LET'S TALK" : "ΑΣ ΜΙΛΗΣΟΥΜΕ"}
+          title={isEnglish ? "Contact" : "Επικοινωνία"}
+          subtitle={
+            isEnglish
+              ? "Tell us what you are building. We'll get back to you within 24 hours."
+              : "Πείτε μας τι χρειάζεται η επιχείρησή σας και θα επικοινωνήσουμε μαζί σας εντός 24 ωρών."
+          }
+        />
         <Contact showHeading={false} />
       </main>
       <Footer />

@@ -2,32 +2,37 @@ import { Header } from "@/components/Header";
 import { Packages } from "@/components/Packages";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { InternalPageHero } from "@/components/InternalPageHero";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function PackagesPage() {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   useSEO({
-    title: "Πακέτα & Τιμές | CYDigital Κύπρος",
-    description: "Δείτε τα πακέτα ψηφιακών υπηρεσιών της CYDigital. Launch, Growth και Scale — βρείτε τη λύση που ταιριάζει στην επιχείρησή σας στην Κύπρο.",
+    title: isEnglish
+      ? "Packages & Pricing | CYDigital Cyprus"
+      : "Πακέτα & Τιμές | CYDigital Κύπρος",
+    description: isEnglish
+      ? "Explore CYDigital digital service packages. Compare Launch, Growth and Scale and find the right solution for your business in Cyprus."
+      : "Δείτε τα πακέτα ψηφιακών υπηρεσιών της CYDigital. Launch, Growth και Scale — βρείτε τη λύση που ταιριάζει στην επιχείρησή σας στην Κύπρο.",
     path: "/paketa",
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="flex min-h-screen flex-col bg-[#F7F5EF] text-[#171717]">
       <Header />
       <main className="flex-1">
-        {/* Page Hero */}
-        <section className="pt-[88px] pb-10 bg-black text-center">
-          <div className="container mx-auto px-4 md:px-6 pt-12">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Πακέτα & Τιμές
-            </h1>
-            <div className="w-32 h-px mx-auto bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mb-4" />
-            <p className="text-white/60 max-w-xl mx-auto font-display italic text-lg">
-              Στρατηγικές λύσεις προσαρμοσμένες στις ανάγκες της επιχείρησής σας
-            </p>
-          </div>
-        </section>
-
+        <InternalPageHero
+          eyebrow={isEnglish ? "CLEAR OPTIONS. SMARTER GROWTH." : "ΞΕΚΑΘΑΡΕΣ ΕΠΙΛΟΓΕΣ. ΕΞΥΠΝΗ ΑΝΑΠΤΥΞΗ."}
+          title={isEnglish ? "Packages & Pricing" : "Πακέτα & Τιμές"}
+          subtitle={
+            isEnglish
+              ? "Strategic digital solutions shaped around your business needs and ambitions."
+              : "Στρατηγικές ψηφιακές λύσεις προσαρμοσμένες στις ανάγκες και τους στόχους της επιχείρησής σας."
+          }
+        />
         <Packages />
         <Contact />
       </main>

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://cydigital.agency";
+const SITE_URL = "https:" + "/" + "/" + "cydigital.agency";
 
 interface SEOOptions {
   title: string;

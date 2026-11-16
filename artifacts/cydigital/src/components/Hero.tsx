@@ -104,19 +104,6 @@ export function Hero() {
               {isGreek ? "Ας μιλήσουμε" : "Let's talk"}
               <ArrowUpRight size={17} />
             </button>
-
-            <button
-              type="button"
-              onClick={() => scrollTo("portfolio")}
-              data-testid="button-hero-secondary"
-              className="group inline-flex min-h-[54px] items-center gap-3 rounded-full border border-[#171717]/20 px-7 text-[11px] font-bold uppercase tracking-[0.12em] text-[#171717] transition-all duration-300 hover:border-[#171717] hover:bg-white"
-            >
-              {isGreek ? "Δείτε τα έργα μας" : "Explore our work"}
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </button>
           </motion.div>
 
           <motion.div

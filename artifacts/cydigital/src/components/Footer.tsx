@@ -30,7 +30,6 @@ export function Footer() {
     { label: t.nav_home, href: "/" },
     { label: t.nav_services, href: "/ypiresies" },
     { label: t.nav_packages, href: "/paketa" },
-    { label: "Portfolio", href: "/portfolio" },
     { label: t.nav_why_us, href: "/giati-emas" },
     { label: t.nav_contact, href: "/epikoinonia" },
   ];

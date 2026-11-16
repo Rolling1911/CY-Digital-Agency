@@ -6,7 +6,6 @@ import { AIServices } from "@/components/AIServices";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Packages } from "@/components/Packages";
 import { ContentCreation } from "@/components/ContentCreation";
-import { Portfolio } from "@/components/Portfolio";
 import { WhyUs } from "@/components/WhyUs";
 import { Testimonials } from "@/components/Testimonials";
 import { StrongCta } from "@/components/StrongCta";
@@ -48,7 +47,6 @@ export default function Home() {
         <TrustBar />
         <Services />
         <HowItWorks />
-        <Portfolio />
         <Packages />
         <ContentCreation />
         <AIServices />

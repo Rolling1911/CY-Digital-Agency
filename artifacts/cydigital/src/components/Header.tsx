@@ -13,7 +13,6 @@ export function Header() {
     { name: t.nav_home, href: "/" },
     { name: t.nav_services, href: "/ypiresies" },
     { name: t.nav_packages, href: "/paketa" },
-    { name: t.nav_portfolio, href: "/portfolio" },
     { name: language === "el" ? "AI Υπηρεσίες" : "AI Services", href: "/#ai-services" },
     { name: t.nav_why_us, href: "/giati-emas" },
   ];

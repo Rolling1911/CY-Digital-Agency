@@ -13,23 +13,7 @@ export function ContentCreation() {
     { icon: Film, number: "04", title: t.content_f4_title, desc: t.content_f4_desc },
   ];
 
-  const examples = [
-    {
-      image: "/images/content-rose.jpeg",
-      title: language === "el" ? "Προϊοντική φωτογραφία" : "Product photography",
-      category: language === "el" ? "ΠΡΟΪΟΝ" : "PRODUCT",
-    },
-    {
-      image: "/images/content-drink.jpeg",
-      title: language === "el" ? "Lifestyle περιεχόμενο" : "Lifestyle content",
-      category: "LIFESTYLE",
-    },
-    {
-      image: "/images/content-grapefruit.jpeg",
-      title: language === "el" ? "Οπτική ταυτότητα προϊόντος" : "Product visual identity",
-      category: language === "el" ? "ΔΗΜΙΟΥΡΓΙΚΟ" : "CREATIVE",
-    },
-  ];
+
 
   const scrollToContact = () => {
     document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
@@ -119,63 +103,6 @@ export function ContentCreation() {
               </motion.div>
             );
           })}
-        </div>
-
-        <div className="mb-10 flex flex-col justify-between gap-4 border-t border-[#171717]/15 pt-8 sm:flex-row sm:items-end">
-          <div>
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#FF6633]">
-              {language === "el" ? "ΕΠΙΛΕΓΜΕΝΗ ΔΟΥΛΕΙΑ" : "SELECTED WORK"}
-            </p>
-
-            <h3 className="text-2xl font-semibold tracking-tight text-[#171717] md:text-3xl">
-              {language === "el" ? "Η δύναμη της εικόνας." : "The power of visuals."}
-            </h3>
-          </div>
-
-          <p className="max-w-sm text-sm leading-6 text-[#171717]/55">
-            {language === "el"
-              ? "Ενδεικτικά δείγματα δημιουργικού περιεχομένου και φωτογραφίας προϊόντων."
-              : "Selected examples of creative content and product photography."}
-          </p>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-3">
-          {examples.map((item, index) => (
-            <motion.div
-              key={item.image}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: index * 0.1 }}
-              className="group"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#171717]/5">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-
-                <span className="absolute left-5 top-5 border border-white/30 bg-black/30 px-3 py-1.5 text-[9px] font-semibold tracking-[0.2em] text-white backdrop-blur-sm">
-                  {item.category}
-                </span>
-
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3">
-                  <h4 className="text-lg font-semibold text-white">
-                    {item.title}
-                  </h4>
-
-                  <ArrowUpRight
-                    size={20}
-                    className="shrink-0 text-white/80 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-[#171717]/15 pt-9 md:flex-row md:items-center">

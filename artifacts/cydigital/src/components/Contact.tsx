@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -56,6 +56,46 @@ export function Contact({ showHeading = true }: { showHeading?: boolean }) {
       message: "",
     },
   });
+
+  useEffect(() => {
+    const handlePackageSelected = (event: Event) => {
+      const customEvent = event as CustomEvent<{
+        name: string;
+        price: string;
+      }>;
+
+      const selected = customEvent.detail;
+      if (!selected?.name || !selected?.price) return;
+
+      form.setValue("service", "web", { shouldValidate: true });
+
+      const existingMessage = form.getValues("message")?.trim();
+      const packageMessage =
+        language === "el"
+          ? `Ενδιαφέρομαι για το πακέτο: ${selected.name} (${selected.price}).`
+          : `I'm interested in the ${selected.name} package (${selected.price}).`;
+
+      form.setValue(
+        "message",
+        existingMessage
+          ? `${existingMessage}\n\n${packageMessage}`
+          : packageMessage,
+        { shouldDirty: true }
+      );
+    };
+
+    window.addEventListener(
+      "cy-digital-package-selected",
+      handlePackageSelected
+    );
+
+    return () => {
+      window.removeEventListener(
+        "cy-digital-package-selected",
+        handlePackageSelected
+      );
+    };
+  }, [form, language]);
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);

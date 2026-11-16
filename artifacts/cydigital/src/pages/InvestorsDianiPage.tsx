@@ -121,7 +121,7 @@ export default function InvestorsDianiPage() {
         {/* Logo mark */}
         <div style={{ display: "flex", justifyContent: "center", marginBottom: "32px" }}>
           <img
-            src="/images/logo-agency.png"
+            src="/images/logo-agency-transparent.png"
             alt="CYDigital"
             style={{ height: "44px", width: "auto", objectFit: "contain", opacity: 0.9 }}
           />

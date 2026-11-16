@@ -912,3 +912,66 @@ img { max-width: 100%; height: auto; }
 }
 
 
+
+/* ── Seasonal snowfall ─────────────────────────────────────────── */
+
+.snowfall-layer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 40;
+  contain: strict;
+}
+
+.snowflake {
+  position: absolute;
+  top: -35px;
+  display: block;
+  color: #527fbd;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  text-shadow:
+    0 0 1px rgba(255,255,255,0.95),
+    0 0 5px rgba(255,255,255,0.7),
+    0 0 8px rgba(65,110,175,0.35);
+  will-change: transform;
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.snow-drift-left {
+  --snow-drift: -55px;
+}
+
+.snow-drift-right {
+  --snow-drift: 55px;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -35px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(var(--snow-drift), 50vh, 0) rotate(180deg);
+  }
+  100% {
+    transform: translate3d(0, 105vh, 0) rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .snowflake {
+    text-shadow: 0 0 3px rgba(255,255,255,0.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snowfall-layer {
+    display: none;
+  }
+}

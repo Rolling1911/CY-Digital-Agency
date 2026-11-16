@@ -82,10 +82,9 @@ export function Header() {
           onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
         >
           <img
-            src="/images/logo-agency.png"
+            src="/images/logo-agency-transparent.png"
             alt="CYDigital"
             className="header-logo h-auto w-[155px] object-contain transition-transform duration-300 group-hover:scale-[1.03] md:w-[175px]"
-            style={{ filter: "brightness(0) saturate(100%)" }}
           />
         </Link>
 

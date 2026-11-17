@@ -7,6 +7,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getLanguageRoute } from "@/lib/languageRoutes";
 
 export function AIServices() {
   const { language } = useLanguage();
@@ -148,7 +149,7 @@ export function AIServices() {
           </div>
 
           <a
-            href="/epikoinonia"
+            href={getLanguageRoute("contact", language)}
             className="inline-flex shrink-0 items-center justify-center gap-3 bg-[#3155F5] px-7 py-4 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#2444D8]"
           >
             {language === "el" ? "Συζητήστε μαζί μας" : "Talk to our team"}

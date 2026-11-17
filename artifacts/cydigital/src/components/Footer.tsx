@@ -8,6 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getLanguageRoute } from "@/lib/languageRoutes";
 
 const socials = [
   {
@@ -27,26 +28,26 @@ export function Footer() {
   const isGreek = language === "el";
 
   const navLinks = [
-    { label: t.nav_home, href: "/" },
-    { label: t.nav_services, href: "/ypiresies" },
-    { label: t.nav_packages, href: "/paketa" },
-    { label: t.nav_why_us, href: "/giati-emas" },
-    { label: t.nav_contact, href: "/epikoinonia" },
+    { label: t.nav_home, href: getLanguageRoute("home", language) },
+    { label: t.nav_services, href: getLanguageRoute("services", language) },
+    { label: t.nav_packages, href: getLanguageRoute("packages", language) },
+    { label: t.nav_why_us, href: getLanguageRoute("about", language) },
+    { label: t.nav_contact, href: getLanguageRoute("contact", language) },
   ];
 
   const serviceLinks = [
     {
       label: isGreek ? "Κατασκευή Ιστοσελίδων" : "Website Development",
-      href: "/ypiresies/kataskevi-istoselidas",
+      href: getLanguageRoute("websiteDevelopment", language),
     },
-    { label: "Social Media", href: "/ypiresies/social-media" },
+    { label: "Social Media", href: getLanguageRoute("socialMedia", language) },
     {
       label: isGreek ? "Γραφιστικά & Branding" : "Graphic Design & Branding",
-      href: "/ypiresies/grafistika",
+      href: getLanguageRoute("graphicDesign", language),
     },
     {
       label: isGreek ? "Δημιουργία Περιεχομένου" : "Content Creation",
-      href: "/ypiresies/dimioyrgia-periekhomenou",
+      href: getLanguageRoute("contentCreation", language),
     },
   ];
 
@@ -100,7 +101,7 @@ export function Footer() {
             </p>
 
             <a
-              href="/epikoinonia"
+              href={getLanguageRoute("contact", language)}
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#F7F5EF] px-6 py-3.5 text-sm font-semibold text-[#171717] transition-all duration-300 hover:bg-[#FF6633] hover:text-white"
             >
               {isGreek ? "Ξεκινήστε ένα project" : "Start a project"}
@@ -121,7 +122,7 @@ export function Footer() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <div>
-            <a href="/" className="inline-flex items-center">
+            <a href={getLanguageRoute("home", language)} className="inline-flex items-center">
               <img
                 src="/images/logo-agency-transparent.png"
                 alt="CY Digital Agency"
@@ -227,7 +228,7 @@ export function Footer() {
             </div>
 
             <a
-              href="/epikoinonia"
+              href={getLanguageRoute("contact", language)}
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#FF6633]"
             >
               {isGreek ? "Ας μιλήσουμε" : "Let's talk"}

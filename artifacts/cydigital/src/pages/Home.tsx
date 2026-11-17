@@ -16,7 +16,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const target = sessionStorage.getItem("scrollTo");
@@ -34,8 +34,14 @@ export default function Home() {
   }, []);
 
   useSEO({
-    title: "CYDigital | Premium Digital Agency Κύπρος",
-    description: "Premium ιστοσελίδες, social media management, γραφιστικά και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν στην Κύπρο.",
+    title:
+      language === "en"
+        ? "CYDigital | Premium Digital Agency in Cyprus"
+        : "CYDigital | Premium Digital Agency Κύπρος",
+    description:
+      language === "en"
+        ? "Professional websites, social media management, graphic design and digital strategy for businesses ready to stand out in Cyprus."
+        : "Premium ιστοσελίδες, social media management, γραφιστικά και digital στρατηγική για επιχειρήσεις που θέλουν να ξεχωρίσουν στην Κύπρο.",
     path: "/",
   });
 

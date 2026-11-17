@@ -1,47 +1,146 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cydigital.agency/</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/ypiresies</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/ypiresies/kataskevi-istoselidas</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/kataskevi-istoselidas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/website-development" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/kataskevi-istoselidas" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/services/website-development</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/kataskevi-istoselidas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/website-development" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/kataskevi-istoselidas" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/ypiresies/social-media</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/social-media" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/social-media" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/social-media" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/services/social-media</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/social-media" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/social-media" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/social-media" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/ypiresies/grafistika</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/grafistika" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/graphic-design" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/grafistika" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/services/graphic-design</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/grafistika" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/graphic-design" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/grafistika" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/ypiresies/dimioyrgia-periekhomenou</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/dimioyrgia-periekhomenou" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/content-creation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/dimioyrgia-periekhomenou" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/services/content-creation</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/ypiresies/dimioyrgia-periekhomenou" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/services/content-creation" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/ypiresies/dimioyrgia-periekhomenou" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/paketa</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/paketa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/packages" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/paketa" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/packages</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/paketa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/packages" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/paketa" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/giati-emas</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/giati-emas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/giati-emas" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/giati-emas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/giati-emas" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cydigital.agency/epikoinonia</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/epikoinonia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/epikoinonia" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cydigital.agency/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://cydigital.agency/epikoinonia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cydigital.agency/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cydigital.agency/epikoinonia" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

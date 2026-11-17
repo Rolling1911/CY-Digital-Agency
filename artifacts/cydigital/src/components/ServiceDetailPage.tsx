@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSEO } from "@/hooks/useSEO";
+import { getLanguageRoute, languageRoutes } from "@/lib/languageRoutes";
 
 interface ServiceCopy {
   title: string;
@@ -93,7 +94,7 @@ export function ServiceDetailPage({
               </p>
 
               <a
-                href="/epikoinonia"
+                href={getLanguageRoute("contact", language)}
                 className="mt-9 inline-flex min-h-[54px] items-center gap-5 rounded-full bg-[#3155F5] px-7 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#2444D8] hover:shadow-[0_12px_30px_rgba(49,85,245,0.2)]"
               >
                 {language === "el" ? "Ζητήστε Προσφορά" : "Request a Quote"}
@@ -173,7 +174,13 @@ export function ServiceDetailPage({
               {relatedServices.map((service) => (
                 <a
                   key={service.href}
-                  href={service.href}
+                  href={
+                    language === "en"
+                      ? Object.values(languageRoutes).find(
+                          (routes) => routes.el === service.href,
+                        )?.en ?? service.href
+                      : service.href
+                  }
                   className="border border-[#171717]/15 bg-white px-5 py-3 text-xs font-bold text-[#171717]/75 transition-all hover:border-[#3155F5] hover:text-[#3155F5]"
                 >
                   {language === "el" ? service.el : service.en}

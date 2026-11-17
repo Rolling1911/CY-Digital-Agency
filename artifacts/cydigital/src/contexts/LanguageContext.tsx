@@ -197,7 +197,9 @@ const LanguageContext = createContext<LanguageContextType>({
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window === "undefined") return "el";
-    return window.localStorage.getItem("cydigital-language") === "en" ? "en" : "el";
+    return window.location.pathname === "/en" || window.location.pathname.startsWith("/en/")
+      ? "en"
+      : "el";
   });
 
   function setLanguage(nextLanguage: Language) {

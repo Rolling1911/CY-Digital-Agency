@@ -1,20 +1,25 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getCurrentPage, getLanguageRoute } from "@/lib/languageRoutes";
 
 export function Header() {
   const { t, language, setLanguage } = useLanguage();
+  const [location, navigate] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: t.nav_home, href: "/" },
-    { name: t.nav_services, href: "/ypiresies" },
-    { name: t.nav_packages, href: "/paketa" },
-    { name: language === "el" ? "AI Υπηρεσίες" : "AI Services", href: "/#ai-services" },
-    { name: t.nav_why_us, href: "/giati-emas" },
+    { name: t.nav_home, href: getLanguageRoute("home", language) },
+    { name: t.nav_services, href: getLanguageRoute("services", language) },
+    { name: t.nav_packages, href: getLanguageRoute("packages", language) },
+    {
+      name: language === "el" ? "AI Υπηρεσίες" : "AI Services",
+      href: `${getLanguageRoute("home", language)}#ai-services`,
+    },
+    { name: t.nav_why_us, href: getLanguageRoute("about", language) },
   ];
 
   useEffect(() => {
@@ -38,7 +43,7 @@ export function Header() {
       } else {
         e.preventDefault();
         sessionStorage.setItem("scrollTo", id);
-        window.location.href = "/";
+        window.location.href = `${getLanguageRoute("home", language)}#${id}`;
       }
     } else {
       window.scrollTo({ top: 0, behavior: "instant" });
@@ -48,8 +53,11 @@ export function Header() {
   }
 
   function toggleLanguage() {
-    setLanguage(language === "el" ? "en" : "el");
+    const nextLanguage = language === "el" ? "en" : "el";
+    const currentPage = getCurrentPage(location);
+    setLanguage(nextLanguage);
     setMobileMenuOpen(false);
+    navigate(getLanguageRoute(currentPage, nextLanguage));
   }
 
   const languageSwitch = (
@@ -76,7 +84,7 @@ export function Header() {
     >
       <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-5 md:px-8 xl:px-10">
         <Link
-          href="/"
+          href={getLanguageRoute("home", language)}
           className="group flex shrink-0 items-center"
           data-testid="link-logo"
           onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
@@ -109,7 +117,7 @@ export function Header() {
             className="rounded-full bg-[#3155F5] px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.08em] text-white shadow-none transition-all hover:bg-[#2444D8] hover:shadow-[0_5px_18px_rgba(49,85,245,0.2)]"
             data-testid="button-header-cta"
           >
-            <Link href="/epikoinonia">{t.nav_cta}</Link>
+            <Link href={getLanguageRoute("contact", language)}>{t.nav_cta}</Link>
           </Button>
         </div>
 
@@ -149,7 +157,7 @@ export function Header() {
               data-testid="button-mobile-header-cta"
             >
               <Link
-                href="/epikoinonia"
+                href={getLanguageRoute("contact", language)}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t.nav_cta}
